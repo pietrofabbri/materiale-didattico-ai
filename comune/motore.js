@@ -38,9 +38,37 @@
   const barra = document.createElement("div"); barra.className = "m-barra";
   const numero = document.createElement("div"); numero.className = "m-numero";
   const aiuto = document.createElement("div"); aiuto.className = "m-aiuto"; aiuto.hidden = true;
-  aiuto.innerHTML = "<kbd>→</kbd> avanti · <kbd>←</kbd> indietro · <kbd>spazio</kbd> avvia o ferma il timer (finito: passa al successivo) · <kbd>R</kbd> riavvia il timer<br><kbd>N</kbd> note del docente · <kbd>B</kbd> barattolo · <kbd>T</kbd> taratura · <kbd>U</kbd> sblocca · <kbd>M</kbd> modalità solo per questa slide · <kbd>K</kbd> blocco sì/no · <kbd>H</kbd> aiuto";
+  aiuto.innerHTML = "<kbd>→</kbd> avanti · <kbd>←</kbd> indietro · <kbd>spazio</kbd> avvia o ferma il timer (finito: passa al successivo) · <kbd>R</kbd> riavvia il timer<br><kbd>N</kbd> note del docente · <kbd>B</kbd> barattolo · <kbd>T</kbd> taratura · <kbd>U</kbd> sblocca · <kbd>M</kbd> modalità solo per questa slide · <kbd>K</kbd> blocco sì/no · <kbd>H</kbd> aiuto<br>Barra in basso: le slide dell'ora. <span class=\"pal essenziale\"></span> essenziale · <span class=\"pal consigliata\"></span> consigliata · <span class=\"pal facoltativa\"></span> facoltativa (si può saltare se manca tempo). Un clic su un segmento porta a quella slide.";
   const note = document.createElement("div"); note.className = "m-note"; note.hidden = true;
-  document.body.append(testata, barra, numero, aiuto, note);
+  const oraBar = document.createElement("div"); oraBar.className = "m-ora";
+  document.body.append(testata, barra, numero, aiuto, note, oraBar);
+
+  // ---------- barra dell'ora: un segmento per slide, colorato per importanza
+  // una slide con data-inizio-ora apre un nuovo blocco (copertina, ora 1, ora 2...)
+  const blocchi = [];
+  slides.forEach((s, k) => {
+    const inizio = s.hasAttribute("data-inizio-ora") || s.classList.contains("scena") || /^giornata-/.test(s.id);
+    if (!blocchi.length || inizio) {
+      const m = /Ora (\d+)/.exec(s.textContent);
+      blocchi.push({ da: k, nome: s.dataset.inizioOra || (s.classList.contains("scena") && m ? "Ora " + m[1] : "") });
+    }
+  });
+  blocchi.forEach((b, n) => { b.a = n + 1 < blocchi.length ? blocchi[n + 1].da - 1 : slides.length - 1; });
+  const IMPN = { essenziale: "essenziale", consigliata: "consigliata", facoltativa: "facoltativa: si può saltare" };
+  function mostraOra() {
+    const b = blocchi.find(x => i >= x.da && i <= x.a);
+    if (!b || b.a === b.da) { oraBar.hidden = true; return; }
+    oraBar.hidden = false;
+    let seg = "";
+    for (let k = b.da; k <= b.a; k++) {
+      const imp = slides[k].dataset.importanza || "essenziale";
+      seg += '<span class="seg ' + imp + (k < i ? " fatto" : "") + (k === i ? " qui" : "") + '" data-k="' + k + '"></span>';
+    }
+    const imp = slides[i].dataset.importanza || "essenziale";
+    oraBar.innerHTML = '<div class="et">' + (b.nome ? b.nome + " · " : "") + (i - b.da + 1) + "/" + (b.a - b.da + 1) +
+      '</div><div class="segmenti">' + seg + '</div><div class="imp ' + imp + '">' + IMPN[imp] + "</div>";
+  }
+  oraBar.addEventListener("click", e => { const t = e.target.closest(".seg"); if (t) vai(+t.dataset.k); });
 
   // ---------- timer in sequenza
   const T = { lista: [], nomi: [], k: 0, durata: 0, resto: 0, va: false, ultimo: 0, inPausaPerBlocco: false };
@@ -136,6 +164,7 @@
     if (s.dataset.logica === "sorteggio") preparaSorteggio(s);
     barra.style.width = ((i + 1) / slides.length * 100) + "%";
     numero.textContent = (i + 1) + " / " + slides.length;
+    mostraOra();
     const a = s.querySelector("aside.note");
     note.innerHTML = a ? '<b>Note per il docente</b><br>' + a.innerHTML : "<b>Nessuna nota per questa slide.</b>";
     try { history.replaceState(null, "", "#" + (i + 1)); } catch (e) {}

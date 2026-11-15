@@ -44,7 +44,10 @@ def css(n):
     """CSS del deck riscritto per la tela: 'section' diventa '.tela'."""
     c = open(os.path.join(cartella(n), "deck.css")).read()
     c = re.sub(r"/\*.*?\*/", "", c, flags=re.S)
-    out = []
+    kf = re.findall(r"@keyframes[^{]*\{(?:[^{}]*\{[^{}]*\})*\s*\}", c)
+    for x in kf:
+        c = c.replace(x, "")
+    out = list(kf)
     for sel, corpo in re.findall(r"([^{}]+)\{([^{}]*)\}", c):
         nuovi = []
         for x in sel.split(","):
@@ -52,7 +55,7 @@ def css(n):
             if not x:
                 continue
             prima = x.split()[0]
-            if prima in (".scena", ".centro"):
+            if prima.startswith(".") and prima.split(":")[0].split(".")[1] in ("scena", "centro", "copertina", "imp-e", "imp-c", "imp-f"):
                 nuovi.append(".tela" + x)
                 continue
             if x == ":root" or x == "section":
@@ -97,6 +100,12 @@ def sezioni(n):
             a_html.append(f'data-timer="{sec}"'); a_html.append(f'data-timer-nomi="{html.escape(nomi)}"')
         if attr.get("logica"):
             a_html.append(f'data-logica="{attr["logica"]}"')
+        a_html.append(f'data-importanza="{attr.get("importanza", "essenziale")}"')
+        if k == 0:
+            a_html.append('data-inizio-ora="Apertura"')
+        elif "scena" in classi.split():
+            mo = re.search(r"Ora (\d+) di", corpo)
+            a_html.append(f'data-inizio-ora="Ora {mo.group(1) if mo else ""}"')
         idsez = f' id="giornata-{n}"' if k == 0 else ""
         st = f' style="{stile.group(1)}"' if stile else ""
         nota_html = f'<aside class="note">{html.escape(nota).replace(chr(10), "<br>")}</aside>' if nota else ""
@@ -108,8 +117,9 @@ CSS_TELA = """
 section.slide:has(> .tela){padding:0 150px 0 0;align-items:center;justify-content:center;background:#E9ECF1}
 section.slide:has(> .tela.scena){background:#0D1322}
 .tela{position:relative;width:1920px;height:1080px;flex:none;transform-origin:center center;transform:scale(var(--scala,0.5));overflow:hidden}
-.tela .passo{opacity:0;transition:opacity .35s ease}
-.tela .passo.visto{opacity:1}
+.tela .passo{opacity:0;transition:opacity .35s ease;animation:none}
+.tela .passo.visto{opacity:1;animation:sali .45s ease both}
+.tela .striscia{display:none}
 .tela p,.tela ol,.tela ul,.tela h2,.tela h1{max-width:none}
 .tela .box,.tela .formula,.tela .legenda,.tela .codice,.tela table.t{max-width:none}
 .tela table.t{border-collapse:collapse;background:#fff}

@@ -52,3 +52,10 @@ Stato: giornata 1 dal deck; giornate 2-5 dal generatore.
 | `img/`, `dati/` | Grafici di «Indovina r» (giornata 2) e dati dei frutti (giornata 5) |
 
 Per modificare il contenuto: cambiare `sorgenti/giornataN.py`, poi `cd sorgenti && python3 unico.py`, che riscrive `index.html`. Il font Atkinson Hyperlegible è distribuito con licenza SIL Open Font License.
+
+## Giornata 1, versione 2 (15/11/2026)
+
+- La giornata 1 è scritta con `sorgenti/g2.py` + `sorgenti/giornata1.py` (la v1 resta in `giornata1_v1.py`): ogni funzione produce direttamente una slide del deck. `python3 sorgenti/artefatto2.py 1` scrive il deck in `artefatti/g1/project/` con lo stile `sorgenti/stile_deck.css`.
+- Ogni slide ha un'**importanza**, nella riga IMPOSTAZIONI: `importanza=essenziale | consigliata | facoltativa`. Nell'HTML compare nella **barra dell'ora** in basso (blu essenziale, ambra consigliata, grigio facoltativa: si può saltare); un clic su un segmento porta a quella slide. Nel deck la stessa informazione è la striscia colorata in fondo alla slide.
+- Nuovi blocchi: riquadro «Ricorda» (richiamo di un concetto non banale), tasselli di parole, catene di coppie, barre di probabilità, animazioni brevi all'apertura della slide.
+- Palette: carta #F6F4EF, inchiostro #1D2433, notte #151A2C, indaco #3B4BA0, corallo #E0603C, ambra #E8A21C, salvia #4F9A73, cielo #3E8EC4, prugna #7A4E9C.

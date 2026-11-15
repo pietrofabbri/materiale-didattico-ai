@@ -2,7 +2,7 @@
  "v": 5,
  "createdOnFiles": {
   "v": 1,
-  "at": "2026-11-15T19:28:59Z"
+  "at": "2026-11-15T19:53:28Z"
  },
  "lists": "css",
  "format": {
@@ -69,15 +69,15 @@
    "description": "Copertina della giornata",
    "start": "g1-001"
   },
-  "s2": {
+  "s1": {
    "description": "Ora 1: Le parole come dati",
    "start": "g1-002"
   },
-  "s3": {
+  "s2": {
    "description": "Ora 2: Vero, verosimile, opinione",
    "start": "g1-021"
   },
-  "s4": {
+  "s3": {
    "description": "Ora 3: Dalle nostre frasi al pappagallo",
    "start": "g1-036"
   }
