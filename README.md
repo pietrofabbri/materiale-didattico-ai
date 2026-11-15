@@ -1,0 +1,41 @@
+# Materiale didattico: intelligenza artificiale e dati
+
+Percorso «Intelligenza artificiale e dati» per una classe prima di Informatica (corso quadriennale), IIS Copernico-Carpeggiani di Ferrara. Docente referente: Pietro Fabbri (A041).
+
+**Si lavora con un solo file: [`index.html`](index.html).** Online: https://pietrofabbri.github.io/materiale-didattico-ai/
+
+Il file contiene tutto: le slide delle cinque giornate, gli stili, i font, le immagini, il barattolo del rumore, i timer e i fogli dell'ora da stampare. Si può scaricare e aprire offline con Chrome o Edge.
+
+## Il percorso
+
+| Giornata | Ore 1 e 2 | Ora 3 (laboratorio) |
+|---|---|---|
+| 1 · La lingua come dati | Italiano: parole e frequenze, radice e desinenza, fatto e opinione | Un modello che genera frasi dalle frasi della classe |
+| 2 · Incertezza e misura | Matematica: probabilità, media, deviazione standard, correlazione | Un calcolatore statistico sul foglio di calcolo |
+| 3 · Il corpo come fonte di dati | Educazione fisica in aula: misure, errori di misura, raccolta anonima | Dai fogli di carta a dati puliti |
+| 4 · Dai dati alle scoperte | Laboratorio: analisi dei dati, Teachable Machine | Preparazione di «Dentro la macchina», l'installazione della classe |
+| 5 · Recupero o primo modello | Laboratorio, condotta dal docente di informatica | Classificatore a k vicini |
+
+Ogni ora dura 40 minuti: avvio, attività, tre domande di controllo, consegna del foglio dell'ora. I gruppi cambiano a ogni giornata; il prodotto finale è della classe intera.
+
+## Come si usa
+
+1. Aprire `index.html` (online o scaricato). Il menu iniziale porta a ogni giornata e stampa i fogli dell'ora (A3 orizzontale, una copia per gruppo; consentire i popup).
+2. Premere **B** e fare la taratura del barattolo del rumore.
+3. Tasti: **frecce** avanti e indietro · **spazio** avvia o ferma il timer, e quando è finito avvia il successivo · **R** riavvia il timer · **N** note per il docente · **H** aiuto · **Home** torna al menu · **B T U M K** barattolo.
+
+Il microfono funziona sicuramente dalla versione online (https). Aprendo il file scaricato, se il browser non concede il microfono: `python3 -m http.server 8017` nella cartella e poi `http://localhost:8017/`.
+
+## Privacy
+
+Nessun dato degli studenti, nessun nome e nessun audio viene salvato o trasmesso. Il barattolo misura solo il livello del suono, in memoria. Il sorteggio dei gruppi usa solo i numeri del registro.
+
+## Struttura e rigenerazione
+
+| Cartella | Contenuto |
+|---|---|
+| `sorgenti/` | Il generatore: `g.py` (tipi di slide), `giornata1.py` … `giornata5.py` (contenuti), `unico.py` (costruisce `index.html`) |
+| `comune/` | Motore delle slide (`motore.js`), stile (`stile.css`); barattolo del rumore, palette e font Atkinson Hyperlegible dal repository [progetto-16](https://github.com/pietrofabbri/progetto-16) |
+| `img/`, `dati/` | Grafici di «Indovina r» (giornata 2) e dati dei frutti (giornata 5) |
+
+Per modificare il contenuto: cambiare `sorgenti/giornataN.py`, poi `cd sorgenti && python3 unico.py`, che riscrive `index.html`. Il font Atkinson Hyperlegible è distribuito con licenza SIL Open Font License.
