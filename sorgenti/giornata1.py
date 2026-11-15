@@ -43,11 +43,9 @@ def build():
     S.append(spiega("Quante parole ci sono?", occhiello="Domanda",
         formula="il gatto e il cane",
         testo=["Scrivete un numero su un foglietto. Poi confrontiamo."],
-        risposta=["Due risposte giuste, perché contano cose diverse.",
-                  "<b>Occorrenze</b>: tutte le parole, anche ripetute: il, gatto, e, il, cane = <b>5</b>.",
+        risposta=["<b>Occorrenze</b>: tutte le parole, anche ripetute: il, gatto, e, il, cane = <b>5</b>.",
                   "<b>Forme diverse</b>: le parole diverse: il, gatto, e, cane = <b>4</b>."],
-        dopo=["Le occorrenze non sono mai meno delle forme. In informatica le occorrenze si chiamano anche token."],
-        note="3-6 min. Lasciare scrivere, raccogliere a voce le risposte (di solito 5 e 4), poi freccia per la risposta."))
+        note="3-6 min. Lasciare scrivere, raccogliere a voce le risposte (di solito 5 e 4): sono giuste entrambe, perché contano cose diverse. Poi freccia per la risposta. Le occorrenze non sono mai meno delle forme; in informatica si chiamano anche token."))
     S.append(spiega("Le regole per contare", occhiello="Perché tutti i gruppi ottengano lo stesso numero",
         punti=["maiuscole e minuscole sono la stessa forma: «Il» e «il» contano come una forma sola",
                "la punteggiatura non si conta",
@@ -67,7 +65,7 @@ def build():
     S.append(spiega("Il paragrafo", occhiello="Testo da contare", testo=[PAR], timer=[(300, "Contare")], rumore="discussione", fase="gruppo",
         note="Soluzione con le regole della classe: 67 occorrenze, 50 forme diverse. Più frequenti: il 6, treno 4, di 3, studenti 3, la 3, poi alle, a, e 2. Si accetta uno scarto di 3."))
     S.append(spiega("Soluzione, e un numero per confrontare", occhiello="Frequenza relativa",
-        tabella=(["", "Valore corretto"], [["Occorrenze", "67"], ["Forme diverse", "50"], ["Parola più frequente", "il, 6 volte"]]),
+        testo=["Occorrenze: <b>67</b> · forme diverse: <b>50</b> · parola più frequente: <b>il</b>, 6 volte."],
         formula="frequenza relativa = occorrenze della parola ÷ occorrenze totali",
         esempio="«il»: 6 ÷ 67 ≈ 0,09, cioè circa il 9% delle parole del testo.",
         dopo=["In R2: le 5 parole più frequenti con la loro frequenza relativa (3 minuti, calcolatrice ammessa)."],

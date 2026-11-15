@@ -1,0 +1,92 @@
+{
+ "v": 5,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-15T19:28:59Z"
+ },
+ "lists": "css",
+ "format": {
+  "v": 1,
+  "shared": [
+   "project/deck.css"
+  ]
+ },
+ "title": "IA e dati 1P · Giornata 1 · La lingua come dati",
+ "order": [
+  "g1-001",
+  "g1-002",
+  "g1-003",
+  "g1-004",
+  "g1-005",
+  "g1-006",
+  "g1-007",
+  "g1-008",
+  "g1-009",
+  "g1-010",
+  "g1-011",
+  "g1-012",
+  "g1-013",
+  "g1-014",
+  "g1-015",
+  "g1-016",
+  "g1-017",
+  "g1-018",
+  "g1-019",
+  "g1-020",
+  "g1-021",
+  "g1-022",
+  "g1-023",
+  "g1-024",
+  "g1-025",
+  "g1-026",
+  "g1-027",
+  "g1-028",
+  "g1-029",
+  "g1-030",
+  "g1-031",
+  "g1-032",
+  "g1-033",
+  "g1-034",
+  "g1-035",
+  "g1-036",
+  "g1-037",
+  "g1-038",
+  "g1-039",
+  "g1-040",
+  "g1-041",
+  "g1-042",
+  "g1-043",
+  "g1-044",
+  "g1-045",
+  "g1-046",
+  "g1-047",
+  "g1-048",
+  "g1-049"
+ ],
+ "cover": "g1-001",
+ "sections": {
+  "s0": {
+   "description": "Copertina della giornata",
+   "start": "g1-001"
+  },
+  "s2": {
+   "description": "Ora 1: Le parole come dati",
+   "start": "g1-002"
+  },
+  "s3": {
+   "description": "Ora 2: Vero, verosimile, opinione",
+   "start": "g1-021"
+  },
+  "s4": {
+   "description": "Ora 3: Dalle nostre frasi al pappagallo",
+   "start": "g1-036"
+  }
+ },
+ "faces": {
+  "atkinson-hyperlegible": {
+   "family": "Atkinson Hyperlegible",
+   "href": "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+  }
+ },
+ "designSystems": []
+}

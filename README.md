@@ -30,12 +30,25 @@ Il microfono funziona sicuramente dalla versione online (https). Aprendo il file
 
 Nessun dato degli studenti, nessun nome e nessun audio viene salvato o trasmesso. Il barattolo misura solo il livello del suono, in memoria. Il sorteggio dei gruppi usa solo i numeri del registro.
 
+## Come si modificano le slide
+
+Ogni giornata si rivede come presentazione modificabile su claude.ai (tipo Slides). Quando è pronta, il deck si scarica in `artefatti/gN/project/` e `python3 sorgenti/unico.py` lo converte nelle slide di `index.html`, aggiungendo timer, barattolo, note e sorteggio. Le impostazioni di ogni slide stanno nella **prima riga delle note**, in questa forma (si possono cambiare a mano nell'editor):
+
+```
+IMPOSTAZIONI: rumore=discussione | fase=gruppo | timer=300 Contare; 180 R2 | logica=sorteggio
+```
+
+`rumore` = silenzio, discussione o spento (barattolo) · `fase` = solo, gruppo o tutti · `timer` = secondi e nome di ciascun timer, separati da punto e virgola · `logica=sorteggio` = la slide del sorteggio dei gruppi. Le giornate non ancora rivedute vengono dal generatore (`sorgenti/giornataN.py`).
+
+Stato: giornata 1 dal deck; giornate 2-5 dal generatore.
+
 ## Struttura e rigenerazione
 
 | Cartella | Contenuto |
 |---|---|
 | `sorgenti/` | Il generatore: `g.py` (tipi di slide), `giornata1.py` … `giornata5.py` (contenuti), `unico.py` (costruisce `index.html`) |
 | `comune/` | Motore delle slide (`motore.js`), stile (`stile.css`); barattolo del rumore, palette e font Atkinson Hyperlegible dal repository [progetto-16](https://github.com/pietrofabbri/progetto-16) |
+| `artefatti/` | I deck delle giornate rivedute su claude.ai (`gN/project/`); `sorgenti/artefatto.py` crea un deck dal generatore, `sorgenti/da_artefatto.py` lo riconverte |
 | `img/`, `dati/` | Grafici di «Indovina r» (giornata 2) e dati dei frutti (giornata 5) |
 
 Per modificare il contenuto: cambiare `sorgenti/giornataN.py`, poi `cd sorgenti && python3 unico.py`, che riscrive `index.html`. Il font Atkinson Hyperlegible è distribuito con licenza SIL Open Font License.

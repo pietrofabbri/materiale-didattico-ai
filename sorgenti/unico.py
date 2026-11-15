@@ -6,6 +6,7 @@ Uso: python3 unico.py [cartella di uscita]   (predefinita: la cartella sopra sor
 """
 import base64, importlib, os, re, sys
 from g import T, FOGLI_TESTA, pagina_foglio
+import da_artefatto as DA
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(QUI)
@@ -41,13 +42,19 @@ GIORNATE = [
 ]
 
 def main():
-    sezioni, templ = [], []
+    sezioni, templ, css_deck, fonti = [], [], [], []
     palette = leggi("comune/palette.css")
     for n, _tit, _sotto in GIORNATE:
         _titolo, S, F = importlib.import_module(f"giornata{n}").build()
-        S = list(S)
-        S[0] = S[0].replace("<section ", f'<section id="giornata-{n}" ', 1)
-        sezioni += S
+        if DA.disponibile(n):            # la giornata è stata rivista nel deck: si usano le slide del deck
+            sezioni += DA.sezioni(n)
+            css_deck.append(DA.css(n))
+            fonti.append(f"giornata {n}: deck")
+        else:
+            S = list(S)
+            S[0] = S[0].replace("<section ", f'<section id="giornata-{n}" ', 1)
+            sezioni += S
+            fonti.append(f"giornata {n}: generatore")
         fogli = "".join(pagina_foglio(n, h, t, r) for h, t, r in F)
         templ.append(f'<template id="fogli-{n}">{fogli}</template>')
     testa = (FOGLI_TESTA.format(titolo=T("Fogli dell'ora"))
@@ -69,7 +76,7 @@ def main():
             '<aside class="note">Prima della lezione: premere B e fare la taratura del barattolo (silenzio, poi discussione). Tasti: frecce avanti e indietro, spazio timer, N note, H aiuto, Home torna al menu. Nessun dato degli studenti viene salvato o trasmesso. Stampare i fogli dell’ora della giornata, in A3 orizzontale, una copia per gruppo: il bottone apre una finestra di stampa (consentire i popup).</aside>\n'
             "</section>\n")
 
-    stile = css_con_font(leggi("comune/stile.css")) + """
+    stile = css_con_font(leggi("comune/stile.css")) + "\n".join(css_deck) + (DA.CSS_TELA if css_deck else "") + """
 .carte.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4vw}
 .carte.menu .carta{min-width:0}\n.carte.menu .tit{font-size:clamp(16px,1.8vw,34px)}
 .menu-bottoni{display:flex;gap:.8vw;flex-wrap:wrap;margin-top:.6vh}
@@ -82,10 +89,11 @@ def main():
             f"<style>{palette}</style><style>{stile}</style></head><body>\n"
             + immagini_inline(corpo) + "".join(templ)
             + "<script>" + js_sicuro(leggi('comune/barattolo.js')) + "</script>\n"
-            + "<script>" + js_sicuro(leggi('comune/motore.js')) + "</script>\n<script>Motore.avvia();</script>\n</body></html>\n")
+            + "<script>" + js_sicuro(leggi('comune/motore.js')) + "</script>\n" + (DA.JS_TELA if css_deck else "") + "<script>Motore.avvia();</script>\n</body></html>\n")
     assert not re.search("[\\u2013\\u2014]", html), "trattino lungo"
     with open(os.path.join(OUT, "index.html"), "w") as f:
         f.write(html)
+    print(", ".join(fonti))
     print("index.html:", len(re.findall(r'<section class="slide', corpo)), "slide,", round(len(html) / 1024), "KB")
 
 if __name__ == "__main__":

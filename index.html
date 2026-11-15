@@ -143,6 +143,74 @@ table.t th,table.t td{padding:.9vh 1.1vw;border-bottom:1px solid var(--p16-linea
 .m-note{position:fixed;left:2vw;right:110px;bottom:3vh;max-height:45vh;overflow:auto;background:#FFFBEA;border:2px solid var(--p16-attenzione);border-radius:10px;padding:14px 18px;font-size:clamp(14px,1.15vw,20px);line-height:1.45;z-index:70;box-shadow:0 8px 30px rgba(13,19,34,.25)}
 .m-aiuto[hidden],.m-note[hidden]{display:none}
 aside.note{display:none}
+.tela{--carta:#F5F6F8;--bianco:#FFFFFF;--inchiostro:#1B2130;--grigio:#5B6475;--linea:#D5DAE2;--notte:#0D1322;
+--rosso:#C8372D;--arancio:#DB6A1C;--verde:#3A8A3E;--petrolio:#0E7C7B;--azzurro:#2C8BC9;--blu:#2E4A9B;--viola:#6B3FA0;--giallo:#FFF4D6}
+.tela{background:var(--carta);color:var(--inchiostro);font-family:'Atkinson Hyperlegible',Arial,sans-serif;padding:88px 128px 150px 112px;box-sizing:border-box;display:flex;flex-direction:column;gap:26px}
+.tela.scena{background:var(--notte);color:var(--carta)}
+.tela.centro{justify-content:center}
+.tela h1{font-size:88px;line-height:1.05;font-weight:700;margin:0}
+.tela h2{font-size:60px;line-height:1.1;font-weight:700;margin:0;padding-right:260px}
+.tela p{font-size:36px;line-height:1.35;margin:0}
+.tela li{font-size:36px;line-height:1.35}
+.tela ol,.tela ul{margin:0;padding-left:56px;display:flex;flex-direction:column;gap:10px}
+.tela .occhiello{font-size:24px;letter-spacing:3px;text-transform:uppercase;color:var(--grigio);font-weight:700}
+.tela.scena .occhiello{color:#9AA3B2}
+.tela.scena p{color:#C9CFDA}
+.tela .grande{font-size:50px;line-height:1.3;font-weight:700}
+.tela .piccolo{font-size:28px;color:var(--grigio);line-height:1.4}
+.tela .spazio{flex:1}
+.tela .acc{color:var(--blu)}
+.tela .box{background:var(--bianco);border-left:10px solid var(--azzurro);border-radius:8px;padding:22px 36px;display:flex;flex-direction:column;gap:10px}
+.tela .box.esempio{border-left-color:var(--verde)}
+.tela .box.attenzione{border-left-color:var(--arancio)}
+.tela .box.risposta{border-left-color:var(--blu)}
+.tela.scena .box{background:#1C2538}
+.tela.scena .box p{color:var(--carta)}
+.tela .etichetta{font-size:24px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--grigio)}
+.tela .cols{display:flex;flex-direction:row;gap:48px;align-items:flex-start}
+.tela .cols>div{flex:1}
+.tela .carte{display:flex;flex-direction:row;flex-wrap:wrap;gap:24px}
+.tela .carta{flex:1 1 30%;background:var(--bianco);border-radius:10px;padding:22px 28px;border-top:8px solid var(--azzurro);display:flex;flex-direction:column;gap:8px}
+.tela .carta .tit{font-size:36px;font-weight:700}
+.tela .carta p{font-size:32px}
+.tela.scena .carta{background:#1C2538}
+.tela.scena .carta .tit{color:var(--carta)}
+.tela .formula{font-size:56px;font-weight:700;line-height:1.35;background:var(--bianco);border:3px solid var(--linea);border-radius:12px;padding:24px 40px}
+.tela .legenda{display:grid;grid-template-columns:260px 1fr;gap:8px 28px}
+.tela .legenda .s{font-size:38px;font-weight:700}
+.tela .codice{font-family:'Courier New',monospace;font-size:34px;line-height:1.5;background:var(--bianco);border:2px solid var(--linea);border-radius:8px;padding:18px 28px}
+.tela table.t{font-size:34px;color:var(--inchiostro)}
+.tela table.t.compatta{font-size:28px}
+.tela .attivita{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.tela .dettagli{display:flex;flex-direction:column;gap:14px}
+.tela .det{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:baseline}
+.tela .det .k{font-size:24px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--grigio)}
+.tela .det p{font-size:32px}
+.tela .foglio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:var(--bianco);border:3px solid var(--inchiostro);border-radius:8px;padding:10px;width:560px}
+.tela .foglio .r{border:2px solid var(--linea);border-radius:6px;padding:6px 8px;color:var(--grigio)}
+.tela .foglio .r p{font-size:24px;line-height:1.15}
+.tela .foglio .r.qui{background:var(--giallo);border:4px solid var(--arancio);color:var(--inchiostro)}
+.tela .foglio .testa{grid-column:span 3}
+.tela .foglio .testa p{font-size:24px;color:var(--grigio)}
+.tela .segnaposto{background:var(--bianco);border:3px dashed var(--linea);border-radius:10px;padding:28px 36px}
+.tela .foot{position:absolute;left:112px;bottom:56px;width:1600px;font-size:24px;color:var(--grigio)}
+.tela.scena .foot{color:#9AA3B2}
+/* slide prese da un deck: tela di 1920×1080 scalata */
+section.slide:has(> .tela){padding:0 150px 0 0;align-items:center;justify-content:center;background:#E9ECF1}
+section.slide:has(> .tela.scena){background:#0D1322}
+.tela{position:relative;width:1920px;height:1080px;flex:none;transform-origin:center center;transform:scale(var(--scala,0.5));overflow:hidden}
+.tela .passo{opacity:0;transition:opacity .35s ease}
+.tela .passo.visto{opacity:1}
+.tela p,.tela ol,.tela ul,.tela h2,.tela h1{max-width:none}
+.tela .box,.tela .formula,.tela .legenda,.tela .codice,.tela table.t{max-width:none}
+.tela table.t{border-collapse:collapse;background:#fff}
+.tela table.t th,.tela table.t td{padding:10px 18px;border-bottom:1px solid #D5DAE2;text-align:left}
+.tela table.t th{background:#E7EAF0}
+.tela .carta{min-width:0;box-shadow:none}
+.tela .foglio{aspect-ratio:auto}
+.tela .foglio .r{font-size:24px}
+.sorteggio-tela .sort-comandi label,.sorteggio-tela .sort-comandi input,.sorteggio-tela .bottone{font-size:28px}
+.sorteggio-tela .gtit{font-size:30px}.sorteggio-tela .gnum{font-size:44px}
 
 .carte.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4vw}
 .carte.menu .carta{min-width:0}
@@ -153,297 +221,342 @@ aside.note{display:none}
 <section class="slide" id="menu" data-rumore="spento">
 <div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P</div><h2>Come impara una macchina</h2><p>Quattro giornate, più una di recupero o di approfondimento. Scegli la giornata.</p><div class="carte menu"><div class="carta" style="--c:var(--p16-g-azzurro)"><div class="tit">Giornata 1 · La lingua come dati</div><p class="piccolo">Italiano · Italiano · Laboratorio</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-1">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-1">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-verde)"><div class="tit">Giornata 2 · Incertezza e misura</div><p class="piccolo">Matematica · Matematica · Laboratorio</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-2">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-2">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-arancio)"><div class="tit">Giornata 3 · Il corpo come fonte di dati</div><p class="piccolo">Educazione fisica in aula · Laboratorio</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-3">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-3">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-viola)"><div class="tit">Giornata 4 · Dai dati alle scoperte</div><p class="piccolo">Laboratorio · «Dentro la macchina»</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-4">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-4">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-petrolio)"><div class="tit">Giornata 5 · Recupero, oppure il primo modello</div><p class="piccolo">Laboratorio, docente di informatica</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-5">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-5">Stampa i fogli dell’ora</button></div></div></div><aside class="note">Prima della lezione: premere B e fare la taratura del barattolo (silenzio, poi discussione). Tasti: frecce avanti e indietro, spazio timer, N note, H aiuto, Home torna al menu. Nessun dato degli studenti viene salvato o trasmesso. Stampare i fogli dell’ora della giornata, in A3 orizzontale, una copia per gruppo: il bottone apre una finestra di stampa (consentire i popup).</aside>
 </section>
-<section id="giornata-1" class="slide" data-rumore="spento">
-<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 1</div><h1>La lingua come dati</h1><p class="grande">Come fa una macchina a «parlare» se non sa che cosa dice?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · Italiano</div><p>Le parole come dati: contare, prevedere, capire il contesto</p></div><div class="carta"><div class="tit">Ora 2 · Italiano</div><p>Vero, verosimile, opinione: scriviamo le nostre frasi</p></div><div class="carta"><div class="tit">Ora 3 · Laboratorio</div><p>Dalle nostre frasi a un modello che genera frasi</p></div></div>
-<aside class="note">Prima della lezione: tarare il barattolo (B, poi T) e provare il sorteggio dei gruppi. Stampare 6 copie del foglio di ciascuna ora (file fogli-giornata-1.html, A3 orizzontale). Pezzi per l’installazione finale: il corpus della classe e le frasi generate dal pappagallo.</aside>
-</section>
-<section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 1 · Ora 1 di 3 · Italiano · 40 minuti</div><h1>Le parole come dati</h1><p class="grande">Contare, prevedere, capire il contesto</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>scoprire perché una macchina può indovinare la parola successiva.</p></div>
-<aside class="note">0-3 min. Accoglienza, presentazione del percorso in una frase: in quattro giornate scopriamo come impara una macchina usando i nostri dati.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Obiettivi dell’ora</div><h2>Alla fine di quest'ora sai…</h2><ol class="obj"><li>contare le <b>occorrenze</b> e le <b>forme diverse</b> di un testo</li><li>calcolare la <b>frequenza relativa</b> di una parola</li><li>dividere una parola in <b>radice</b> e <b>desinenza</b> e dire che cosa dice la desinenza</li><li><b>prevedere</b> la parola successiva e spiegare perché ci riesci</li><li>trovare i <b>due significati</b> di una frase ambigua</li><li>dire che cosa fa un <b>pappagallo stocastico</b></li></ol><p class="piccolo">Alla fine dell’ora tre domande controllano questi obiettivi.</p>
+<section id="giornata-1" class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 1</p><h1>La lingua come dati</h1><p class="grande">Come fa una macchina a «parlare» se non sa che cosa dice?</p><div class="spazio"></div><div class="carte"><div class="carta"><p class="tit">Ora 1 · Italiano</p><p>Le parole come dati: contare, prevedere, capire il contesto</p></div><div class="carta"><p class="tit">Ora 2 · Italiano</p><p>Vero, verosimile, opinione: scriviamo le nostre frasi</p></div><div class="carta"><p class="tit">Ora 3 · Laboratorio</p><p>Dalle nostre frasi a un modello che genera frasi</p></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1</p>
 
-</section>
-<section class="slide" data-rumore="spento" data-fase="tutti" data-logica="sorteggio">
-<div class="occhiello">Oggi lavoriamo in gruppi nuovi</div><h2>Formiamo i gruppi</h2><p>Ogni giornata ha gruppi nuovi, sorteggiati con i numeri del registro. Quando compare il vostro gruppo, andate all’isola del suo colore. Avete un minuto.</p><div class="sorteggio"></div>
-<aside class="note">Inserire gli assenti e premere Sorteggia. Le isole hanno il cartellino colorato. Nessun nome sullo schermo: solo i numeri del registro.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Le regole delle quattro giornate</div>
+</div><aside class="note">Prima della lezione: tarare il barattolo (B, poi T) e provare il sorteggio dei gruppi. Stampare 6 copie del foglio di ciascuna ora (file fogli-giornata-1.html, A3 orizzontale). Pezzi per l’installazione finale: il corpus della classe e le frasi generate dal pappagallo.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela scena">
+<p class="occhiello">Giornata 1 · Ora 1 di 3 · Italiano · 40 minuti</p><h1>Le parole come dati</h1><p class="grande">Contare, prevedere, capire il contesto</p><div class="spazio"></div><div class="box risposta"><p class="etichetta">Missione dell’ora</p><p>scoprire perché una macchina può indovinare la parola successiva.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">0-3 min. Accoglienza, presentazione del percorso in una frase: in quattro giornate scopriamo come impara una macchina usando i nostri dati.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Obiettivi dell’ora</p><h2>Alla fine di quest'ora sai…</h2><ol class="obj"><li>contare le <b>occorrenze</b> e le <b>forme diverse</b> di un testo</li><li>calcolare la <b>frequenza relativa</b> di una parola</li><li>dividere una parola in <b>radice</b> e <b>desinenza</b> e dire che cosa dice la desinenza</li><li><b>prevedere</b> la parola successiva e spiegare perché ci riesci</li><li>trovare i <b>due significati</b> di una frase ambigua</li><li>dire che cosa fa un <b>pappagallo stocastico</b></li></ol><p class="piccolo">Alla fine dell’ora tre domande controllano questi obiettivi.</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div></section>
+<section class="slide" data-rumore="spento" data-fase="tutti" data-logica="sorteggio"><div class="tela ">
+<p class="occhiello">Oggi lavoriamo in gruppi nuovi</p><h2>Formiamo i gruppi</h2><p>Ogni giornata ha gruppi nuovi, sorteggiati con i numeri del registro. Quando compare il vostro gruppo, andate all’isola del suo colore. Avete un minuto.</p><div class="sorteggio sorteggio-tela"></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">Inserire gli assenti e premere Sorteggia. Le isole hanno il cartellino colorato. Nessun nome sullo schermo: solo i numeri del registro.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Le regole delle quattro giornate</p>
 <h2>Come lavoriamo</h2>
-<div class="carte"><div class="carta" style="--c:#2C8BC9"><div class="tit">Il foglio dell’ora</div><p>Un foglio grande per gruppo, con riquadri numerati: R1, R2…</p><p>Le slide dicono in quale riquadro scrivere. Niente nomi: solo il numero del gruppo.</p></div><div class="carta" style="--c:#3A8A3E"><div class="tit">Il timer</div><p>In alto a destra: quanto tempo resta.</p><p>Quando suona, si alza la penna.</p></div><div class="carta" style="--c:#DB6A1C"><div class="tit">Il barattolo</div><p>Sente solo quanto è forte il rumore, non le parole, e non registra niente.</p><p>Se il rumore resta troppo alto, lo schermo si ferma: si riparte quando torna la calma.</p></div></div>
-<aside class="note">Il barattolo è quello del Progetto 16. Dire: protegge le voci più basse; vale anche per il docente; nei lavori di gruppo è regolato per la discussione; se scatta: smettere di parlare, appoggiare quello che si ha in mano, fare un respiro.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Domanda</div>
+<div class="carte"><div class="carta" style="border-top-color:#2C8BC9"><p class="tit">Il foglio dell’ora</p><p>Un foglio grande per gruppo, con riquadri numerati: R1, R2…</p><p>Le slide dicono in quale riquadro scrivere. Niente nomi: solo il numero del gruppo.</p></div><div class="carta" style="border-top-color:#3A8A3E"><p class="tit">Il timer</p><p>In alto a destra: quanto tempo resta.</p><p>Quando suona, si alza la penna.</p></div><div class="carta" style="border-top-color:#DB6A1C"><p class="tit">Il barattolo</p><p>Sente solo quanto è forte il rumore, non le parole, e non registra niente.</p><p>Se il rumore resta troppo alto, lo schermo si ferma: si riparte quando torna la calma.</p></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">Il barattolo è quello del Progetto 16. Dire: protegge le voci più basse; vale anche per il docente; nei lavori di gruppo è regolato per la discussione; se scatta: smettere di parlare, appoggiare quello che si ha in mano, fare un respiro.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Domanda</p>
 <h2>Quante parole ci sono?</h2>
 <p>Scrivete un numero su un foglietto. Poi confrontiamo.</p>
-<div class="formula">il gatto e il cane</div>
-<div class="box risposta passo"><div class="etichetta">Risposta</div><p>Due risposte giuste, perché contano cose diverse.</p><b>Occorrenze</b>: tutte le parole, anche ripetute: il, gatto, e, il, cane = <b>5</b>.<b>Forme diverse</b>: le parole diverse: il, gatto, e, cane = <b>4</b>.</div>
-<p class="piccolo">Le occorrenze non sono mai meno delle forme. In informatica le occorrenze si chiamano anche token.</p>
-<aside class="note">3-6 min. Lasciare scrivere, raccogliere a voce le risposte (di solito 5 e 4), poi freccia per la risposta.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Perché tutti i gruppi ottengano lo stesso numero</div>
+<p class="formula">il gatto e il cane</p>
+<div class="box risposta passo"><p class="etichetta">Risposta</p><b>Occorrenze</b>: tutte le parole, anche ripetute: il, gatto, e, il, cane = <b>5</b>.<b>Forme diverse</b>: le parole diverse: il, gatto, e, cane = <b>4</b>.</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">3-6 min. Lasciare scrivere, raccogliere a voce le risposte (di solito 5 e 4): sono giuste entrambe, perché contano cose diverse. Poi freccia per la risposta. Le occorrenze non sono mai meno delle forme; in informatica si chiamano anche token.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Perché tutti i gruppi ottengano lo stesso numero</p>
 <h2>Le regole per contare</h2>
 <ul><li>maiuscole e minuscole sono la stessa forma: «Il» e «il» contano come una forma sola</li><li>la punteggiatura non si conta</li><li>scritture diverse sono forme diverse: «gatto» e «gatti» sono due forme</li><li>una parola con l’apostrofo si conta da sola: «l’» è una forma</li></ul>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>«Il sole e il mare e il vento»</p><p>Occorrenze: il, sole, e, il, mare, e, il, vento = <b>8</b>.</p><p>Forme: il (3 volte), sole, e (2 volte), mare, vento = <b>5</b>.</p></div>
-<aside class="note">6-7 min. Se la classe propone altre regole, decidere insieme e scriverle alla lavagna prima di contare.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Contare">
-<div class="occhiello">Attività</div><h2>Contate il paragrafo</h2><div class="attivita"><div><ol><li>Leggete il paragrafo nella slide successiva (o sul foglio stampato)</li><li>Scrivete in R1 l’elenco delle forme: ogni volta che una parola ricompare, aggiungete una tacca</li><li>Contate le tacche: questo è il numero delle occorrenze</li><li>Contate le righe dell’elenco: questo è il numero delle forme</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>treno ||||   studenti |||   il ||||| |</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R1</b> (Conteggi)</p></div><div class="det"><span class="k">Tempo</span><p>5 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 1 · Gruppo n. ___</div><div class="r qui" style="grid-column:span 1"><b>R1</b> Conteggi</div><div class="r" style="grid-column:span 1"><b>R2</b> Parole più frequenti</div><div class="r" style="grid-column:span 1"><b>R3</b> Radici e desinenze</div><div class="r" style="grid-column:span 1"><b>R4</b> Gioco di Shannon</div><div class="r" style="grid-column:span 1"><b>R5</b> Due significati</div><div class="r" style="grid-column:span 1"><b>R6</b> Controllo</div></div></div></div>
-<aside class="note">7-12 min. Lasciare questa slide 30 secondi per la consegna, poi passare al paragrafo e avviare il timer lì (anche la slide del paragrafo ha il timer).</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Contare">
-<div class="occhiello">Testo da contare</div>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>«Il sole e il mare e il vento»</p><p>Occorrenze: il, sole, e, il, mare, e, il, vento = <b>8</b>.</p><p>Forme: il (3 volte), sole, e (2 volte), mare, vento = <b>5</b>.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">6-7 min. Se la classe propone altre regole, decidere insieme e scriverle alla lavagna prima di contare.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Contare"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Contate il paragrafo</h2><div class="attivita"><div><ol><li>Leggete il paragrafo nella slide successiva (o sul foglio stampato)</li><li>Scrivete in R1 l’elenco delle forme: ogni volta che una parola ricompare, aggiungete una tacca</li><li>Contate le tacche: questo è il numero delle occorrenze</li><li>Contate le righe dell’elenco: questo è il numero delle forme</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>treno ||||   studenti |||   il ||||| |</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R1</b> (Conteggi)</p></div><div class="det"><p class="k">Tempo</p><p>5 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 1 · Gruppo n. ___</p></div><div class="r qui" style="grid-column:span 1"><p><b>R1</b> Conteggi</p></div><div class="r" style="grid-column:span 1"><p><b>R2</b> Parole più frequenti</p></div><div class="r" style="grid-column:span 1"><p><b>R3</b> Radici e desinenze</p></div><div class="r" style="grid-column:span 1"><p><b>R4</b> Gioco di Shannon</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Due significati</p></div><div class="r" style="grid-column:span 1"><p><b>R6</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">7-12 min. Lasciare questa slide 30 secondi per la consegna, poi passare al paragrafo e avviare il timer lì (anche la slide del paragrafo ha il timer).</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Contare"><div class="tela ">
+<p class="occhiello">Testo da contare</p>
 <h2>Il paragrafo</h2>
 <p>Ogni mattina il treno parte dalla stazione alle sette. Il treno è quasi sempre pieno di studenti che vanno a scuola. Alcuni studenti leggono, altri ascoltano la musica e molti guardano il telefono. Quando il treno arriva in città, gli studenti scendono di corsa, perché la prima ora comincia alle otto e il professore di matematica non aspetta nessuno. La sera il treno riporta tutti a casa.</p>
-<aside class="note">Soluzione con le regole della classe: 67 occorrenze, 50 forme diverse. Più frequenti: il 6, treno 4, di 3, studenti 3, la 3, poi alle, a, e 2. Si accetta uno scarto di 3.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="R2">
-<div class="occhiello">Frequenza relativa</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">Soluzione con le regole della classe: 67 occorrenze, 50 forme diverse. Più frequenti: il 6, treno 4, di 3, studenti 3, la 3, poi alle, a, e 2. Si accetta uno scarto di 3.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="R2"><div class="tela ">
+<p class="occhiello">Frequenza relativa</p>
 <h2>Soluzione, e un numero per confrontare</h2>
-<div class="formula">frequenza relativa = occorrenze della parola ÷ occorrenze totali</div>
-<table class="t"><tr><th></th><th>Valore corretto</th></tr><tr><td>Occorrenze</td><td>67</td></tr><tr><td>Forme diverse</td><td>50</td></tr><tr><td>Parola più frequente</td><td>il, 6 volte</td></tr></table>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>«il»: 6 ÷ 67 ≈ 0,09, cioè circa il 9% delle parole del testo.</p></div>
+<p>Occorrenze: <b>67</b> · forme diverse: <b>50</b> · parola più frequente: <b>il</b>, 6 volte.</p>
+<p class="formula">frequenza relativa = occorrenze della parola ÷ occorrenze totali</p>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>«il»: 6 ÷ 67 ≈ 0,09, cioè circa il 9% delle parole del testo.</p></div>
 <p class="piccolo">In R2: le 5 parole più frequenti con la loro frequenza relativa (3 minuti, calcolatrice ammessa).</p>
-<aside class="note">12-16 min. Punto a chi è entro 3. Soluzione R2: il 0,09; treno 0,06; di, studenti, la 0,04. Far notare: in cima ci sono parole piccole e comuni e la parola dell’argomento; 41 forme su 50 compaiono una volta sola.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Radice e desinenza</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">12-16 min. Punto a chi è entro 3. Soluzione R2: il 0,09; treno 0,06; di, studenti, la 0,04. Far notare: in cima ci sono parole piccole e comuni e la parola dell’argomento; 41 forme su 50 compaiono una volta sola.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Radice e desinenza</p>
 <h2>Le parole hanno dei pezzi</h2>
 <p>La <b>radice</b> porta il significato (mangiare). La <b>desinenza</b> porta le informazioni grammaticali: chi, quanti, quando.</p>
 <table class="t"><tr><th>Parola</th><th>Radice</th><th>Desinenza</th><th>Che cosa dice la desinenza</th></tr><tr><td>mangio</td><td>mangi-</td><td>-o</td><td>io, adesso</td></tr><tr><td>mangiamo</td><td>mangi-</td><td>-amo</td><td>noi, adesso</td></tr><tr><td>mangiavano</td><td>mangi-</td><td>-avano</td><td>loro, nel passato</td></tr></table>
-<aside class="note">16-18 min. Far leggere la tabella riga per riga.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Un metodo per i verbi</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">16-18 min. Far leggere la tabella riga per riga.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Un metodo per i verbi</p>
 <h2>Come si trovano, in tre passi</h2>
 <ol><li>Trova l’<b>infinito</b> del verbo (la forma che finisce in -are, -ere, -ire)</li><li>Togli -are, -ere o -ire: quello che resta è la <b>radice</b></li><li>Nella parola di partenza, quello che viene dopo la radice è la <b>desinenza</b>: chiediti chi, quanti, quando</li></ol>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>«corriamo» → correre → radice <b>corr-</b> → desinenza <b>-iamo</b>: noi, adesso.</p><p>«dormivano» → dormire → radice <b>dorm-</b> → desinenza <b>-ivano</b>: loro, nel passato.</p></div>
-<aside class="note">18-19 min. Fare un terzo esempio alla lavagna con un verbo proposto dalla classe.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Oltre i verbi</div>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>«corriamo» → correre → radice <b>corr-</b> → desinenza <b>-iamo</b>: noi, adesso.</p><p>«dormivano» → dormire → radice <b>dorm-</b> → desinenza <b>-ivano</b>: loro, nel passato.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">18-19 min. Fare un terzo esempio alla lavagna con un verbo proposto dalla classe.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Oltre i verbi</p>
 <h2>Anche nomi e aggettivi, ma con eccezioni</h2>
 <table class="t"><tr><th>Parola</th><th>Radice</th><th>Desinenza</th><th>Che cosa dice</th></tr><tr><td>gatto</td><td>gatt-</td><td>-o</td><td>maschile, uno</td></tr><tr><td>gatte</td><td>gatt-</td><td>-e</td><td>femminile, più di uno</td></tr><tr><td>bella</td><td>bell-</td><td>-a</td><td>femminile, uno</td></tr></table>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Nei verbi <b>irregolari</b> la radice cambia: «vado» viene da andare, ma non ha la radice and-. Qui il metodo non basta: lo si segnala.</p></div>
-<aside class="note">19-20 min. Altri irregolari utili: essere (sono, ero), fare (faccio), venire (vengo).</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="240" data-timer-nomi="R3">
-<div class="occhiello">Attività</div><h2>Radici e desinenze</h2><div class="attivita"><div><ol><li>Per ogni parola scrivete in R3: radice, desinenza, che cosa dice la desinenza</li><li>Verbi: <b>parlavamo, leggete, finiranno, cantai, prendono, apriamo</b></li><li>Nomi e aggettivi: <b>ragazze, verdi, libro</b></li><li>Se una parola è irregolare, scrivetelo</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>corriamo → corr- / -iamo → noi, adesso</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R3</b> (Radici e desinenze)</p></div><div class="det"><span class="k">Tempo</span><p>4 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 1 · Gruppo n. ___</div><div class="r" style="grid-column:span 1"><b>R1</b> Conteggi</div><div class="r" style="grid-column:span 1"><b>R2</b> Parole più frequenti</div><div class="r qui" style="grid-column:span 1"><b>R3</b> Radici e desinenze</div><div class="r" style="grid-column:span 1"><b>R4</b> Gioco di Shannon</div><div class="r" style="grid-column:span 1"><b>R5</b> Due significati</div><div class="r" style="grid-column:span 1"><b>R6</b> Controllo</div></div></div></div>
-<aside class="note">20-24 min. Soluzioni nella slide successiva.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">R3</div>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Nei verbi <b>irregolari</b> la radice cambia: «vado» viene da andare, ma non ha la radice and-. Qui il metodo non basta: lo si segnala.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">19-20 min. Altri irregolari utili: essere (sono, ero), fare (faccio), venire (vengo).</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="240" data-timer-nomi="R3"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Radici e desinenze</h2><div class="attivita"><div><ol><li>Per ogni parola scrivete in R3: radice, desinenza, che cosa dice la desinenza</li><li>Verbi: <b>parlavamo, leggete, finiranno, cantai, prendono, apriamo</b></li><li>Nomi e aggettivi: <b>ragazze, verdi, libro</b></li><li>Se una parola è irregolare, scrivetelo</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>corriamo → corr- / -iamo → noi, adesso</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R3</b> (Radici e desinenze)</p></div><div class="det"><p class="k">Tempo</p><p>4 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 1 · Gruppo n. ___</p></div><div class="r" style="grid-column:span 1"><p><b>R1</b> Conteggi</p></div><div class="r" style="grid-column:span 1"><p><b>R2</b> Parole più frequenti</p></div><div class="r qui" style="grid-column:span 1"><p><b>R3</b> Radici e desinenze</p></div><div class="r" style="grid-column:span 1"><p><b>R4</b> Gioco di Shannon</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Due significati</p></div><div class="r" style="grid-column:span 1"><p><b>R6</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">20-24 min. Soluzioni nella slide successiva.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">R3</p>
 <h2>Soluzioni</h2>
 <table class="t compatta"><tr><th>Parola</th><th>Radice</th><th>Desinenza</th><th>Che cosa dice</th></tr><tr><td>parlavamo</td><td>parl-</td><td>-avamo</td><td>noi, nel passato</td></tr><tr><td>leggete</td><td>legg-</td><td>-ete</td><td>voi, adesso</td></tr><tr><td>finiranno</td><td>fin-</td><td>-iranno</td><td>loro, nel futuro</td></tr><tr><td>cantai</td><td>cant-</td><td>-ai</td><td>io, nel passato</td></tr><tr><td>prendono</td><td>prend-</td><td>-ono</td><td>loro, adesso</td></tr><tr><td>apriamo</td><td>apr-</td><td>-iamo</td><td>noi, adesso</td></tr><tr><td>ragazze</td><td>ragazz-</td><td>-e</td><td>femminile, più di una</td></tr><tr><td>verdi</td><td>verd-</td><td>-i</td><td>più di uno</td></tr><tr><td>libro</td><td>libr-</td><td>-o</td><td>maschile, uno</td></tr></table>
-<aside class="note">Le macchine fanno qualcosa di simile: spezzano il testo in pezzi frequenti (token), a volte più piccoli delle parole. Una parola rara diventa due o tre pezzi comuni.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Shannon">
-<div class="occhiello">Attività</div><h2>Il gioco di Shannon</h2><div class="attivita"><div><ol><li>Il docente legge una frase una parola alla volta</li><li>Prima di ogni parola, il gruppo scrive in R4 quella che secondo lui viene dopo</li><li>Il docente dice la parola vera: chi l’ha indovinata fa un segno</li><li>Alla fine: quante ne avete indovinate? In quale punto della frase era più facile?</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>«Oggi piove, prendo l’…» → ombrello</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R4</b> (Gioco di Shannon)</p></div><div class="det"><span class="k">Tempo</span><p>5 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 1 · Gruppo n. ___</div><div class="r" style="grid-column:span 1"><b>R1</b> Conteggi</div><div class="r" style="grid-column:span 1"><b>R2</b> Parole più frequenti</div><div class="r" style="grid-column:span 1"><b>R3</b> Radici e desinenze</div><div class="r qui" style="grid-column:span 1"><b>R4</b> Gioco di Shannon</div><div class="r" style="grid-column:span 1"><b>R5</b> Due significati</div><div class="r" style="grid-column:span 1"><b>R6</b> Controllo</div></div></div></div>
-<aside class="note">24-29 min. Frase da leggere senza proiettarla: «ogni mattina prendo l’autobus per andare a scuola e arrivo sempre in ritardo». Dopo «per andare a» quasi tutti scrivono «scuola». Claude Shannon fece questo esperimento nel 1951. Domanda finale: dove era più facile? Verso la fine, perché c’era più contesto.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="60" data-timer-nomi="R5">
-<div class="occhiello">Che cosa abbiamo scoperto</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">Le macchine fanno qualcosa di simile: spezzano il testo in pezzi frequenti (token), a volte più piccoli delle parole. Una parola rara diventa due o tre pezzi comuni.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Shannon"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Il gioco di Shannon</h2><div class="attivita"><div><ol><li>Il docente legge una frase una parola alla volta</li><li>Prima di ogni parola, il gruppo scrive in R4 quella che secondo lui viene dopo</li><li>Il docente dice la parola vera: chi l’ha indovinata fa un segno</li><li>Alla fine: quante ne avete indovinate? In quale punto della frase era più facile?</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>«Oggi piove, prendo l’…» → ombrello</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R4</b> (Gioco di Shannon)</p></div><div class="det"><p class="k">Tempo</p><p>5 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 1 · Gruppo n. ___</p></div><div class="r" style="grid-column:span 1"><p><b>R1</b> Conteggi</p></div><div class="r" style="grid-column:span 1"><p><b>R2</b> Parole più frequenti</p></div><div class="r" style="grid-column:span 1"><p><b>R3</b> Radici e desinenze</p></div><div class="r qui" style="grid-column:span 1"><p><b>R4</b> Gioco di Shannon</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Due significati</p></div><div class="r" style="grid-column:span 1"><p><b>R6</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">24-29 min. Frase da leggere senza proiettarla: «ogni mattina prendo l’autobus per andare a scuola e arrivo sempre in ritardo». Dopo «per andare a» quasi tutti scrivono «scuola». Claude Shannon fece questo esperimento nel 1951. Domanda finale: dove era più facile? Verso la fine, perché c’era più contesto.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="60" data-timer-nomi="R5"><div class="tela ">
+<p class="occhiello">Che cosa abbiamo scoperto</p>
 <h2>La lingua è prevedibile, ma il contesto conta</h2>
 <p>Spesso la parola successiva si indovina: più parole hai davanti (il <b>contesto</b>), più è facile.</p>
-<div class="formula">«La pesca è buona»</div>
-<div class="box risposta passo"><div class="etichetta">Risposta</div><p>La <b>pesca</b>, il frutto, è buona da mangiare; oppure la <b>pesca</b>, andare a pescare, è andata bene.</p><p>Un altro esempio: «Mi piace il riso» (il cibo, oppure il ridere). Senza contesto non si sa quale significato scegliere.</p></div>
+<p class="formula">«La pesca è buona»</p>
+<div class="box risposta passo"><p class="etichetta">Risposta</p><p>La <b>pesca</b>, il frutto, è buona da mangiare; oppure la <b>pesca</b>, andare a pescare, è andata bene.</p><p>Un altro esempio: «Mi piace il riso» (il cibo, oppure il ridere). Senza contesto non si sa quale significato scegliere.</p></div>
 <p class="piccolo">In R5: scrivete i due significati della frase e la parola che crea il doppio senso (1 minuto).</p>
-<aside class="note">29-31 min. La parola pesca ha due significati: si chiama ambiguità. Una macchina che guarda poche parole alla volta può scegliere il significato sbagliato.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Che cosa fa una macchina che scrive</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">29-31 min. La parola pesca ha due significati: si chiama ambiguità. Una macchina che guarda poche parole alla volta può scegliere il significato sbagliato.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Che cosa fa una macchina che scrive</p>
 <h2>Il pappagallo stocastico</h2>
 <p>Un chatbot sceglie la parola successiva guardando quanto spesso, nei testi che ha letto, quella parola segue le altre: sceglie la parola <b>probabile</b>.</p>
 <p>Per questo qualcuno lo chiama <b>pappagallo stocastico</b>: «stocastico» vuol dire «che dipende dal caso e dalle probabilità».</p>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Sceglie la parola probabile. Non controlla se quello che scrive è vero.</p></div>
-<aside class="note">31-33 min. Il termine viene da un articolo del 2021 di Emily Bender, Timnit Gebru e colleghi. Nell’ora 3 la classe costruirà un pappagallo con le proprie frasi.</aside>
-</section>
-<section class="slide" data-rumore="silenzio" data-fase="solo" data-timer="180" data-timer-nomi="Da soli">
-<div class="occhiello">Controllo degli obiettivi · 3 minuti</div><h2>Tre domande</h2><p class="piccolo">Da soli, nel riquadro <b>R6</b> del foglio. Poi si confronta nel gruppo.</p><div class="cols"><div><ol><li>Dividi <b>prendevate</b> in radice e desinenza: che cosa dice la desinenza?</li><li>Scrivi i due significati di «Ho visto il riccio».</li><li>Completa: «Un pappagallo stocastico sceglie la parola successiva in base a…»</li></ol></div><div><div class="box risposta passo"><div class="etichetta">Risposte</div><ol><li>prend- / -evate: voi, nel passato</li><li>l’animale con gli aculei; oppure il guscio spinoso della castagna (o un ricciolo di capelli)</li><li>… a quanto spesso quella parola segue le altre (probabilità); non controlla se è vero</li></ol></div></div></div>
-<aside class="note">33-36 min. Se meno di metà della classe risponde bene a una domanda, riprenderla all’inizio dell’ora 2.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Per il formulario della classe</div><h2>Da copiare nel formulario</h2><div class="formula">frequenza relativa = occorrenze di una parola ÷ occorrenze totali</div><div class="legenda"><div class="s">occorrenze</div><p>tutte le parole del testo, anche ripetute</p><div class="s">forme</div><p>le parole diverse</p><div class="s">esempio</div><p>«il» 6 volte su 67 parole: 6 ÷ 67 ≈ 0,09 = 9%</p></div><p class="piccolo">Consegnate il foglio dell’ora.</p>
-<aside class="note">36-40 min. Ritirare i fogli. Se avanza tempo: catena dei pappagalli umani (ognuno aggiunge una parola guardando solo l’ultima).</aside>
-</section>
-<section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 1 · Ora 2 di 3 · Italiano · 40 minuti</div><h1>Vero, verosimile, opinione</h1><p class="grande">Scriviamo le frasi da cui nascerà il nostro modello</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>scrivere 48 frasi controllate, 8 per gruppo.</p></div>
-<aside class="note">Stessi gruppi dell’ora 1. Il prodotto di quest’ora (R3) serve subito nell’ora 3: i fogli vanno portati in laboratorio.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Obiettivi dell’ora</div><h2>Alla fine di quest'ora sai…</h2><ol class="obj"><li>riconoscere il <b>genere</b> di un testo breve dalle parole che lo fanno riconoscere</li><li>distinguere <b>fatto</b>, <b>opinione</b> e <b>falso verosimile</b></li><li>scrivere 8 frasi che rispettano delle <b>regole</b> precise</li><li>indicare chi può confermare un fatto: una <b>fonte</b></li><li>dire che cosa rende <b>credibile</b> una frase falsa</li><li>distinguere una fonte <b>primaria</b> da una <b>secondaria</b></li></ol><p class="piccolo">Alla fine dell’ora tre domande controllano questi obiettivi.</p>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Sceglie la parola probabile. Non controlla se quello che scrive è vero.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
 
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="R1">
-<div class="occhiello">Attività</div><h2>Vero o inventato?</h2><div class="attivita"><div><ol><li>Leggete i cinque consigli: li ha scritti un’intelligenza artificiale</li><li>1 Studia nel tuo stile, visivo, uditivo o cinestetico: impari molto di più. · 2 Fai pause continue: l’attenzione dura otto secondi, meno di un pesce rosso. · 3 Rileggi gli appunti tre volte: secondo uno studio di Harvard ricordi il 40% in più. · 4 Interrogati da solo, senza guardare il libro. · 5 Studia un po’ ogni giorno, non tutto la sera prima.</li><li>Scrivete in R1 i numeri dei consigli che credete veri</li></ol></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R1</b> (Vero o inventato?)</p></div><div class="det"><span class="k">Tempo</span><p>3 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 2 · Gruppo n. ___</div><div class="r qui" style="grid-column:span 1"><b>R1</b> Vero o inventato?</div><div class="r" style="grid-column:span 2"><b>R2</b> Di che genere è?</div><div class="r" style="grid-column:span 3"><b>R3</b> Le nostre 8 frasi</div><div class="r" style="grid-column:span 1"><b>R4</b> Gioco del verosimile</div><div class="r" style="grid-column:span 1"><b>R5</b> Controllo</div></div></div></div>
-<aside class="note">3-6 min. Non dare la soluzione ora: arriva alla fine dell’ora. Soluzione: veri il 4 e il 5 (autointerrogazione e studio distribuito sono effetti molto documentati); falsi l’1 e il 2 (gli stili di apprendimento non migliorano l’apprendimento; gli otto secondi sono un mito); inventato il 3 (lo studio non esiste).</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="240" data-timer-nomi="R2">
-<div class="occhiello">Attività</div><h2>Di che genere è?</h2><div class="attivita"><div><ol><li>Per ognuno dei sei testi scrivete in R2 il <b>genere</b></li><li>Scrivete tre parole che lo fanno riconoscere: si chiamano <b>marcatori</b></li><li>I sei testi sono nella slide successiva</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>«il chitarrista accorda le corde prima del concerto» → genere: musica; marcatori: chitarrista, corde, concerto</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R2</b> (Di che genere è?)</p></div><div class="det"><span class="k">Tempo</span><p>4 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 2 · Gruppo n. ___</div><div class="r" style="grid-column:span 1"><b>R1</b> Vero o inventato?</div><div class="r qui" style="grid-column:span 2"><b>R2</b> Di che genere è?</div><div class="r" style="grid-column:span 3"><b>R3</b> Le nostre 8 frasi</div><div class="r" style="grid-column:span 1"><b>R4</b> Gioco del verosimile</div><div class="r" style="grid-column:span 1"><b>R5</b> Controllo</div></div></div></div>
-<aside class="note">6-10 min. Soluzioni: 1 meteo (nuvole, venti, nord); 2 calcio (portiere, rigore, novantesimo); 3 cucina (pizzico, sale, mescolate); 4 fiaba (c’era una volta, re, figlie); 5 scuola (verifica, storia, giovedì); 6 informatica (programma, file, finestra).</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="240" data-timer-nomi="R2">
-<div class="occhiello">Di che genere è?</div>
+</div><aside class="note">31-33 min. Il termine viene da un articolo del 2021 di Emily Bender, Timnit Gebru e colleghi. Nell’ora 3 la classe costruirà un pappagallo con le proprie frasi.</aside></section>
+<section class="slide" data-rumore="silenzio" data-fase="solo" data-timer="180" data-timer-nomi="Da soli"><div class="tela ">
+<p class="occhiello">Controllo degli obiettivi · 3 minuti</p><h2>Tre domande</h2><p class="piccolo">Da soli, nel riquadro <b>R6</b> del foglio. Poi si confronta nel gruppo.</p><div class="cols"><div><ol><li>Dividi <b>prendevate</b> in radice e desinenza: che cosa dice la desinenza?</li><li>Scrivi i due significati di «Ho visto il riccio».</li><li>Completa: «Un pappagallo stocastico sceglie la parola successiva in base a…»</li></ol></div><div><div class="box risposta passo"><p class="etichetta">Risposte</p><ol><li>prend- / -evate: voi, nel passato</li><li>l’animale con gli aculei; oppure il guscio spinoso della castagna (o un ricciolo di capelli)</li><li>… a quanto spesso quella parola segue le altre (probabilità); non controlla se è vero</li></ol></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">33-36 min. Se meno di metà della classe risponde bene a una domanda, riprenderla all’inizio dell’ora 2.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Per il formulario della classe</p><h2>Da copiare nel formulario</h2><p class="formula">frequenza relativa = occorrenze di una parola ÷ occorrenze totali</p><div class="legenda"><p class="s">occorrenze</p><p>tutte le parole del testo, anche ripetute</p><p class="s">forme</p><p>le parole diverse</p><p class="s">esempio</p><p>«il» 6 volte su 67 parole: 6 ÷ 67 ≈ 0,09 = 9%</p></div><p class="piccolo">Consegnate il foglio dell’ora.</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
+
+</div><aside class="note">36-40 min. Ritirare i fogli. Se avanza tempo: catena dei pappagalli umani (ognuno aggiunge una parola guardando solo l’ultima).</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela scena">
+<p class="occhiello">Giornata 1 · Ora 2 di 3 · Italiano · 40 minuti</p><h1>Vero, verosimile, opinione</h1><p class="grande">Scriviamo le frasi da cui nascerà il nostro modello</p><div class="spazio"></div><div class="box risposta"><p class="etichetta">Missione dell’ora</p><p>scrivere 48 frasi controllate, 8 per gruppo.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">Stessi gruppi dell’ora 1. Il prodotto di quest’ora (R3) serve subito nell’ora 3: i fogli vanno portati in laboratorio.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Obiettivi dell’ora</p><h2>Alla fine di quest'ora sai…</h2><ol class="obj"><li>riconoscere il <b>genere</b> di un testo breve dalle parole che lo fanno riconoscere</li><li>distinguere <b>fatto</b>, <b>opinione</b> e <b>falso verosimile</b></li><li>scrivere 8 frasi che rispettano delle <b>regole</b> precise</li><li>indicare chi può confermare un fatto: una <b>fonte</b></li><li>dire che cosa rende <b>credibile</b> una frase falsa</li><li>distinguere una fonte <b>primaria</b> da una <b>secondaria</b></li></ol><p class="piccolo">Alla fine dell’ora tre domande controllano questi obiettivi.</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="R1"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Vero o inventato?</h2><div class="attivita"><div><ol><li>Leggete i cinque consigli: li ha scritti un’intelligenza artificiale</li><li>1 Studia nel tuo stile, visivo, uditivo o cinestetico: impari molto di più. · 2 Fai pause continue: l’attenzione dura otto secondi, meno di un pesce rosso. · 3 Rileggi gli appunti tre volte: secondo uno studio di Harvard ricordi il 40% in più. · 4 Interrogati da solo, senza guardare il libro. · 5 Studia un po’ ogni giorno, non tutto la sera prima.</li><li>Scrivete in R1 i numeri dei consigli che credete veri</li></ol></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R1</b> (Vero o inventato?)</p></div><div class="det"><p class="k">Tempo</p><p>3 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 2 · Gruppo n. ___</p></div><div class="r qui" style="grid-column:span 1"><p><b>R1</b> Vero o inventato?</p></div><div class="r" style="grid-column:span 2"><p><b>R2</b> Di che genere è?</p></div><div class="r" style="grid-column:span 3"><p><b>R3</b> Le nostre 8 frasi</p></div><div class="r" style="grid-column:span 1"><p><b>R4</b> Gioco del verosimile</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">3-6 min. Non dare la soluzione ora: arriva alla fine dell’ora. Soluzione: veri il 4 e il 5 (autointerrogazione e studio distribuito sono effetti molto documentati); falsi l’1 e il 2 (gli stili di apprendimento non migliorano l’apprendimento; gli otto secondi sono un mito); inventato il 3 (lo studio non esiste).</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="240" data-timer-nomi="R2"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Di che genere è?</h2><div class="attivita"><div><ol><li>Per ognuno dei sei testi scrivete in R2 il <b>genere</b></li><li>Scrivete tre parole che lo fanno riconoscere: si chiamano <b>marcatori</b></li><li>I sei testi sono nella slide successiva</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>«il chitarrista accorda le corde prima del concerto» → genere: musica; marcatori: chitarrista, corde, concerto</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R2</b> (Di che genere è?)</p></div><div class="det"><p class="k">Tempo</p><p>4 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 2 · Gruppo n. ___</p></div><div class="r" style="grid-column:span 1"><p><b>R1</b> Vero o inventato?</p></div><div class="r qui" style="grid-column:span 2"><p><b>R2</b> Di che genere è?</p></div><div class="r" style="grid-column:span 3"><p><b>R3</b> Le nostre 8 frasi</p></div><div class="r" style="grid-column:span 1"><p><b>R4</b> Gioco del verosimile</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">6-10 min. Soluzioni: 1 meteo (nuvole, venti, nord); 2 calcio (portiere, rigore, novantesimo); 3 cucina (pizzico, sale, mescolate); 4 fiaba (c’era una volta, re, figlie); 5 scuola (verifica, storia, giovedì); 6 informatica (programma, file, finestra).</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="240" data-timer-nomi="R2"><div class="tela ">
+<p class="occhiello">Di che genere è?</p>
 <h2>I sei testi</h2>
-<div class="carte"><div class="carta"><div class="tit">1</div><p>domani nuvole al nord e sole al sud, venti deboli</p></div><div class="carta"><div class="tit">2</div><p>il portiere para il rigore al novantesimo</p></div><div class="carta"><div class="tit">3</div><p>aggiungete un pizzico di sale e mescolate</p></div><div class="carta"><div class="tit">4</div><p>c’era una volta un re che aveva tre figlie</p></div><div class="carta"><div class="tit">5</div><p>la verifica di storia è spostata a giovedì</p></div><div class="carta"><div class="tit">6</div><p>il programma salva il file e chiude la finestra</p></div></div>
-<aside class="note">Avviare qui il timer se non è stato avviato nella slide precedente.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Fatto, opinione, falso verosimile</div>
+<div class="carte"><div class="carta"><p class="tit">1</p><p>domani nuvole al nord e sole al sud, venti deboli</p></div><div class="carta"><p class="tit">2</p><p>il portiere para il rigore al novantesimo</p></div><div class="carta"><p class="tit">3</p><p>aggiungete un pizzico di sale e mescolate</p></div><div class="carta"><p class="tit">4</p><p>c’era una volta un re che aveva tre figlie</p></div><div class="carta"><p class="tit">5</p><p>la verifica di storia è spostata a giovedì</p></div><div class="carta"><p class="tit">6</p><p>il programma salva il file e chiude la finestra</p></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">Avviare qui il timer se non è stato avviato nella slide precedente.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Fatto, opinione, falso verosimile</p>
 <h2>Tre tipi di frase</h2>
-<div class="carte"><div class="carta" style="--c:#3A8A3E"><div class="tit">Fatto vero</div><p>Si può controllare, e il controllo dice: vero.</p><p><i>il po sfocia nel mare adriatico</i></p></div><div class="carta" style="--c:#2C8BC9"><div class="tit">Opinione</div><p>Esprime un giudizio: non è né vera né falsa.</p><p><i>il po è il fiume più bello</i></p></div><div class="carta" style="--c:#DB6A1C"><div class="tit">Falso verosimile</div><p>Sembra vero, si può controllare, ma è falso.</p><p><i>il po nasce in svizzera</i></p></div></div>
+<div class="carte"><div class="carta" style="border-top-color:#3A8A3E"><p class="tit">Fatto vero</p><p>Si può controllare, e il controllo dice: vero.</p><p><i>il po sfocia nel mare adriatico</i></p></div><div class="carta" style="border-top-color:#2C8BC9"><p class="tit">Opinione</p><p>Esprime un giudizio: non è né vera né falsa.</p><p><i>il po è il fiume più bello</i></p></div><div class="carta" style="border-top-color:#DB6A1C"><p class="tit">Falso verosimile</p><p>Sembra vero, si può controllare, ma è falso.</p><p><i>il po nasce in svizzera</i></p></div></div>
 <p class="piccolo">«Verificabile» vuol dire che si può controllare, non che è vero: anche un falso verosimile è verificabile.</p>
-<aside class="note">10-12 min. Il Po nasce in Piemonte, dal Monviso: la terza frase sembra vera perché le Alpi sono vicine alla Svizzera.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Corpus e modello</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">10-12 min. Il Po nasce in Piemonte, dal Monviso: la terza frase sembra vera perché le Alpi sono vicine alla Svizzera.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Corpus e modello</p>
 <h2>Le vostre frasi diventeranno un modello</h2>
 <p>Un <b>corpus</b> è una raccolta di testi usata come dati.</p>
 <p>Un <b>modello</b> è un programma che ha imparato dagli esempi a fare previsioni. Il nostro, nell’ora 3, imparerà dalle vostre frasi quale parola viene dopo un’altra.</p>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Per questo le frasi devono rispettare delle regole: il modello funziona solo se le parole si ripetono.</p></div>
-<aside class="note">12-13 min.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Ogni gruppo ha un genere</div>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Per questo le frasi devono rispettare delle regole: il modello funziona solo se le parole si ripetono.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">12-13 min.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Ogni gruppo ha un genere</p>
 <h2>Le regole delle 8 frasi</h2>
 <ul><li>da <b>4 a 8 parole</b>, con chi fa, che cosa fa, e un complemento</li><li>tutto <b>minuscolo</b>, <b>senza punteggiatura</b></li><li>almeno <b>3 parole</b> che si ripetono in più frasi</li><li><b>3 fatti veri</b> (ciascuno con chi lo può confermare), <b>3 falsi verosimili</b>, <b>2 opinioni</b></li><li>vietato copiare i sei testi di prima</li></ul>
 <table class="t"><tr><th>Gruppo</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><td>Genere</td><td>meteo</td><td>calcio</td><td>cucina</td><td>fiabe</td><td>scuola</td><td>informatica</td></tr></table>
-<aside class="note">13-14 min. La tabella dei generi resta valida qualunque sia il colore del gruppo: gruppo 1 è il primo sorteggiato.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Esempio prima di scrivere</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">13-14 min. La tabella dei generi resta valida qualunque sia il colore del gruppo: gruppo 1 è il primo sorteggiato.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Esempio prima di scrivere</p>
 <h2>Un esempio completo: il genere «animali»</h2>
 <table class="t compatta"><tr><th>Frase</th><th>Tipo</th><th>Fonte</th></tr><tr><td>il gatto dorme molte ore al giorno</td><td>fatto</td><td>un libro di veterinaria</td></tr><tr><td>il gatto vede bene al buio</td><td>fatto</td><td>un museo di scienze naturali</td></tr><tr><td>il cane sente suoni molto acuti</td><td>fatto</td><td>un’associazione di veterinari</td></tr><tr><td>il cane vede tutti i colori</td><td>falso</td><td></td></tr><tr><td>il gatto ha nove vite</td><td>falso</td><td></td></tr><tr><td>il cane dorme in piedi</td><td>falso</td><td></td></tr><tr><td>il gatto è più simpatico del cane</td><td>opinione</td><td></td></tr><tr><td>il cane è l’animale più bello</td><td>opinione</td><td></td></tr></table>
 <p class="piccolo">Parole che si ripetono: il, gatto, cane, dorme, vede. «Internet» o «un chatbot» non valgono come fonte.</p>
-<aside class="note">14 min. Mostrare che le parole ripetute permettono al modello di collegare le frasi.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="600,180" data-timer-nomi="Scrivere|Controllare">
-<div class="occhiello">Attività</div><h2>Scrivete le vostre 8 frasi</h2><div class="attivita"><div><ol><li>Scrivete le 8 frasi del vostro genere nella tabella di R3</li><li>Per ogni frase scrivete il tipo: fatto, falso o opinione</li><li>Per i 3 fatti veri scrivete chi li può confermare</li><li>Secondo timer: rileggete ogni frase con le regole e correggete</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>il cuoco sala la pasta · fatto · un libro di cucina</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R3</b> (Le nostre 8 frasi)</p></div><div class="det"><span class="k">Tempo</span><p>10 + 3 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 2 · Gruppo n. ___</div><div class="r" style="grid-column:span 1"><b>R1</b> Vero o inventato?</div><div class="r" style="grid-column:span 2"><b>R2</b> Di che genere è?</div><div class="r qui" style="grid-column:span 3"><b>R3</b> Le nostre 8 frasi</div><div class="r" style="grid-column:span 1"><b>R4</b> Gioco del verosimile</div><div class="r" style="grid-column:span 1"><b>R5</b> Controllo</div></div></div></div>
-<aside class="note">14-27 min. Girare tra i gruppi e controllare due errori: opinioni scritte come fatti; fatti che non si possono controllare. Per le fiabe i fatti veri riguardano le fiabe (cappuccetto rosso incontra il lupo nel bosco; fonte: la raccolta dei fratelli Grimm).</aside>
-</section>
-<section class="slide" data-rumore="spento" data-fase="tutti" data-timer="240" data-timer-nomi="Gioco">
-<div class="occhiello">Attività</div><h2>Il gioco del verosimile</h2><div class="attivita"><div><ol><li>Un componente del gruppo legge due frasi: una vera e una falsa verosimile, nell’ordine che vuole</li><li>Gli altri gruppi scrivono in R4 quale secondo loro è falsa</li><li>Un punto al gruppo che inganna, un punto a chi indovina</li></ol></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Tutti insieme</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R4</b> (Gioco del verosimile)</p></div><div class="det"><span class="k">Tempo</span><p>4 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 2 · Gruppo n. ___</div><div class="r" style="grid-column:span 1"><b>R1</b> Vero o inventato?</div><div class="r" style="grid-column:span 2"><b>R2</b> Di che genere è?</div><div class="r" style="grid-column:span 3"><b>R3</b> Le nostre 8 frasi</div><div class="r qui" style="grid-column:span 1"><b>R4</b> Gioco del verosimile</div><div class="r" style="grid-column:span 1"><b>R5</b> Controllo</div></div></div></div>
-<aside class="note">27-31 min. Se il tempo è poco, solo tre gruppi. Scrivere alla lavagna che cosa ha reso credibili le frasi false.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Gli ingredienti del verosimile</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">14 min. Mostrare che le parole ripetute permettono al modello di collegare le frasi.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="600,180" data-timer-nomi="Scrivere|Controllare"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Scrivete le vostre 8 frasi</h2><div class="attivita"><div><ol><li>Scrivete le 8 frasi del vostro genere nella tabella di R3</li><li>Per ogni frase scrivete il tipo: fatto, falso o opinione</li><li>Per i 3 fatti veri scrivete chi li può confermare</li><li>Secondo timer: rileggete ogni frase con le regole e correggete</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>il cuoco sala la pasta · fatto · un libro di cucina</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R3</b> (Le nostre 8 frasi)</p></div><div class="det"><p class="k">Tempo</p><p>10 + 3 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 2 · Gruppo n. ___</p></div><div class="r" style="grid-column:span 1"><p><b>R1</b> Vero o inventato?</p></div><div class="r" style="grid-column:span 2"><p><b>R2</b> Di che genere è?</p></div><div class="r qui" style="grid-column:span 3"><p><b>R3</b> Le nostre 8 frasi</p></div><div class="r" style="grid-column:span 1"><p><b>R4</b> Gioco del verosimile</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">14-27 min. Girare tra i gruppi e controllare due errori: opinioni scritte come fatti; fatti che non si possono controllare. Per le fiabe i fatti veri riguardano le fiabe (cappuccetto rosso incontra il lupo nel bosco; fonte: la raccolta dei fratelli Grimm).</aside></section>
+<section class="slide" data-rumore="spento" data-fase="tutti" data-timer="240" data-timer-nomi="Gioco"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Il gioco del verosimile</h2><div class="attivita"><div><ol><li>Un componente del gruppo legge due frasi: una vera e una falsa verosimile, nell’ordine che vuole</li><li>Gli altri gruppi scrivono in R4 quale secondo loro è falsa</li><li>Un punto al gruppo che inganna, un punto a chi indovina</li></ol></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Tutti insieme</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R4</b> (Gioco del verosimile)</p></div><div class="det"><p class="k">Tempo</p><p>4 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 2 · Gruppo n. ___</p></div><div class="r" style="grid-column:span 1"><p><b>R1</b> Vero o inventato?</p></div><div class="r" style="grid-column:span 2"><p><b>R2</b> Di che genere è?</p></div><div class="r" style="grid-column:span 3"><p><b>R3</b> Le nostre 8 frasi</p></div><div class="r qui" style="grid-column:span 1"><p><b>R4</b> Gioco del verosimile</p></div><div class="r" style="grid-column:span 1"><p><b>R5</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">27-31 min. Se il tempo è poco, solo tre gruppi. Scrivere alla lavagna che cosa ha reso credibili le frasi false.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Gli ingredienti del verosimile</p>
 <h2>Perché crediamo a una frase falsa</h2>
-<div class="carte"><div class="carta"><div class="tit">Un nome importante</div><p>«secondo Harvard…»</p></div><div class="carta"><div class="tit">Un numero preciso</div><p>«il 40% in più»</p></div><div class="carta"><div class="tit">Una data o un luogo</div><p>«nel 2019 a Milano»</p></div><div class="carta"><div class="tit">Un tono sicuro</div><p>nessun dubbio, nessun forse</p></div></div>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Nessuno di questi ingredienti è una prova. Il consiglio 3 di inizio ora li aveva quasi tutti.</p></div>
-<aside class="note">31 min.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Le fonti</div>
+<div class="carte"><div class="carta"><p class="tit">Un nome importante</p><p>«secondo Harvard…»</p></div><div class="carta"><p class="tit">Un numero preciso</p><p>«il 40% in più»</p></div><div class="carta"><p class="tit">Una data o un luogo</p><p>«nel 2019 a Milano»</p></div><div class="carta"><p class="tit">Un tono sicuro</p><p>nessun dubbio, nessun forse</p></div></div>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Nessuno di questi ingredienti è una prova. Il consiglio 3 di inizio ora li aveva quasi tutti.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">31 min.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Le fonti</p>
 <h2>Cinque domande prima di fidarsi</h2>
 <ol><li><b>Chi</b> lo dice?</li><li><b>Come</b> lo sa?</li><li><b>Perché</b> lo dice?</li><li><b>Quando</b> l’ha detto?</li><li><b>Chi altro</b> lo conferma?</li></ol>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>Un terremoto: la fonte <b>primaria</b> è l’INGV, che lo misura con i suoi strumenti.</p><p>Il giornale che riporta il dato dell’INGV è una fonte <b>secondaria</b>.</p></div>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Un chatbot non è una fonte: si cerca la fonte che conferma quello che dice.</p></div>
-<aside class="note">31-33 min.</aside>
-</section>
-<section class="slide" data-rumore="silenzio" data-fase="solo" data-timer="180" data-timer-nomi="Da soli">
-<div class="occhiello">Controllo degli obiettivi · 3 minuti</div><h2>Tre domande</h2><p class="piccolo">Da soli, nel riquadro <b>R5</b> del foglio. Poi si confronta nel gruppo.</p><div class="cols"><div><ol><li>«Il Po è il fiume più lungo d’Italia»: fatto o opinione?</li><li>«Il Po è il fiume più bello d’Italia»: fatto o opinione?</li><li>Notizia di un terremoto: è primaria la pagina dell’INGV o l’articolo di un giornale?</li></ol></div><div><div class="box risposta passo"><div class="etichetta">Risposte</div><ol><li>Fatto (si può controllare, ed è vero)</li><li>Opinione (dipende da chi giudica)</li><li>La pagina dell’INGV. E i cinque consigli? Veri il 4 e il 5; falsi l’1 e il 2; inventato il 3</li></ol></div></div></div>
-<aside class="note">33-36 min. Dopo le risposte, dare la soluzione dei cinque consigli.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Per il formulario della classe</div><h2>Da copiare nel formulario</h2><div class="formula">fatto: si può controllare (e può risultare falso)<br>opinione: né vera né falsa<br>verosimile non vuol dire vero</div><p class="piccolo">I fogli con le 8 frasi vanno subito in laboratorio.</p>
-<aside class="note">36-40 min. Ritirare i fogli: sono il materiale dell’ora 3.</aside>
-</section>
-<section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 1 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Dalle nostre frasi al pappagallo</h1><p class="grande">Il primo modello della classe, sul foglio di calcolo</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>costruire il pappagallo della 1P e farlo parlare.</p></div>
-<aside class="note">Preparare: foglio condiviso «Corpus 1P» (colonne id, gruppo, genere, frase, tipo, fonte; 8 righe per gruppo); per ogni gruppo un foglio «Pappagallo» con le colonne parola e successiva. Un computer per gruppo.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Obiettivi dell’ora</div><h2>Alla fine di quest'ora sai…</h2><ol class="obj"><li>inserire le frasi in un foglio condiviso e salvarle in formato <b>CSV</b></li><li>trasformare una frase in <b>coppie di parole</b></li><li>contare le coppie con una <b>formula</b></li><li>calcolare la <b>probabilità</b> che una parola segua un’altra</li><li>generare una frase con la regola <b>greedy</b></li><li>spiegare perché il pappagallo <b>non sa</b> se una frase è vera</li></ol><p class="piccolo">Alla fine dell’ora tre domande controllano questi obiettivi.</p>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>Un terremoto: la fonte <b>primaria</b> è l’INGV, che lo misura con i suoi strumenti.</p><p>Il giornale che riporta il dato dell’INGV è una fonte <b>secondaria</b>.</p></div>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Un chatbot non è una fonte: si cerca la fonte che conferma quello che dice.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
 
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Che cos’è l’intelligenza artificiale, in breve</div>
+</div><aside class="note">31-33 min.</aside></section>
+<section class="slide" data-rumore="silenzio" data-fase="solo" data-timer="180" data-timer-nomi="Da soli"><div class="tela ">
+<p class="occhiello">Controllo degli obiettivi · 3 minuti</p><h2>Tre domande</h2><p class="piccolo">Da soli, nel riquadro <b>R5</b> del foglio. Poi si confronta nel gruppo.</p><div class="cols"><div><ol><li>«Il Po è il fiume più lungo d’Italia»: fatto o opinione?</li><li>«Il Po è il fiume più bello d’Italia»: fatto o opinione?</li><li>Notizia di un terremoto: è primaria la pagina dell’INGV o l’articolo di un giornale?</li></ol></div><div><div class="box risposta passo"><p class="etichetta">Risposte</p><ol><li>Fatto (si può controllare, ed è vero)</li><li>Opinione (dipende da chi giudica)</li><li>La pagina dell’INGV. E i cinque consigli? Veri il 4 e il 5; falsi l’1 e il 2; inventato il 3</li></ol></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">33-36 min. Dopo le risposte, dare la soluzione dei cinque consigli.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Per il formulario della classe</p><h2>Da copiare nel formulario</h2><p class="formula">fatto: si può controllare (e può risultare falso)<br>opinione: né vera né falsa<br>verosimile non vuol dire vero</p><p class="piccolo">I fogli con le 8 frasi vanno subito in laboratorio.</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
+
+</div><aside class="note">36-40 min. Ritirare i fogli: sono il materiale dell’ora 3.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela scena">
+<p class="occhiello">Giornata 1 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</p><h1>Dalle nostre frasi al pappagallo</h1><p class="grande">Il primo modello della classe, sul foglio di calcolo</p><div class="spazio"></div><div class="box risposta"><p class="etichetta">Missione dell’ora</p><p>costruire il pappagallo della 1P e farlo parlare.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">Preparare: foglio condiviso «Corpus 1P» (colonne id, gruppo, genere, frase, tipo, fonte; 8 righe per gruppo); per ogni gruppo un foglio «Pappagallo» con le colonne parola e successiva. Un computer per gruppo.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Obiettivi dell’ora</p><h2>Alla fine di quest'ora sai…</h2><ol class="obj"><li>inserire le frasi in un foglio condiviso e salvarle in formato <b>CSV</b></li><li>trasformare una frase in <b>coppie di parole</b></li><li>contare le coppie con una <b>formula</b></li><li>calcolare la <b>probabilità</b> che una parola segua un’altra</li><li>generare una frase con la regola <b>greedy</b></li><li>spiegare perché il pappagallo <b>non sa</b> se una frase è vera</li></ol><p class="piccolo">Alla fine dell’ora tre domande controllano questi obiettivi.</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Che cos’è l’intelligenza artificiale, in breve</p>
 <h2>Regole oppure esempi</h2>
 <p>Oggi costruiamo un modello a mano: impara dalle vostre frasi quale parola viene dopo un’altra.</p>
-<div class="carte"><div class="carta" style="--c:#2C8BC9"><div class="tit">Programmazione classica</div><p>Una persona scrive le regole: «se il messaggio contiene gratis, è pubblicità».</p><p>Il computer le esegue.</p></div><div class="carta" style="--c:#3A8A3E"><div class="tit">Apprendimento automatico</div><p>Diamo al computer molti esempi già classificati.</p><p>Il computer ricava da solo le regole: costruisce un modello.</p></div></div>
-<aside class="note">3-6 min.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Inserire">
-<div class="occhiello">Attività</div><h2>Le frasi nel foglio condiviso</h2><div class="attivita"><div><ol><li>Aprite il foglio «Corpus 1P»</li><li>Scrivete le vostre 8 frasi <b>solo</b> nelle righe del vostro gruppo, come sono sul foglio</li><li>Colonne: id, gruppo, genere, frase, tipo, fonte</li><li>Uno scrive, un altro detta, un altro controlla parola per parola</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>17 · gruppo 3 · cucina · il cuoco sala la pasta · fatto · un libro di cucina</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>sul computer, nel foglio «Corpus 1P»</p></div><div class="det"><span class="k">Tempo</span><p>5 minuti</p></div></div></div>
-<aside class="note">6-11 min. Controllare che nessuno scriva nelle righe degli altri gruppi.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Un formato semplice per i dati</div>
+<div class="carte"><div class="carta" style="border-top-color:#2C8BC9"><p class="tit">Programmazione classica</p><p>Una persona scrive le regole: «se il messaggio contiene gratis, è pubblicità».</p><p>Il computer le esegue.</p></div><div class="carta" style="border-top-color:#3A8A3E"><p class="tit">Apprendimento automatico</p><p>Diamo al computer molti esempi già classificati.</p><p>Il computer ricava da solo le regole: costruisce un modello.</p></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">3-6 min.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="300" data-timer-nomi="Inserire"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Le frasi nel foglio condiviso</h2><div class="attivita"><div><ol><li>Aprite il foglio «Corpus 1P»</li><li>Scrivete le vostre 8 frasi <b>solo</b> nelle righe del vostro gruppo, come sono sul foglio</li><li>Colonne: id, gruppo, genere, frase, tipo, fonte</li><li>Uno scrive, un altro detta, un altro controlla parola per parola</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>17 · gruppo 3 · cucina · il cuoco sala la pasta · fatto · un libro di cucina</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>sul computer, nel foglio «Corpus 1P»</p></div><div class="det"><p class="k">Tempo</p><p>5 minuti</p></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">6-11 min. Controllare che nessuno scriva nelle righe degli altri gruppi.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Un formato semplice per i dati</p>
 <h2>Il formato CSV</h2>
 <p>File › Scarica › Valori separati da virgola (.csv). Aperto con un editor di testo, il file è così:</p>
 <ul><li>una riga per ogni frase</li><li>le colonne separate sempre dallo stesso simbolo (qui il punto e virgola)</li><li>la prima riga contiene i nomi delle colonne</li></ul>
-<div class="codice">id;gruppo;genere;frase;tipo;fonte
-1;1;meteo;il vento soffia forte al nord;fatto;aeronautica militare
-2;1;meteo;…</div>
-<aside class="note">11-13 min. Dimostrazione al proiettore. Salvare come corpus_1p.csv nella cartella della classe (pezzo per l’installazione). Il file deve avere 49 righe: i nomi delle colonne più 48 frasi.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Il primo passo del modello</div>
+<p class="codice">id;gruppo;genere;frase;tipo;fonte<br>1;1;meteo;il vento soffia forte al nord;fatto;aeronautica militare<br>2;1;meteo;…</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">11-13 min. Dimostrazione al proiettore. Salvare come corpus_1p.csv nella cartella della classe (pezzo per l’installazione). Il file deve avere 49 righe: i nomi delle colonne più 48 frasi.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Il primo passo del modello</p>
 <h2>Dalle frasi alle coppie</h2>
 <p>Frasi: «il cane corre veloce» e «il cane dorme».</p>
 <table class="t"><tr><th>parola (a)</th><th>successiva (b)</th></tr><tr><td>il</td><td>cane</td></tr><tr><td>cane</td><td>corre</td></tr><tr><td>corre</td><td>veloce</td></tr><tr><td>il</td><td>cane</td></tr><tr><td>cane</td><td>dorme</td></tr></table>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Una frase di 4 parole dà 3 coppie. Le coppie non attraversano due frasi: «veloce il» non è una coppia.</p></div>
-<aside class="note">13-14 min.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="360" data-timer-nomi="Coppie">
-<div class="occhiello">Attività</div><h2>Le vostre coppie</h2><div class="attivita"><div><ol><li>Scegliete una vostra frase e scrivete in R1 le sue coppie, a mano</li><li>Poi nel foglio «Pappagallo»: colonna A parola, colonna B successiva</li><li>Una riga per ogni coppia, frase dopo frase</li><li>Controllo: numero di coppie = somma di (parole di ogni frase − 1)</li></ol><div class="box esempio"><div class="etichetta">Esempio</div><p>il cuoco sala la pasta → (il, cuoco) (cuoco, sala) (sala, la) (la, pasta)</p></div></div><div class="dettagli"><div class="det"><span class="k">Con chi</span><p>Nel gruppo</p></div><div class="det"><span class="k">Dove</span><p>foglio dell’ora, riquadro <b>R1</b> (Le coppie di una frase)</p></div><div class="det"><span class="k">Tempo</span><p>6 minuti</p></div><div class="foglio" style="grid-template-columns:repeat(3,1fr)"><div class="testa">Giornata 1 · Ora 3 · Gruppo n. ___</div><div class="r qui" style="grid-column:span 1"><b>R1</b> Le coppie di una frase</div><div class="r" style="grid-column:span 1"><b>R2</b> Conti e probabilità</div><div class="r" style="grid-column:span 1"><b>R3</b> La frase del pappagallo</div><div class="r" style="grid-column:span 3"><b>R4</b> Controllo</div></div></div></div>
-<aside class="note">14-20 min. Le 8 frasi di un gruppo danno circa 35 coppie.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">c(a, b) e c(a)</div>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Una frase di 4 parole dà 3 coppie. Le coppie non attraversano due frasi: «veloce il» non è una coppia.</p></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">13-14 min.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="360" data-timer-nomi="Coppie"><div class="tela ">
+<p class="occhiello">Attività</p><h2>Le vostre coppie</h2><div class="attivita"><div><ol><li>Scegliete una vostra frase e scrivete in R1 le sue coppie, a mano</li><li>Poi nel foglio «Pappagallo»: colonna A parola, colonna B successiva</li><li>Una riga per ogni coppia, frase dopo frase</li><li>Controllo: numero di coppie = somma di (parole di ogni frase − 1)</li></ol><div class="box esempio"><p class="etichetta">Esempio</p><p>il cuoco sala la pasta → (il, cuoco) (cuoco, sala) (sala, la) (la, pasta)</p></div></div><div class="dettagli"><div class="det"><p class="k">Con chi</p><p>Nel gruppo</p></div><div class="det"><p class="k">Dove</p><p>foglio dell’ora, riquadro <b>R1</b> (Le coppie di una frase)</p></div><div class="det"><p class="k">Tempo</p><p>6 minuti</p></div><div class="foglio" ><div class="testa"><p>Giornata 1 · Ora 3 · Gruppo n. ___</p></div><div class="r qui" style="grid-column:span 1"><p><b>R1</b> Le coppie di una frase</p></div><div class="r" style="grid-column:span 1"><p><b>R2</b> Conti e probabilità</p></div><div class="r" style="grid-column:span 1"><p><b>R3</b> La frase del pappagallo</p></div><div class="r" style="grid-column:span 3"><p><b>R4</b> Controllo</p></div></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">14-20 min. Le 8 frasi di un gruppo danno circa 35 coppie.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">c(a, b) e c(a)</p>
 <h2>Contare con le formule</h2>
 <ul><li><b>c(a, b)</b>: quante volte la coppia a, b compare. Colonna C.</li><li><b>c(a)</b>: quante volte la parola a compare con una parola dopo. Colonna D.</li></ul>
-<div class="codice">C2: =CONTA.PIÙ.SE(A:A;A2;B:B;B2)
-D2: =CONTA.SE(A:A;A2)</div>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>Con le frasi del cane: c(il, cane) = 2 e c(il) = 2; c(cane, corre) = 1 e c(cane) = 2.</p></div>
+<p class="codice">C2: =CONTA.PIÙ.SE(A:A;A2;B:B;B2)<br>D2: =CONTA.SE(A:A;A2)</p>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>Con le frasi del cane: c(il, cane) = 2 e c(il) = 2; c(cane, corre) = 1 e c(cane) = 2.</p></div>
 <p class="piccolo">Si scrive la formula nella riga 2 e la si trascina fino all’ultima coppia.</p>
-<aside class="note">20-22 min. In un foglio in inglese: COUNTIFS e COUNTIF, con la virgola al posto del punto e virgola.</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="Formule e R2">
-<div class="occhiello">Dal conteggio alla probabilità</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">20-22 min. In un foglio in inglese: COUNTIFS e COUNTIF, con la virgola al posto del punto e virgola.</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="Formule e R2"><div class="tela ">
+<p class="occhiello">Dal conteggio alla probabilità</p>
 <h2>La probabilità che b segua a</h2>
 <p>Si legge: «probabilità di b, sapendo che prima c’è a». Nel foglio, colonna E: <span class="mono">=C2/D2</span></p>
-<div class="formula">P(b | a) = c(a, b) ÷ c(a)</div>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>P(corre | cane) = 1 ÷ 2 = 0,5 e P(dorme | cane) = 1 ÷ 2 = 0,5.</p><p>Le probabilità delle parole che seguono «cane» sommano a 1.</p></div>
+<p class="formula">P(b | a) = c(a, b) ÷ c(a)</p>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>P(corre | cane) = 1 ÷ 2 = 0,5 e P(dorme | cane) = 1 ÷ 2 = 0,5.</p><p>Le probabilità delle parole che seguono «cane» sommano a 1.</p></div>
 <p class="piccolo">In R2: scegliete due parole del vostro foglio e scrivete c(a), c(a, b) e P(b | a).</p>
-<aside class="note">22-25 min. Controllare su due parole che le probabilità sommano a 1 (le coppie ripetute compaiono su più righe: vanno contate una volta).</aside>
-</section>
-<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="R3">
-<div class="occhiello">Generare una frase</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">22-25 min. Controllare su due parole che le probabilità sommano a 1 (le coppie ripetute compaiono su più righe: vanno contate una volta).</aside></section>
+<section class="slide" data-rumore="discussione" data-fase="gruppo" data-timer="180" data-timer-nomi="R3"><div class="tela ">
+<p class="occhiello">Generare una frase</p>
 <h2>Far parlare il pappagallo: la regola greedy</h2>
 <ol><li>partite dalla parola che compare più spesso all’inizio delle vostre frasi</li><li>scegliete sempre la parola successiva con la P più alta</li><li>a pari probabilità, la prima in ordine alfabetico</li><li>fermatevi quando la parola non ha successive, o dopo 8 parole</li></ol>
-<div class="box esempio"><div class="etichetta">Esempio</div><p>il → cane (P = 1) → corre o dorme (0,5 e 0,5: vince corre, prima in ordine alfabetico) → veloce: «il cane corre veloce»</p></div>
+<div class="box esempio"><p class="etichetta">Esempio</p><p>il → cane (P = 1) → corre o dorme (0,5 e 0,5: vince corre, prima in ordine alfabetico) → veloce: «il cane corre veloce»</p></div>
 <p class="piccolo">«Greedy» in inglese vuol dire «ingordo»: prende sempre il pezzo più grande subito. In R3 scrivete la frase generata (3 minuti).</p>
-<aside class="note">25-28 min.</aside>
-</section>
-<section class="slide" data-rumore="spento" data-fase="tutti">
-<div class="occhiello">Gioco</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">25-28 min.</aside></section>
+<section class="slide" data-rumore="spento" data-fase="tutti"><div class="tela ">
+<p class="occhiello">Gioco</p>
 <h2>Indovina il pappagallo</h2>
 <p>Un componente di ogni gruppo legge la frase del suo pappagallo. Gli altri gruppi scrivono su un foglietto il genere.</p>
 <p class="piccolo">Di solito si indovina: il pappagallo ripete le parole del suo corpus.</p>
-<aside class="note">28-30 min. Un punto a chi indovina.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Che cosa sa davvero il pappagallo</div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">28-30 min. Un punto a chi indovina.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Che cosa sa davvero il pappagallo</p>
 <h2>Spazzatura dentro, spazzatura fuori</h2>
 <p>Il corpus contiene fatti veri, falsi verosimili e opinioni. Il pappagallo li ha contati tutti allo stesso modo.</p>
 <p>La vostra frase generata è vera, falsa o un’opinione? Scrivetelo in R3.</p>
-<div class="box attenzione"><div class="etichetta">Attenzione</div><p>Il pappagallo conosce solo quante volte le parole si seguono. Non sa che cosa è vero.</p></div>
+<div class="box attenzione"><p class="etichetta">Attenzione</p><p>Il pappagallo conosce solo quante volte le parole si seguono. Non sa che cosa è vero.</p></div>
 <p class="piccolo">Un chatbot vero ha letto moltissimi testi e guarda tutte le parole precedenti, non solo l’ultima; ma sceglie sempre parole probabili. Per fidarsi servono le fonti.</p>
-<aside class="note">30-33 min.</aside>
-</section>
-<section class="slide" data-rumore="silenzio" data-fase="solo" data-timer="180" data-timer-nomi="Da soli">
-<div class="occhiello">Controllo degli obiettivi · 3 minuti</div><h2>Tre domande</h2><p class="piccolo">Da soli, nel riquadro <b>R4</b> del foglio. Poi si confronta nel gruppo.</p><div class="cols"><div><ol><li>Se c(il) = 10 e c(il, cane) = 4, quanto vale P(cane | il)?</li><li>Che cosa fa la regola greedy?</li><li>Il pappagallo sa se una frase è vera? Perché?</li></ol></div><div><div class="box risposta passo"><div class="etichetta">Risposte</div><ol><li>4 ÷ 10 = 0,4</li><li>Sceglie sempre la parola successiva più probabile</li><li>No: conosce solo quante volte le parole si seguono nel corpus</li></ol></div></div></div>
-<aside class="note">33-36 min.</aside>
-</section>
-<section class="slide" data-rumore="spento">
-<div class="occhiello">Per il formulario della classe</div><h2>Da copiare nel formulario</h2><div class="formula">P(b | a) = c(a, b) ÷ c(a)</div><div class="legenda"><div class="s">c(a, b)</div><p>quante volte la parola b viene subito dopo la parola a</p><div class="s">c(a)</div><p>quante volte la parola a ha una parola dopo</p><div class="s">greedy</div><p>si sceglie sempre la parola b con la probabilità più alta</p></div><p class="piccolo">Pezzi per l’installazione, nella cartella della classe: corpus_1p.csv e il foglio Pappagallo di ogni gruppo.</p>
-<aside class="note">36-40 min. Salvare. Se avanza tempo: generare con un dado invece che con la regola greedy (se due parole hanno 0,5 ciascuna: 1-3 la prima, 4-6 la seconda).</aside>
-</section>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">30-33 min.</aside></section>
+<section class="slide" data-rumore="silenzio" data-fase="solo" data-timer="180" data-timer-nomi="Da soli"><div class="tela ">
+<p class="occhiello">Controllo degli obiettivi · 3 minuti</p><h2>Tre domande</h2><p class="piccolo">Da soli, nel riquadro <b>R4</b> del foglio. Poi si confronta nel gruppo.</p><div class="cols"><div><ol><li>Se c(il) = 10 e c(il, cane) = 4, quanto vale P(cane | il)?</li><li>Che cosa fa la regola greedy?</li><li>Il pappagallo sa se una frase è vera? Perché?</li></ol></div><div><div class="box risposta passo"><p class="etichetta">Risposte</p><ol><li>4 ÷ 10 = 0,4</li><li>Sceglie sempre la parola successiva più probabile</li><li>No: conosce solo quante volte le parole si seguono nel corpus</li></ol></div></div></div>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">33-36 min.</aside></section>
+<section class="slide" data-rumore="spento"><div class="tela ">
+<p class="occhiello">Per il formulario della classe</p><h2>Da copiare nel formulario</h2><p class="formula">P(b | a) = c(a, b) ÷ c(a)</p><div class="legenda"><p class="s">c(a, b)</p><p>quante volte la parola b viene subito dopo la parola a</p><p class="s">c(a)</p><p>quante volte la parola a ha una parola dopo</p><p class="s">greedy</p><p>si sceglie sempre la parola b con la probabilità più alta</p></div><p class="piccolo">Pezzi per l’installazione, nella cartella della classe: corpus_1p.csv e il foglio Pappagallo di ogni gruppo.</p>
+<p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
+
+</div><aside class="note">36-40 min. Salvare. Se avanza tempo: generare con un dado invece che con la regola greedy (se due parole hanno 0,5 ciascuna: 1-3 la prima, 4-6 la seconda).</aside></section>
 <section id="giornata-2" class="slide" data-rumore="spento">
 <div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 2</div><h1>Incertezza e misura</h1><p class="grande">Quanto possiamo essere sicuri di qualcosa che ricaviamo dai dati?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · Matematica</div><p>Probabile non vuol dire certo</p></div><div class="carta"><div class="tit">Ora 2 · Matematica</div><p>Tanti numeri, pochi numeri</p></div><div class="carta"><div class="tit">Ora 3 · Laboratorio</div><p>Il calcolatore statistico e il segreto della 1Z</p></div></div>
 <aside class="note">Materiale: una moneta per coppia; una moneta normale e una con due teste in un sacchetto; 10 gettoni per gruppo (o fagioli); calcolatrici. Nei fogli dei lanci, metà con il biglietto «inventa» e metà «lancia». Pezzi per l’installazione: la tabella della moneta truccata, i lanci della classe, il calcolatore.</aside>
@@ -2231,5 +2344,5 @@ body{font-family:var(--p16-font);color:#1B2130;margin:0}
   };
 })();
 </script>
-<script>Motore.avvia();</script>
+<script>(function(){function s(){var k=Math.min((innerWidth-150)/1920,innerHeight/1080);document.documentElement.style.setProperty('--scala',k)}addEventListener('resize',s);s()})();</script><script>Motore.avvia();</script>
 </body></html>
