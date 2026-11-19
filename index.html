@@ -149,21 +149,20 @@ aside.note{display:none}
 .m-ora .segmenti{flex:1;display:flex;gap:4px;align-items:center;height:18px}
 .m-ora .seg{flex:1;height:8px;border-radius:4px;cursor:pointer;transition:height .2s,opacity .2s}
 .m-ora .seg.fatto{opacity:.35}
-.m-ora .seg.qui{height:18px;box-shadow:0 0 0 2px #1D2433}
+.m-ora .seg.qui{height:18px;box-shadow:0 0 0 2px #22192F}
 .m-ora .imp{white-space:nowrap;font-weight:700;padding:2px 10px;border-radius:10px;color:#fff}
-.m-ora .seg.essenziale,.m-ora .imp.essenziale,.m-aiuto .pal.essenziale{background:#3B4BA0}
-.m-ora .seg.consigliata,.m-ora .imp.consigliata,.m-aiuto .pal.consigliata{background:#E8A21C}
-.m-ora .seg.facoltativa,.m-aiuto .pal.facoltativa{background:#B8BECA}
-.m-ora .imp.facoltativa{background:#8F98AA}
+.m-ora .seg.essenziale,.m-ora .imp.essenziale,.m-aiuto .pal.essenziale{background:#0E7C7B}
+.m-ora .seg.consigliata,.m-ora .imp.consigliata,.m-aiuto .pal.consigliata{background:#F4A259}
+.m-ora .seg.facoltativa,.m-aiuto .pal.facoltativa{background:#CFC8D9}
+.m-ora .imp.facoltativa{background:#8C8299}
 .m-aiuto .pal{display:inline-block;width:1.6em;height:.6em;border-radius:.3em;vertical-align:middle}
 section.slide.attiva:has(> .tela.scena)~.m-ora .et{color:#C9CFDA}
 @keyframes sali{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
 @keyframes allunga{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.tela{--carta:#F6F4EF;--bianco:#FFFFFF;--inchiostro:#1D2433;--grigio:#5D6677;--linea:#DCD8CE;--notte:#151A2C;
---indaco:#3B4BA0;--indaco-chiaro:#ECEFFA;--corallo:#E0603C;--ambra:#E8A21C;--ambra-chiaro:#FDF3DC;--salvia:#4F9A73;--salvia-chiaro:#E8F3EC;--cielo:#3E8EC4;--prugna:#7A4E9C;--grigio-chiaro:#C9CDD6}
-.tela{background:var(--carta);color:var(--inchiostro);font-family:'Atkinson Hyperlegible',Arial,sans-serif;padding:84px 128px 150px 112px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px}
-.tela.scena{background:var(--notte);color:#F3F1EA}
+.tela{--carta:#F5F1E8;--bianco:#FFFDF8;--inchiostro:#22192F;--grigio:#6B6378;--linea:#E3DBCC;--notte:#1E1630;--indaco:#0E7C7B;--indaco-chiaro:#DCEFEC;--corallo:#F25C54;--ambra:#F4A259;--ambra-chiaro:#FDEBD7;--salvia:#5B8E4F;--salvia-chiaro:#E6EFDF;--cielo:#7B6CD9;--prugna:#B5487A;--grigio-chiaro:#CFC8D9}
+.tela{background-color:var(--carta);background-image:radial-gradient(#E3DBCC 1.6px,transparent 1.6px);background-size:36px 36px;color:var(--inchiostro);font-family:'Atkinson Hyperlegible',Arial,sans-serif;padding:84px 128px 150px 112px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px}
+.tela.scena{background:linear-gradient(135deg,#1E1630 0%,#1A2433 100%);color:#F7F2E8}
 .tela.copertina{background:var(--carta)}
 .tela h1{font-size:92px;line-height:1.04;font-weight:700;margin:0;animation:sali .6s ease both}
 .tela h2{font-size:62px;line-height:1.08;font-weight:700;margin:0;padding-right:280px}
@@ -171,7 +170,7 @@ section.slide.attiva:has(> .tela.scena)~.m-ora .et{color:#C9CFDA}
 .tela li{font-size:38px;line-height:1.35}
 .tela ol,.tela ul{margin:0;padding-left:58px;display:flex;flex-direction:column;gap:12px}
 .tela b{color:var(--indaco)}
-.tela.scena b{color:#AEB9F0}
+.tela.scena b{color:#7FD3CF}
 .tela .occhiello{font-size:24px;letter-spacing:3px;text-transform:uppercase;color:var(--grigio);font-weight:700}
 .tela.scena .occhiello{color:#9AA3B8}
 .tela.scena p{color:#D5D9E4}
@@ -179,18 +178,18 @@ section.slide.attiva:has(> .tela.scena)~.m-ora .et{color:#C9CFDA}
 .tela.scena .grande{color:#F3F1EA}
 .tela .piccolo{font-size:28px;color:var(--grigio);line-height:1.4}
 .tela .spazio{flex:1}
-.tela .linea{width:140px;height:8px;border-radius:4px;background:var(--corallo);transform-origin:left center;animation:allunga .7s .15s ease both}
+.tela .linea{width:180px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--corallo) 0 33%,var(--ambra) 33% 66%,var(--indaco) 66% 100%);transform-origin:left center;animation:allunga .7s .15s ease both}
 .tela .box{background:var(--bianco);border-left:12px solid var(--cielo);border-radius:10px;padding:20px 34px;display:flex;flex-direction:column;gap:8px;animation:sali .5s .2s ease both}
 .tela .box.esempio{border-left-color:var(--salvia);background:var(--salvia-chiaro)}
 .tela .box.ricorda{border-left-color:var(--indaco);background:var(--indaco-chiaro)}
 .tela .box.attenzione{border-left-color:var(--corallo)}
 .tela .box.risposta{border-left-color:var(--cielo)}
-.tela .box.missione{background:#232A42;border-left-color:var(--ambra)}
+.tela .box.missione{background:rgba(255,255,255,.06);border-left-color:var(--ambra)}
 .tela .box.missione p{color:#F3F1EA;font-size:42px}
 .tela .etichetta{font-size:24px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--grigio)}
 .tela .box.ricorda .etichetta{color:var(--indaco)}
-.tela .box.esempio .etichetta{color:#2F7351}
-.tela .box.attenzione .etichetta{color:#B4441F}
+.tela .box.esempio .etichetta{color:#3D6634}
+.tela .box.attenzione .etichetta{color:#B8302A}
 .tela .box.missione .etichetta{color:var(--ambra)}
 .tela .cols{display:flex;flex-direction:row;gap:48px;align-items:flex-start}
 .tela .cols>div{flex:1}
@@ -221,14 +220,14 @@ section.slide.attiva:has(> .tela.scena)~.m-ora .et{color:#C9CFDA}
 .tela .tassello:nth-child(8){animation-delay:.7s}
 .tela .tassello:nth-child(9){animation-delay:.8s}
 .tela .tassello.t-indaco{background:var(--indaco-chiaro);border-color:var(--indaco);color:var(--indaco)}
-.tela .tassello.t-corallo{background:#FCEAE4;border-color:var(--corallo);color:#B4441F}
-.tela .tassello.t-salvia{background:var(--salvia-chiaro);border-color:var(--salvia);color:#2F7351}
-.tela .tassello.t-ambra{background:var(--ambra-chiaro);border-color:var(--ambra);color:#8A5D00}
+.tela .tassello.t-corallo{background:#FDE4E2;border-color:var(--corallo);color:#B8302A}
+.tela .tassello.t-salvia{background:var(--salvia-chiaro);border-color:var(--salvia);color:#3D6634}
+.tela .tassello.t-ambra{background:var(--ambra-chiaro);border-color:var(--ambra);color:#9A5410}
 .tela .freccia{font-size:48px;font-weight:700;color:var(--corallo)}
 .tela .barre{display:flex;flex-direction:column;gap:16px}
 .tela .barra{display:grid;grid-template-columns:300px 1fr 280px;gap:20px;align-items:center}
 .tela .b-et{font-size:34px;font-weight:700}
-.tela .b-fondo{height:40px;background:#E7E3DA;border-radius:20px;overflow:hidden}
+.tela .b-fondo{height:40px;background:#E8E1D3;border-radius:20px;overflow:hidden}
 .tela .b-riemp{height:40px;background:var(--indaco);border-radius:20px;transform-origin:left center;animation:allunga .9s .2s ease both}
 .tela .b-val{font-size:34px;font-weight:700;color:var(--indaco)}
 .tela .attivita{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
@@ -278,16 +277,16 @@ section.slide:has(> .tela.scena){background:#0D1322}
 .menu-bottoni .bottone{font-size:clamp(14px,1.15vw,22px);padding:6px 12px}
 </style></head><body>
 <section class="slide" id="menu" data-rumore="spento">
-<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P</div><h2>Come impara una macchina</h2><p>Quattro giornate, più una di recupero o di approfondimento. Scegli la giornata.</p><div class="carte menu"><div class="carta" style="--c:var(--p16-g-azzurro)"><div class="tit">Giornata 1 · La lingua come dati</div><p class="piccolo">Italiano · Italiano · Laboratorio</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-1">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-1">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-verde)"><div class="tit">Giornata 2 · Incertezza e misura</div><p class="piccolo">Matematica · Matematica · Laboratorio</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-2">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-2">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-arancio)"><div class="tit">Giornata 3 · Il corpo come fonte di dati</div><p class="piccolo">Educazione fisica in aula · Laboratorio</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-3">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-3">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-viola)"><div class="tit">Giornata 4 · Dai dati alle scoperte</div><p class="piccolo">Laboratorio · «Dentro la macchina»</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-4">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-4">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-petrolio)"><div class="tit">Giornata 5 · Recupero, oppure il primo modello</div><p class="piccolo">Laboratorio, docente di informatica</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-5">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-5">Stampa i fogli dell’ora</button></div></div></div><aside class="note">Prima della lezione: premere B e fare la taratura del barattolo (silenzio, poi discussione). Tasti: frecce avanti e indietro, spazio timer, N note, H aiuto, Home torna al menu. Nessun dato degli studenti viene salvato o trasmesso. Stampare i fogli dell’ora della giornata, in A3 orizzontale, una copia per gruppo: il bottone apre una finestra di stampa (consentire i popup).</aside>
+<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P</div><h2>Come impara una macchina</h2><p>Quattro giornate, più una di recupero o di approfondimento. Scegli la giornata.</p><div class="carte menu"><div class="carta" style="--c:var(--p16-g-azzurro)"><div class="tit">Giornata 1 · La lingua come dati</div><p class="piccolo">Parole, fatti e opinioni, il pappagallo della classe</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-1">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-1">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-verde)"><div class="tit">Giornata 2 · Incertezza e misura</div><p class="piccolo">Probabilità, dispersione, il calcolatore</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-2">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-2">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-arancio)"><div class="tit">Giornata 3 · Il corpo come fonte di dati</div><p class="piccolo">Prove motorie in aula, misure, dataset pulito</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-3">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-3">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-viola)"><div class="tit">Giornata 4 · Dai dati alle scoperte</div><p class="piccolo">Analisi, modelli che imparano, «Dentro la macchina»</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-4">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-4">Stampa i fogli dell’ora</button></div></div><div class="carta" style="--c:var(--p16-g-petrolio)"><div class="tit">Giornata 5 · Recupero, oppure il primo modello</div><p class="piccolo">Vicini e distanze, il torneo dei frutti</p><div class="menu-bottoni"><button class="bottone pieno" type="button" data-vai="giornata-5">Apri le slide</button><button class="bottone" type="button" data-stampa="fogli-5">Stampa i fogli dell’ora</button></div></div></div><aside class="note">Prima della lezione: premere B e fare la taratura del barattolo (silenzio, poi discussione). Tasti: frecce avanti e indietro, spazio timer, N note, H aiuto, Home torna al menu. Nessun dato degli studenti viene salvato o trasmesso. Stampare i fogli dell’ora della giornata, in A3 orizzontale, una copia per gruppo: il bottone apre una finestra di stampa (consentire i popup).</aside>
 </section>
 <section id="giornata-1" class="slide" data-rumore="spento" data-importanza="essenziale" data-inizio-ora="Apertura"><div class="tela copertina imp-e">
-<p class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 1</p><h1>La lingua come dati</h1><p class="grande">Come fa una macchina a scrivere frasi, se non sa che cosa dice?</p><div class="spazio"></div><div class="carte"><div class="carta" style="border-top-color:#3B4BA0"><p class="tit">Ora 1 · Italiano</p><p>Contare le parole e prevedere la successiva</p></div><div class="carta" style="border-top-color:#E0603C"><p class="tit">Ora 2 · Italiano</p><p>Fatti, opinioni, falsi: scriviamo le nostre frasi</p></div><div class="carta" style="border-top-color:#4F9A73"><p class="tit">Ora 3 · Laboratorio</p><p>Dalle nostre frasi a un modello che scrive</p></div></div>
+<p class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 1</p><h1>La lingua come dati</h1><p class="grande">Come fa una macchina a scrivere frasi, se non sa che cosa dice?</p><div class="spazio"></div><div class="carte"><div class="carta" style="border-top-color:#0E7C7B"><p class="tit">Ora 1 · In aula</p><p>Contare le parole e prevedere la successiva</p></div><div class="carta" style="border-top-color:#F25C54"><p class="tit">Ora 2 · In aula</p><p>Fatti, opinioni, falsi: scriviamo le nostre frasi</p></div><div class="carta" style="border-top-color:#5B8E4F"><p class="tit">Ora 3 · In laboratorio</p><p>Dalle nostre frasi a un modello che scrive</p></div></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1</p>
 
 </div><aside class="note">Prima della lezione: tarare il barattolo (B, poi T) e provare il sorteggio. Stampare 6 copie dei fogli di ciascuna ora (A3 orizzontale). Barra in basso: blu essenziale, ambra consigliata, grigio facoltativa (si salta se manca tempo).</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="essenziale" data-inizio-ora="Ora 1"><div class="tela scena imp-e">
-<p class="occhiello">Giornata 1 · Ora 1 di 3 · Italiano · 40 minuti</p><h1>Le parole come dati</h1><p class="grande">Contare, prevedere, capire il contesto</p><div class="spazio"></div><div class="box missione"><p class="etichetta">Missione dell’ora</p><p>capire perché una macchina riesce a indovinare la parola che viene dopo.</p></div>
+<p class="occhiello">Giornata 1 · Ora 1 di 3 · In aula · 40 minuti</p><h1>Le parole come dati</h1><p class="grande">Contare, prevedere, capire il contesto</p><div class="spazio"></div><div class="box missione"><p class="etichetta">Missione dell’ora</p><p>capire perché una macchina riesce a indovinare la parola che viene dopo.</p></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
 
@@ -305,7 +304,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">Inserire gli assenti e premere Sorteggia. Sullo schermo solo numeri del registro, nessun nome.</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="consigliata"><div class="tela imp-c">
-<p class="occhiello">Le regole delle quattro giornate</p><h2>Come lavoriamo</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#3B4BA0"><p class="tit">Il foglio dell’ora</p><p>Un foglio grande per gruppo, diviso in riquadri: R1, R2… La slide dice dove scrivere.</p></div><div class="carta" style="border-top-color:#4F9A73"><p class="tit">Il timer</p><p>In alto a destra: il tempo che resta. Quando suona, si alza la penna.</p></div><div class="carta" style="border-top-color:#E0603C"><p class="tit">Il barattolo</p><p>Misura solo il volume, non le parole, e non registra. Se il rumore resta alto, lo schermo si ferma.</p></div></div>
+<p class="occhiello">Le regole delle quattro giornate</p><h2>Come lavoriamo</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#0E7C7B"><p class="tit">Il foglio dell’ora</p><p>Un foglio grande per gruppo, diviso in riquadri: R1, R2… La slide dice dove scrivere.</p></div><div class="carta" style="border-top-color:#5B8E4F"><p class="tit">Il timer</p><p>In alto a destra: il tempo che resta. Quando suona, si alza la penna.</p></div><div class="carta" style="border-top-color:#F25C54"><p class="tit">Il barattolo</p><p>Misura solo il volume, non le parole, e non registra. Se il rumore resta alto, lo schermo si ferma.</p></div></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
 
@@ -341,7 +340,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">12-16 min. Barre in scala: la più lunga è il 9%. Far notare: in cima ci sono parole piccole e comuni, poi la parola dell’argomento (treno). 41 forme su 50 compaiono una volta sola.</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="essenziale"><div class="tela imp-e">
-<p class="occhiello">Radice e desinenza</p><h2>Le parole hanno due pezzi</h2><div class="linea"></div><div class="tasselli"><p class="tassello t-indaco">mangi</p><p class="tassello t-corallo">o</p></div><div class="tasselli"><p class="tassello t-indaco">mangi</p><p class="tassello t-corallo">amo</p></div><div class="tasselli"><p class="tassello t-indaco">mangi</p><p class="tassello t-corallo">avano</p></div><p>La <b>radice</b> (blu) porta il significato: mangiare. La <b>desinenza</b> (rosso) dice <b>chi</b>, <b>quanti</b>, <b>quando</b>: io adesso, noi adesso, loro nel passato.</p>
+<p class="occhiello">Radice e desinenza</p><h2>Le parole hanno due pezzi</h2><div class="linea"></div><div class="tasselli"><p class="tassello t-indaco">mangi</p><p class="tassello t-corallo">o</p></div><div class="tasselli"><p class="tassello t-indaco">mangi</p><p class="tassello t-corallo">amo</p></div><div class="tasselli"><p class="tassello t-indaco">mangi</p><p class="tassello t-corallo">avano</p></div><p>La <b>radice</b>, il primo pezzo, porta il significato: mangiare. La <b>desinenza</b>, il secondo, dice <b>chi</b>, <b>quanti</b>, <b>quando</b>: io adesso, noi adesso, loro nel passato.</p>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 1</p>
 
@@ -401,7 +400,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">36-40 min. Ritirare i fogli. Se avanza tempo: catena dei pappagalli umani (ognuno aggiunge una parola guardando solo l’ultima).</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="essenziale" data-inizio-ora="Ora 2"><div class="tela scena imp-e">
-<p class="occhiello">Giornata 1 · Ora 2 di 3 · Italiano · 40 minuti</p><h1>Vero, verosimile, opinione</h1><p class="grande">Scriviamo le frasi da cui nascerà il nostro modello</p><div class="spazio"></div><div class="box missione"><p class="etichetta">Missione dell’ora</p><p>scrivere 48 frasi controllate: 8 per gruppo.</p></div>
+<p class="occhiello">Giornata 1 · Ora 2 di 3 · In aula · 40 minuti</p><h1>Vero, verosimile, opinione</h1><p class="grande">Scriviamo le frasi da cui nascerà il nostro modello</p><div class="spazio"></div><div class="box missione"><p class="etichetta">Missione dell’ora</p><p>scrivere 48 frasi controllate: 8 per gruppo.</p></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
 
@@ -431,7 +430,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">Avviare qui il timer se non è partito nella slide precedente.</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="essenziale"><div class="tela imp-e">
-<p class="occhiello">Fatto, opinione, falso verosimile</p><h2>Tre tipi di frase</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#4F9A73"><p class="tit">Fatto vero</p><p>Si può controllare, e il controllo dice: vero.</p><p><i>il po sfocia nel mare adriatico</i></p></div><div class="carta" style="border-top-color:#3E8EC4"><p class="tit">Opinione</p><p>È un giudizio: non è né vera né falsa.</p><p><i>il po è il fiume più bello</i></p></div><div class="carta" style="border-top-color:#E0603C"><p class="tit">Falso verosimile</p><p>Sembra vero, si può controllare, ma è falso.</p><p><i>il po nasce in svizzera</i></p></div></div><div class="box ricorda"><p class="etichetta">Ricorda</p><p><b>Verificabile</b> vuol dire «si può controllare», non «è vero». Anche un falso verosimile è verificabile.</p></div>
+<p class="occhiello">Fatto, opinione, falso verosimile</p><h2>Tre tipi di frase</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#5B8E4F"><p class="tit">Fatto vero</p><p>Si può controllare, e il controllo dice: vero.</p><p><i>il po sfocia nel mare adriatico</i></p></div><div class="carta" style="border-top-color:#7B6CD9"><p class="tit">Opinione</p><p>È un giudizio: non è né vera né falsa.</p><p><i>il po è il fiume più bello</i></p></div><div class="carta" style="border-top-color:#F25C54"><p class="tit">Falso verosimile</p><p>Sembra vero, si può controllare, ma è falso.</p><p><i>il po nasce in svizzera</i></p></div></div><div class="box ricorda"><p class="etichetta">Ricorda</p><p><b>Verificabile</b> vuol dire «si può controllare», non «è vero». Anche un falso verosimile è verificabile.</p></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
 
@@ -467,7 +466,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">27-31 min. Con poco tempo, solo tre gruppi. Scrivere alla lavagna che cosa ha reso credibili le frasi false.</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="consigliata"><div class="tela imp-c">
-<p class="occhiello">Gli ingredienti del verosimile</p><h2>Perché crediamo a una frase falsa</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#3B4BA0"><p class="tit">Un nome importante</p><p>«secondo Harvard…»</p></div><div class="carta" style="border-top-color:#E8A21C"><p class="tit">Un numero preciso</p><p>«il 40% in più»</p></div><div class="carta" style="border-top-color:#4F9A73"><p class="tit">Una data o un luogo</p><p>«nel 2019 a Milano»</p></div><div class="carta" style="border-top-color:#E0603C"><p class="tit">Un tono sicuro</p><p>nessun dubbio, nessun forse</p></div></div><div class="box attenzione passo"><p class="etichetta">Attenzione</p><p>Nessuno di questi è una prova. Il consiglio 3 li aveva quasi tutti.</p></div>
+<p class="occhiello">Gli ingredienti del verosimile</p><h2>Perché crediamo a una frase falsa</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#0E7C7B"><p class="tit">Un nome importante</p><p>«secondo Harvard…»</p></div><div class="carta" style="border-top-color:#F4A259"><p class="tit">Un numero preciso</p><p>«il 40% in più»</p></div><div class="carta" style="border-top-color:#5B8E4F"><p class="tit">Una data o un luogo</p><p>«nel 2019 a Milano»</p></div><div class="carta" style="border-top-color:#F25C54"><p class="tit">Un tono sicuro</p><p>nessun dubbio, nessun forse</p></div></div><div class="box attenzione passo"><p class="etichetta">Attenzione</p><p>Nessuno di questi è una prova. Il consiglio 3 li aveva quasi tutti.</p></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 2</p>
 
@@ -491,7 +490,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">36-40 min. Ritirare i fogli: sono il materiale dell’ora 3.</aside></section>
 <section class="slide" data-rumore="spento" data-importanza="essenziale" data-inizio-ora="Ora 3"><div class="tela scena imp-e">
-<p class="occhiello">Giornata 1 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</p><h1>Dalle nostre frasi al pappagallo</h1><p class="grande">Il primo modello della classe, sul foglio di calcolo</p><div class="spazio"></div><div class="box missione"><p class="etichetta">Missione dell’ora</p><p>costruire il pappagallo della 1P e farlo parlare.</p></div>
+<p class="occhiello">Giornata 1 · Ora 3 di 3 · In laboratorio · 40 minuti</p><h1>Dalle nostre frasi al pappagallo</h1><p class="grande">Il primo modello della classe, sul foglio di calcolo</p><div class="spazio"></div><div class="box missione"><p class="etichetta">Missione dell’ora</p><p>costruire il pappagallo della 1P e farlo parlare.</p></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
 
@@ -503,7 +502,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div></section>
 <section class="slide" data-rumore="spento" data-importanza="consigliata"><div class="tela imp-c">
-<p class="occhiello">Che cos’è l’intelligenza artificiale, in breve</p><h2>Regole oppure esempi</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#3E8EC4"><p class="tit">Programmazione classica</p><p>Una persona scrive le regole.</p><p>«Se il messaggio contiene gratis, è pubblicità».</p></div><div class="carta" style="border-top-color:#4F9A73"><p class="tit">Apprendimento automatico</p><p>Diamo al computer molti esempi.</p><p>Il computer ricava le regole da solo: costruisce un <b>modello</b>.</p></div></div><div class="box ricorda"><p class="etichetta">Ricorda</p><p><b>Modello</b>: un programma che ha imparato dagli esempi a fare previsioni.</p></div>
+<p class="occhiello">Che cos’è l’intelligenza artificiale, in breve</p><h2>Regole oppure esempi</h2><div class="linea"></div><div class="carte"><div class="carta" style="border-top-color:#7B6CD9"><p class="tit">Programmazione classica</p><p>Una persona scrive le regole.</p><p>«Se il messaggio contiene gratis, è pubblicità».</p></div><div class="carta" style="border-top-color:#5B8E4F"><p class="tit">Apprendimento automatico</p><p>Diamo al computer molti esempi.</p><p>Il computer ricava le regole da solo: costruisce un <b>modello</b>.</p></div></div><div class="box ricorda"><p class="etichetta">Ricorda</p><p><b>Modello</b>: un programma che ha imparato dagli esempi a fare previsioni.</p></div>
 <div class="striscia"></div>
 <p class="foot">IA e dati · 1P · Giornata 1 · Ora 3</p>
 
@@ -575,11 +574,11 @@ section.slide:has(> .tela.scena){background:#0D1322}
 
 </div><aside class="note">36-40 min. Salvare. Se avanza tempo: generare con un dado invece che con la regola greedy (due parole a 0,5: 1-3 la prima, 4-6 la seconda).</aside></section>
 <section id="giornata-2" class="slide" data-rumore="spento">
-<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 2</div><h1>Incertezza e misura</h1><p class="grande">Quanto possiamo essere sicuri di qualcosa che ricaviamo dai dati?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · Matematica</div><p>Probabile non vuol dire certo</p></div><div class="carta"><div class="tit">Ora 2 · Matematica</div><p>Tanti numeri, pochi numeri</p></div><div class="carta"><div class="tit">Ora 3 · Laboratorio</div><p>Il calcolatore statistico e il segreto della 1Z</p></div></div>
+<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 2</div><h1>Incertezza e misura</h1><p class="grande">Quanto possiamo essere sicuri di qualcosa che ricaviamo dai dati?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · In aula</div><p>Probabile non vuol dire certo</p></div><div class="carta"><div class="tit">Ora 2 · In aula</div><p>Tanti numeri, pochi numeri</p></div><div class="carta"><div class="tit">Ora 3 · In laboratorio</div><p>Il calcolatore statistico e il segreto della 1Z</p></div></div>
 <aside class="note">Materiale: una moneta per coppia; una moneta normale e una con due teste in un sacchetto; 10 gettoni per gruppo (o fagioli); calcolatrici. Nei fogli dei lanci, metà con il biglietto «inventa» e metà «lancia». Pezzi per l’installazione: la tabella della moneta truccata, i lanci della classe, il calcolatore.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 2 · Ora 1 di 3 · Matematica · 40 minuti</div><h1>Probabile non vuol dire certo</h1><p class="grande">Probabilità con monete e gettoni</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>capire quanto possiamo fidarci di ciò che osserviamo.</p></div>
+<div class="occhiello">Giornata 2 · Ora 1 di 3 · In aula · 40 minuti</div><h1>Probabile non vuol dire certo</h1><p class="grande">Probabilità con monete e gettoni</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>capire quanto possiamo fidarci di ciò che osserviamo.</p></div>
 
 </section>
 <section class="slide" data-rumore="spento">
@@ -676,7 +675,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 <aside class="note">36-40 min.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 2 · Ora 2 di 3 · Matematica · 40 minuti</div><h1>Tanti numeri, pochi numeri</h1><p class="grande">Media, mediana, dispersione, correlazione</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>riassumere tanti numeri con pochi numeri, senza farsi ingannare.</p></div>
+<div class="occhiello">Giornata 2 · Ora 2 di 3 · In aula · 40 minuti</div><h1>Tanti numeri, pochi numeri</h1><p class="grande">Media, mediana, dispersione, correlazione</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>riassumere tanti numeri con pochi numeri, senza farsi ingannare.</p></div>
 
 </section>
 <section class="slide" data-rumore="spento">
@@ -765,7 +764,7 @@ section.slide:has(> .tela.scena){background:#0D1322}
 <aside class="note">36-40 min.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 2 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Il calcolatore statistico</h1><p class="grande">E il segreto della classe 1Z</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>trasformare le formule di matematica in un foglio che calcola da solo.</p></div>
+<div class="occhiello">Giornata 2 · Ora 3 di 3 · In laboratorio · 40 minuti</div><h1>Il calcolatore statistico</h1><p class="grande">E il segreto della classe 1Z</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>trasformare le formule in un foglio che calcola da solo.</p></div>
 <aside class="note">Preparare: foglio condiviso «Lanci» (colonne n ed esito, 20 righe per coppia); modello «Calcolatore» per gruppo con i fogli Dati (colonna A ore di schermo, B ore di sonno della 1Z, righe 2-41) e Statistiche.</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -834,11 +833,11 @@ B10: =INTERCETTA(Dati!B2:B41;Dati!A2:A41)</div>
 <aside class="note">36-40 min. Salvare il calcolatore: si usa nella giornata 4.</aside>
 </section>
 <section id="giornata-3" class="slide" data-rumore="spento">
-<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 3</div><h1>Il corpo come fonte di dati</h1><p class="grande">Come si raccolgono dati veri, e perché non sono mai perfetti?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · Educazione fisica</div><p>Misurare bene, e imparare per tentativi</p></div><div class="carta"><div class="tit">Ora 2 · Educazione fisica</div><p>La raccolta dei dati, in aula</p></div><div class="carta"><div class="tit">Ora 3 · Laboratorio</div><p>Dal foglio di carta a un archivio pulito</p></div></div>
+<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 3</div><h1>Il corpo come fonte di dati</h1><p class="grande">Come si raccolgono dati veri, e perché non sono mai perfetti?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · In aula</div><p>Misurare bene, e imparare per tentativi</p></div><div class="carta"><div class="tit">Ora 2 · In aula</div><p>La raccolta dei dati, in aula</p></div><div class="carta"><div class="tit">Ora 3 · In laboratorio</div><p>Dal foglio di carta a un archivio pulito</p></div></div>
 <aside class="note">Tutto si fa in aula. Materiale: 3 cronometri (o il cronometro del telefono del docente), nastro adesivo di carta, 3 cestini, 30 palline di carta (fogli riciclati appallottolati), una benda, un’urna con 29 codici (lettera + cifra). Prima della giornata: concordare con il collega di educazione fisica, se partecipa, le due prove e il contratto dei dati. Pezzi per l’installazione: il dataset pulito e l’errore di misura stimato.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 3 · Ora 1 di 3 · Educazione fisica, in aula · 40 minuti</div><h1>Misurare bene</h1><p class="grande">Errori di misura, protocollo, privacy; imparare per tentativi</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>decidere come si misura, prima di misurare.</p></div>
+<div class="occhiello">Giornata 3 · Ora 1 di 3 · In aula · 40 minuti</div><h1>Misurare bene</h1><p class="grande">Errori di misura, protocollo, privacy; imparare per tentativi</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>decidere come si misura, prima di misurare.</p></div>
 <aside class="note">Spostare i banchi lungo le pareti se serve spazio. Segnare con il nastro: una linea di lancio a 2 metri da un cestino; per il bersaglio nascosto, un cerchio piccolo (3 punti) dentro un cerchio grande (1 punto) sul pavimento.</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -914,7 +913,7 @@ B10: =INTERCETTA(Dati!B2:B41;Dati!A2:A41)</div>
 <aside class="note">36-40 min. Preparare le postazioni per l’ora 2.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 3 · Ora 2 di 3 · Educazione fisica, in aula · 40 minuti</div><h1>La raccolta</h1><p class="grande">Sei postazioni, due turni, un foglio per gruppo</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>raccogliere dati di cui ci si può fidare.</p></div>
+<div class="occhiello">Giornata 3 · Ora 2 di 3 · In aula · 40 minuti</div><h1>La raccolta</h1><p class="grande">Sei postazioni, due turni, un foglio per gruppo</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>raccogliere dati di cui ci si può fidare.</p></div>
 <aside class="note">Sei postazioni: tre di equilibrio (spazio libero di un metro) e tre di lanci (cestino e linea a 2 metri). Protocolli dell’ora 1 appesi.</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -965,7 +964,7 @@ B10: =INTERCETTA(Dati!B2:B41;Dati!A2:A41)</div>
 <aside class="note">36-40 min. Riordinare l’aula.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 3 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Dal foglio di carta all’archivio</h1><p class="grande">Inserimento controllato, pulizia, registro</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>trasformare i fogli della raccolta in dati di cui ci si può fidare.</p></div>
+<div class="occhiello">Giornata 3 · Ora 3 di 3 · In laboratorio · 40 minuti</div><h1>Dal foglio di carta all’archivio</h1><p class="grande">Inserimento controllato, pulizia, registro</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>trasformare i fogli della raccolta in dati di cui ci si può fidare.</p></div>
 <aside class="note">Preparare: foglio condiviso «Prove 1P» (colonne A codice, B mano, C equilibrio_1, D equilibrio_2, E lanci_10) con la convalida su ogni colonna; foglio «Parallelo» con le stesse colonne; foglio «Registro» (chi, riga, colonna, prima, dopo, motivo).</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -1033,11 +1032,11 @@ B10: =INTERCETTA(Dati!B2:B41;Dati!A2:A41)</div>
 <aside class="note">36-40 min. Conservare i fogli di carta fino alla giornata 4.</aside>
 </section>
 <section id="giornata-4" class="slide" data-rumore="spento">
-<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 4</div><h1>Dai dati alle scoperte</h1><p class="grande">Che cosa ci dicono i nostri dati, e come impara una macchina dagli esempi?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · Laboratorio</div><p>L’analisi dei nostri dati</p></div><div class="carta"><div class="tit">Ora 2 · Laboratorio</div><p>Macchine che imparano dagli esempi</p></div><div class="carta"><div class="tit">Ora 3 · Laboratorio</div><p>Prepariamo «Dentro la macchina»</p></div></div>
+<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 4</div><h1>Dai dati alle scoperte</h1><p class="grande">Che cosa ci dicono i nostri dati, e come impara una macchina dagli esempi?</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · In laboratorio</div><p>L’analisi dei nostri dati</p></div><div class="carta"><div class="tit">Ora 2 · In laboratorio</div><p>Macchine che imparano dagli esempi</p></div><div class="carta"><div class="tit">Ora 3 · In laboratorio</div><p>Prepariamo «Dentro la macchina»</p></div></div>
 <aside class="note">Preparare: prove_1p.csv e i calcolatori della giornata 2 nella cartella della classe; computer con webcam; oggetti (penna, gomma, temperino) o fogli e pennarelli per i disegni. Alla fine della giornata la classe ha preparato le stazioni dell’installazione «Dentro la macchina».</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 4 · Ora 1 di 3 · Laboratorio di informatica · 40 minuti</div><h1>L’analisi dei nostri dati</h1><p class="grande">Il calcolatore al lavoro sulle nostre prove</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>trovare una cosa vera sui nostri dati e saperla difendere.</p></div>
+<div class="occhiello">Giornata 4 · Ora 1 di 3 · In laboratorio · 40 minuti</div><h1>L’analisi dei nostri dati</h1><p class="grande">Il calcolatore al lavoro sulle nostre prove</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>trovare una cosa vera sui nostri dati e saperla difendere.</p></div>
 
 </section>
 <section class="slide" data-rumore="spento">
@@ -1109,7 +1108,7 @@ G2: =DEV.ST.POP(C2:D2)</div>
 <aside class="note">36-40 min.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 4 · Ora 2 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Macchine che imparano dagli esempi</h1><p class="grande">Addestrare, provare, ingannare</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>insegnare a una macchina con gli esempi, e poi provare a ingannarla.</p></div>
+<div class="occhiello">Giornata 4 · Ora 2 di 3 · In laboratorio · 40 minuti</div><h1>Macchine che imparano dagli esempi</h1><p class="grande">Addestrare, provare, ingannare</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>insegnare a una macchina con gli esempi, e poi provare a ingannarla.</p></div>
 <aside class="note">Provare prima che teachablemachine.withgoogle.com funzioni dalla rete della scuola. Se il collega di educazione fisica è presente può fare una dimostrazione con le pose, davanti alla webcam.</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -1173,7 +1172,7 @@ G2: =DEV.ST.POP(C2:D2)</div>
 <aside class="note">36-40 min. Salvare il modello migliore per l’installazione.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 4 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Prepariamo «Dentro la macchina»</h1><p class="grande">L’installazione in cui i visitatori diventano i dati</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>preparare e provare le stazioni dell’installazione della classe.</p></div>
+<div class="occhiello">Giornata 4 · Ora 3 di 3 · In laboratorio · 40 minuti</div><h1>Prepariamo «Dentro la macchina»</h1><p class="grande">L’installazione in cui i visitatori diventano i dati</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>preparare e provare le stazioni dell’installazione della classe.</p></div>
 <aside class="note">Il foglio di quest’ora è la scheda della stazione. La pagina web dell’installazione (cruscotto e stazioni) la prepara il docente con i pezzi salvati dalla classe.</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -1227,7 +1226,7 @@ G2: =DEV.ST.POP(C2:D2)</div>
 <aside class="note">38-40 min. Raccogliere le schede delle stazioni e i biglietti.</aside>
 </section>
 <section id="giornata-5" class="slide" data-rumore="spento">
-<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 5</div><h1>Recupero, oppure il primo modello</h1><p class="grande">Che cosa resta da sistemare? Se niente: costruiamo un classificatore che funziona davvero.</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · Laboratorio</div><p>Distanze e vicini: che frutto è W?</p></div><div class="carta"><div class="tit">Ora 2 · Laboratorio</div><p>Progettare il modello e scommettere</p></div><div class="carta"><div class="tit">Ora 3 · Laboratorio</div><p>Il torneo dei classificatori</p></div></div>
+<div class="occhiello">Percorso «Intelligenza artificiale e dati» · Classe 1P · Giornata 5</div><h1>Recupero, oppure il primo modello</h1><p class="grande">Che cosa resta da sistemare? Se niente: costruiamo un classificatore che funziona davvero.</p><div class="spazio"></div><div class="carte"><div class="carta"><div class="tit">Ora 1 · In laboratorio</div><p>Distanze e vicini: che frutto è W?</p></div><div class="carta"><div class="tit">Ora 2 · In laboratorio</div><p>Progettare il modello e scommettere</p></div><div class="carta"><div class="tit">Ora 3 · In laboratorio</div><p>Il torneo dei classificatori</p></div></div>
 <aside class="note">Giornata condotta dal docente di informatica. Il percorso si è già concluso in 4 giornate. Se qualcosa è rimasto indietro, questa giornata serve a recuperarlo con i file delle giornate precedenti (slide successiva). Se la classe è in pari, si fa il primo modello. Dati: dati/frutti.csv (24 frutti) e dati/frutti_segreti.csv (7 frutti).</aside>
 </section>
 <section class="slide" data-rumore="spento">
@@ -1238,7 +1237,7 @@ G2: =DEV.ST.POP(C2:D2)</div>
 <aside class="note">Usare il tasto Home nei file delle altre giornate per tornare all’inizio; il numero della slide si può scrivere nell’indirizzo dopo il simbolo #.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 5 · Ora 1 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Distanze e vicini</h1><p class="grande">Il classificatore dei vicini sul foglio di calcolo</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>far decidere al foglio di calcolo che frutto è W.</p></div>
+<div class="occhiello">Giornata 5 · Ora 1 di 3 · In laboratorio · 40 minuti</div><h1>Distanze e vicini</h1><p class="grande">Il classificatore dei vicini sul foglio di calcolo</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>far decidere al foglio di calcolo che frutto è W.</p></div>
 
 </section>
 <section class="slide" data-rumore="spento">
@@ -1304,7 +1303,7 @@ G2: =DEV.ST.POP(C2:D2)</div>
 <aside class="note">36-40 min.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 5 · Ora 2 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Progettare il modello</h1><p class="grande">Scelte di progetto e valutazione</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>decidere come è fatto il nostro modello e scommettere su quanto funziona.</p></div>
+<div class="occhiello">Giornata 5 · Ora 2 di 3 · In laboratorio · 40 minuti</div><h1>Progettare il modello</h1><p class="grande">Scelte di progetto e valutazione</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>decidere come è fatto il nostro modello e scommettere su quanto funziona.</p></div>
 
 </section>
 <section class="slide" data-rumore="spento">
@@ -1353,7 +1352,7 @@ G2: =DEV.ST.POP(C2:D2)</div>
 <aside class="note">36-40 min.</aside>
 </section>
 <section class="slide scena" data-rumore="spento">
-<div class="occhiello">Giornata 5 · Ora 3 di 3 · Laboratorio di informatica · 40 minuti</div><h1>Il torneo dei classificatori</h1><p class="grande">Sette frutti che il modello non ha mai visto</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>mettere alla prova il modello su frutti mai visti.</p></div>
+<div class="occhiello">Giornata 5 · Ora 3 di 3 · In laboratorio · 40 minuti</div><h1>Il torneo dei classificatori</h1><p class="grande">Sette frutti che il modello non ha mai visto</p><div class="spazio"></div><div class="box risposta"><div class="etichetta">Missione dell’ora</div><p>mettere alla prova il modello su frutti mai visti.</p></div>
 
 </section>
 <section class="slide" data-rumore="spento">

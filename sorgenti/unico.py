@@ -34,11 +34,11 @@ def immagini_inline(html):
     return re.sub(r'src="(img/[^"]+\.png)"', lambda m: f'src="{data_uri(m.group(1), "image/png")}"', html)
 
 GIORNATE = [
-    (1, "La lingua come dati", "Italiano · Italiano · Laboratorio"),
-    (2, "Incertezza e misura", "Matematica · Matematica · Laboratorio"),
-    (3, "Il corpo come fonte di dati", "Educazione fisica in aula · Laboratorio"),
-    (4, "Dai dati alle scoperte", "Laboratorio · «Dentro la macchina»"),
-    (5, "Recupero, oppure il primo modello", "Laboratorio, docente di informatica"),
+    (1, "La lingua come dati", "Parole, fatti e opinioni, il pappagallo della classe"),
+    (2, "Incertezza e misura", "Probabilità, dispersione, il calcolatore"),
+    (3, "Il corpo come fonte di dati", "Prove motorie in aula, misure, dataset pulito"),
+    (4, "Dai dati alle scoperte", "Analisi, modelli che imparano, «Dentro la macchina»"),
+    (5, "Recupero, oppure il primo modello", "Vicini e distanze, il torneo dei frutti"),
 ]
 
 def main():

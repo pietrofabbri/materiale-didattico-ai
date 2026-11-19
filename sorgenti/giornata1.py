@@ -15,9 +15,9 @@ def build():
     S, F = [], []
     S.append(copertina(1, "La lingua come dati",
         "Come fa una macchina a scrivere frasi, se non sa che cosa dice?",
-        [("Ora 1 · Italiano", "Contare le parole e prevedere la successiva"),
-         ("Ora 2 · Italiano", "Fatti, opinioni, falsi: scriviamo le nostre frasi"),
-         ("Ora 3 · Laboratorio", "Dalle nostre frasi a un modello che scrive")],
+        [("Ora 1 · In aula", "Contare le parole e prevedere la successiva"),
+         ("Ora 2 · In aula", "Fatti, opinioni, falsi: scriviamo le nostre frasi"),
+         ("Ora 3 · In laboratorio", "Dalle nostre frasi a un modello che scrive")],
         note="Prima della lezione: tarare il barattolo (B, poi T) e provare il sorteggio. Stampare 6 copie dei fogli di ciascuna ora (A3 orizzontale). Barra in basso: blu essenziale, ambra consigliata, grigio facoltativa (si salta se manca tempo)."))
 
     # ================================================================ ORA 1
@@ -28,7 +28,7 @@ def build():
          ("R5", "Due significati", "La frase, i due significati, la parola che crea il doppio senso.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((1, "Le parole come dati", R))
-    S.append(ora(1, "Italiano", "Le parole come dati", "Contare, prevedere, capire il contesto",
+    S.append(ora(1, "In aula", "Le parole come dati", "Contare, prevedere, capire il contesto",
         "capire perché una macchina riesce a indovinare la parola che viene dopo.",
         note="0-3 min. Presentare il percorso in una frase: in quattro giornate scopriamo come impara una macchina, usando i nostri dati."))
     S.append(obiettivi([
@@ -83,7 +83,7 @@ def build():
         Tasselli(["mangi", "o"], {"mangi": "indaco", "o": "corallo"}),
         Tasselli(["mangi", "amo"], {"mangi": "indaco", "amo": "corallo"}),
         Tasselli(["mangi", "avano"], {"mangi": "indaco", "avano": "corallo"}),
-        P("La <b>radice</b> (blu) porta il significato: mangiare. La <b>desinenza</b> (rosso) dice <b>chi</b>, <b>quanti</b>, <b>quando</b>: io adesso, noi adesso, loro nel passato."),
+        P("La <b>radice</b>, il primo pezzo, porta il significato: mangiare. La <b>desinenza</b>, il secondo, dice <b>chi</b>, <b>quanti</b>, <b>quando</b>: io adesso, noi adesso, loro nel passato."),
         occhiello="Radice e desinenza",
         note="16-18 min. Chiedere alla classe di dire che cosa cambia tra le tre parole."))
     S.append(slide("Come si trovano, in tre passi",
@@ -158,7 +158,7 @@ def build():
          ("R4", "Gioco del verosimile", "Quali frasi degli altri gruppi erano false? Che cosa le rendeva credibili?", 1),
          ("R5", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((2, "Vero, verosimile, opinione", R))
-    S.append(ora(2, "Italiano", "Vero, verosimile, opinione", "Scriviamo le frasi da cui nascerà il nostro modello",
+    S.append(ora(2, "In aula", "Vero, verosimile, opinione", "Scriviamo le frasi da cui nascerà il nostro modello",
         "scrivere 48 frasi controllate: 8 per gruppo.",
         note="Stessi gruppi dell'ora 1. I fogli con R3 vanno portati in laboratorio per l'ora 3."))
     S.append(obiettivi([
@@ -265,7 +265,7 @@ def build():
          ("R3", "La frase del pappagallo", "La frase generata con la regola greedy, e se è vera, falsa o opinione.", 1),
          ("R4", "Controllo", "Le tre risposte del controllo finale.", 3)]
     foglio_ora(R); F.append((3, "Dalle nostre frasi al pappagallo", R))
-    S.append(ora(3, "Laboratorio di informatica", "Dalle nostre frasi al pappagallo", "Il primo modello della classe, sul foglio di calcolo",
+    S.append(ora(3, "In laboratorio", "Dalle nostre frasi al pappagallo", "Il primo modello della classe, sul foglio di calcolo",
         "costruire il pappagallo della 1P e farlo parlare.",
         note="Preparare: foglio condiviso «Corpus 1P» (colonne id, gruppo, genere, frase, tipo, fonte; 8 righe per gruppo); per ogni gruppo un foglio «Pappagallo» con le colonne parola e successiva. Un computer per gruppo."))
     S.append(obiettivi([

@@ -120,11 +120,11 @@ aside.note{display:none}
 .m-ora .segmenti{flex:1;display:flex;gap:4px;align-items:center;height:18px}
 .m-ora .seg{flex:1;height:8px;border-radius:4px;cursor:pointer;transition:height .2s,opacity .2s}
 .m-ora .seg.fatto{opacity:.35}
-.m-ora .seg.qui{height:18px;box-shadow:0 0 0 2px #1D2433}
+.m-ora .seg.qui{height:18px;box-shadow:0 0 0 2px #22192F}
 .m-ora .imp{white-space:nowrap;font-weight:700;padding:2px 10px;border-radius:10px;color:#fff}
-.m-ora .seg.essenziale,.m-ora .imp.essenziale,.m-aiuto .pal.essenziale{background:#3B4BA0}
-.m-ora .seg.consigliata,.m-ora .imp.consigliata,.m-aiuto .pal.consigliata{background:#E8A21C}
-.m-ora .seg.facoltativa,.m-aiuto .pal.facoltativa{background:#B8BECA}
-.m-ora .imp.facoltativa{background:#8F98AA}
+.m-ora .seg.essenziale,.m-ora .imp.essenziale,.m-aiuto .pal.essenziale{background:#0E7C7B}
+.m-ora .seg.consigliata,.m-ora .imp.consigliata,.m-aiuto .pal.consigliata{background:#F4A259}
+.m-ora .seg.facoltativa,.m-aiuto .pal.facoltativa{background:#CFC8D9}
+.m-ora .imp.facoltativa{background:#8C8299}
 .m-aiuto .pal{display:inline-block;width:1.6em;height:.6em;border-radius:.3em;vertical-align:middle}
 section.slide.attiva:has(> .tela.scena)~.m-ora .et{color:#C9CFDA}

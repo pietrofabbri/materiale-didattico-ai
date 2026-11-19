@@ -4,9 +4,9 @@ def build():
     S, F = [], []
     S.append(titolo_giornata(5, "Recupero, oppure il primo modello",
         "Che cosa resta da sistemare? Se niente: costruiamo un classificatore che funziona davvero.",
-        [("Ora 1 · Laboratorio", "Distanze e vicini: che frutto è W?"),
-         ("Ora 2 · Laboratorio", "Progettare il modello e scommettere"),
-         ("Ora 3 · Laboratorio", "Il torneo dei classificatori")],
+        [("Ora 1 · In laboratorio", "Distanze e vicini: che frutto è W?"),
+         ("Ora 2 · In laboratorio", "Progettare il modello e scommettere"),
+         ("Ora 3 · In laboratorio", "Il torneo dei classificatori")],
         note="Giornata condotta dal docente di informatica. Il percorso si è già concluso in 4 giornate. Se qualcosa è rimasto indietro, questa giornata serve a recuperarlo con i file delle giornate precedenti (slide successiva). Se la classe è in pari, si fa il primo modello. Dati: dati/frutti.csv (24 frutti) e dati/frutti_segreti.csv (7 frutti)."))
     S.append(spiega("Prima di cominciare: c'è qualcosa da recuperare?", occhiello="Per il docente",
         punti=["Corpus o pappagallo incompleti → giornata-1.html, ora 3",
@@ -24,7 +24,7 @@ def build():
          ("R5", "Perché è cambiato?", "La spiegazione del gruppo.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((1, "Distanze e vicini", R))
-    S.append(ora(1, "Laboratorio di informatica", "Distanze e vicini", "Il classificatore dei vicini sul foglio di calcolo",
+    S.append(ora(1, "In laboratorio", "Distanze e vicini", "Il classificatore dei vicini sul foglio di calcolo",
         "far decidere al foglio di calcolo che frutto è W."))
     S.append(obiettivi([
         "calcolare la <b>distanza</b> tra due esempi con più misure",
@@ -94,7 +94,7 @@ def build():
          ("R5", "La scommessa", "Quanti frutti segreti su 7 indovineremo? Gettoni puntati.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((2, "Progettare il modello", R))
-    S.append(ora(2, "Laboratorio di informatica", "Progettare il modello", "Scelte di progetto e valutazione",
+    S.append(ora(2, "In laboratorio", "Progettare il modello", "Scelte di progetto e valutazione",
         "decidere come è fatto il nostro modello e scommettere su quanto funziona."))
     S.append(obiettivi([
         "distinguere <b>classificazione</b> e <b>regressione</b>",
@@ -145,7 +145,7 @@ def build():
          ("R3", "Il frutto impossibile", "Perché S7 è difficile per tutti? Che cosa servirebbe?", 2),
          ("R4", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((3, "Il torneo dei classificatori", R))
-    S.append(ora(3, "Laboratorio di informatica", "Il torneo dei classificatori", "Sette frutti che il modello non ha mai visto",
+    S.append(ora(3, "In laboratorio", "Il torneo dei classificatori", "Sette frutti che il modello non ha mai visto",
         "mettere alla prova il modello su frutti mai visti."))
     S.append(obiettivi([
         "applicare il proprio modello a dati nuovi <b>senza cambiarlo</b>",

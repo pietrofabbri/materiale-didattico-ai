@@ -4,9 +4,9 @@ def build():
     S, F = [], []
     S.append(titolo_giornata(4, "Dai dati alle scoperte",
         "Che cosa ci dicono i nostri dati, e come impara una macchina dagli esempi?",
-        [("Ora 1 · Laboratorio", "L'analisi dei nostri dati"),
-         ("Ora 2 · Laboratorio", "Macchine che imparano dagli esempi"),
-         ("Ora 3 · Laboratorio", "Prepariamo «Dentro la macchina»")],
+        [("Ora 1 · In laboratorio", "L'analisi dei nostri dati"),
+         ("Ora 2 · In laboratorio", "Macchine che imparano dagli esempi"),
+         ("Ora 3 · In laboratorio", "Prepariamo «Dentro la macchina»")],
         note="Preparare: prove_1p.csv e i calcolatori della giornata 2 nella cartella della classe; computer con webcam; oggetti (penna, gomma, temperino) o fogli e pennarelli per i disegni. Alla fine della giornata la classe ha preparato le stazioni dell'installazione «Dentro la macchina»."))
 
     # ================================================================ ORA 1
@@ -17,7 +17,7 @@ def build():
          ("R5", "La nostra scoperta", "Un numero · un grafico (descritto) · un limite.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((1, "L'analisi dei nostri dati", R))
-    S.append(ora(1, "Laboratorio di informatica", "L'analisi dei nostri dati", "Il calcolatore al lavoro sulle nostre prove",
+    S.append(ora(1, "In laboratorio", "L'analisi dei nostri dati", "Il calcolatore al lavoro sulle nostre prove",
         "trovare una cosa vera sui nostri dati e saperla difendere."))
     S.append(obiettivi([
         "confrontare una <b>stima</b> con il valore calcolato",
@@ -96,7 +96,7 @@ def build():
          ("R5", "L'inganno", "L'esempio ingannevole e perché, scritto prima di provarlo.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((2, "Macchine che imparano dagli esempi", R))
-    S.append(ora(2, "Laboratorio di informatica", "Macchine che imparano dagli esempi", "Addestrare, provare, ingannare",
+    S.append(ora(2, "In laboratorio", "Macchine che imparano dagli esempi", "Addestrare, provare, ingannare",
         "insegnare a una macchina con gli esempi, e poi provare a ingannarla.",
         note="Provare prima che teachablemachine.withgoogle.com funzioni dalla rete della scuola. Se il collega di educazione fisica è presente può fare una dimostrazione con le pose, davanti alla webcam."))
     S.append(obiettivi([
@@ -177,7 +177,7 @@ def build():
          ("R5", "La domanda", "Una domanda da fare al visitatore alla fine.", 1),
          ("R6", "Prova incrociata", "L'osservazione del gruppo che ha provato la stazione.", 1)]
     foglio_ora(R); F.append((3, "Prepariamo «Dentro la macchina»", R))
-    S.append(ora(3, "Laboratorio di informatica", "Prepariamo «Dentro la macchina»", "L'installazione in cui i visitatori diventano i dati",
+    S.append(ora(3, "In laboratorio", "Prepariamo «Dentro la macchina»", "L'installazione in cui i visitatori diventano i dati",
         "preparare e provare le stazioni dell'installazione della classe.",
         note="Il foglio di quest'ora è la scheda della stazione. La pagina web dell'installazione (cruscotto e stazioni) la prepara il docente con i pezzi salvati dalla classe."))
     S.append(obiettivi([

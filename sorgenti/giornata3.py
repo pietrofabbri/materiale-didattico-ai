@@ -4,9 +4,9 @@ def build():
     S, F = [], []
     S.append(titolo_giornata(3, "Il corpo come fonte di dati",
         "Come si raccolgono dati veri, e perché non sono mai perfetti?",
-        [("Ora 1 · Educazione fisica", "Misurare bene, e imparare per tentativi"),
-         ("Ora 2 · Educazione fisica", "La raccolta dei dati, in aula"),
-         ("Ora 3 · Laboratorio", "Dal foglio di carta a un archivio pulito")],
+        [("Ora 1 · In aula", "Misurare bene, e imparare per tentativi"),
+         ("Ora 2 · In aula", "La raccolta dei dati, in aula"),
+         ("Ora 3 · In laboratorio", "Dal foglio di carta a un archivio pulito")],
         note="Tutto si fa in aula. Materiale: 3 cronometri (o il cronometro del telefono del docente), nastro adesivo di carta, 3 cestini, 30 palline di carta (fogli riciclati appallottolati), una benda, un'urna con 29 codici (lettera + cifra). Prima della giornata: concordare con il collega di educazione fisica, se partecipa, le due prove e il contratto dei dati. Pezzi per l'installazione: il dataset pulito e l'errore di misura stimato."))
 
     # ================================================================ ORA 1
@@ -16,7 +16,7 @@ def build():
          ("R4", "Bersaglio nascosto", "La strategia «se… allora…», i punteggi dei lanci, il totale R.", 2),
          ("R5", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((1, "Misurare bene", R))
-    S.append(ora(1, "Educazione fisica, in aula", "Misurare bene", "Errori di misura, protocollo, privacy; imparare per tentativi",
+    S.append(ora(1, "In aula", "Misurare bene", "Errori di misura, protocollo, privacy; imparare per tentativi",
         "decidere come si misura, prima di misurare.",
         note="Spostare i banchi lungo le pareti se serve spazio. Segnare con il nastro: una linea di lancio a 2 metri da un cestino; per il bersaglio nascosto, un cerchio piccolo (3 punti) dentro un cerchio grande (1 punto) sul pavimento."))
     S.append(obiettivi([
@@ -100,7 +100,7 @@ def build():
          ("R2", "Lanci", "Tabella: codice · mano · centri su 10 · note.", 1),
          ("R3", "Controllo", "Le tre risposte del controllo finale.", 3)]
     foglio_ora(R); F.append((2, "La raccolta", R))
-    S.append(ora(2, "Educazione fisica, in aula", "La raccolta", "Sei postazioni, due turni, un foglio per gruppo",
+    S.append(ora(2, "In aula", "La raccolta", "Sei postazioni, due turni, un foglio per gruppo",
         "raccogliere dati di cui ci si può fidare.",
         note="Sei postazioni: tre di equilibrio (spazio libero di un metro) e tre di lanci (cestino e linea a 2 metri). Protocolli dell'ora 1 appesi."))
     S.append(obiettivi([
@@ -153,7 +153,7 @@ def build():
          ("R3", "Quanto sbagliamo copiando", "Caselle diverse ÷ caselle confrontate = ___%.", 1),
          ("R4", "Controllo", "Le tre risposte del controllo finale.", 3)]
     foglio_ora(R); F.append((3, "Dal foglio di carta all'archivio", R))
-    S.append(ora(3, "Laboratorio di informatica", "Dal foglio di carta all'archivio", "Inserimento controllato, pulizia, registro",
+    S.append(ora(3, "In laboratorio", "Dal foglio di carta all'archivio", "Inserimento controllato, pulizia, registro",
         "trasformare i fogli della raccolta in dati di cui ci si può fidare.",
         note="Preparare: foglio condiviso «Prove 1P» (colonne A codice, B mano, C equilibrio_1, D equilibrio_2, E lanci_10) con la convalida su ogni colonna; foglio «Parallelo» con le stesse colonne; foglio «Registro» (chi, riga, colonna, prima, dopo, motivo)."))
     S.append(obiettivi([

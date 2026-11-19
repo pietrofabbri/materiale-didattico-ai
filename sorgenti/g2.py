@@ -50,7 +50,7 @@ def Tabella(testa, righe, compatta=False):
     tr = "".join("<tr>" + "".join(f"<td>{T(str(c))}</td>" for c in r) + "</tr>" for r in righe)
     return f'<table class="t{" compatta" if compatta else ""}"><tr>{th}</tr>{tr}</table>'
 
-COLORI_CARTA = {"indaco": "#3B4BA0", "corallo": "#E0603C", "ambra": "#E8A21C", "salvia": "#4F9A73", "cielo": "#3E8EC4", "prugna": "#7A4E9C"}
+COLORI_CARTA = {"indaco": "#0E7C7B", "corallo": "#F25C54", "ambra": "#F4A259", "salvia": "#5B8E4F", "cielo": "#7B6CD9", "prugna": "#B5487A"}
 
 def Carte(carte, frammento=False):
     out = []

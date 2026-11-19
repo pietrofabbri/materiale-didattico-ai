@@ -4,9 +4,9 @@ def build():
     S, F = [], []
     S.append(titolo_giornata(2, "Incertezza e misura",
         "Quanto possiamo essere sicuri di qualcosa che ricaviamo dai dati?",
-        [("Ora 1 · Matematica", "Probabile non vuol dire certo"),
-         ("Ora 2 · Matematica", "Tanti numeri, pochi numeri"),
-         ("Ora 3 · Laboratorio", "Il calcolatore statistico e il segreto della 1Z")],
+        [("Ora 1 · In aula", "Probabile non vuol dire certo"),
+         ("Ora 2 · In aula", "Tanti numeri, pochi numeri"),
+         ("Ora 3 · In laboratorio", "Il calcolatore statistico e il segreto della 1Z")],
         note="Materiale: una moneta per coppia; una moneta normale e una con due teste in un sacchetto; 10 gettoni per gruppo (o fagioli); calcolatrici. Nei fogli dei lanci, metà con il biglietto «inventa» e metà «lancia». Pezzi per l'installazione: la tabella della moneta truccata, i lanci della classe, il calcolatore."))
 
     # ================================================================ ORA 1
@@ -17,7 +17,7 @@ def build():
          ("R5", "L'albero", "L'albero della moneta e P(truccata | testa).", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((1, "Probabile non vuol dire certo", R))
-    S.append(ora(1, "Matematica", "Probabile non vuol dire certo", "Probabilità con monete e gettoni",
+    S.append(ora(1, "In aula", "Probabile non vuol dire certo", "Probabilità con monete e gettoni",
         "capire quanto possiamo fidarci di ciò che osserviamo."))
     S.append(obiettivi([
         "dare a un evento un numero tra <b>0</b> (impossibile) e <b>1</b> (certo)",
@@ -121,7 +121,7 @@ def build():
          ("R5", "Indovina r", "Sei stime di r, una per grafico.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((2, "Tanti numeri, pochi numeri", R))
-    S.append(ora(2, "Matematica", "Tanti numeri, pochi numeri", "Media, mediana, dispersione, correlazione",
+    S.append(ora(2, "In aula", "Tanti numeri, pochi numeri", "Media, mediana, dispersione, correlazione",
         "riassumere tanti numeri con pochi numeri, senza farsi ingannare."))
     S.append(obiettivi([
         "calcolare <b>media</b> e <b>mediana</b> e scegliere la più adatta",
@@ -212,8 +212,8 @@ def build():
          ("R3", "Stima e verità", "Le due rette e una ragione per cui non coincidono.", 1),
          ("R4", "Controllo", "Le tre risposte del controllo finale.", 3)]
     foglio_ora(R); F.append((3, "Il calcolatore statistico", R))
-    S.append(ora(3, "Laboratorio di informatica", "Il calcolatore statistico", "E il segreto della classe 1Z",
-        "trasformare le formule di matematica in un foglio che calcola da solo.",
+    S.append(ora(3, "In laboratorio", "Il calcolatore statistico", "E il segreto della classe 1Z",
+        "trasformare le formule in un foglio che calcola da solo.",
         note="Preparare: foglio condiviso «Lanci» (colonne n ed esito, 20 righe per coppia); modello «Calcolatore» per gruppo con i fogli Dati (colonna A ore di schermo, B ore di sonno della 1Z, righe 2-41) e Statistiche."))
     S.append(obiettivi([
         "inserire i lanci e calcolare la <b>frequenza</b> lancio dopo lancio",
