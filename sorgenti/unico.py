@@ -37,7 +37,7 @@ GIORNATE = [
     (1, "La lingua come dati", "Parole, fatti e opinioni, il pappagallo della classe"),
     (2, "Incertezza e misura", "Probabilità, dispersione, il calcolatore"),
     (3, "Il corpo come fonte di dati", "Prove motorie in aula, misure, dataset pulito"),
-    (4, "Dai dati alle scoperte", "Analisi, modelli che imparano, «Dentro la macchina»"),
+    (4, "Dai dati alle scoperte", "Analisi, modelli che imparano, presentazione finale"),
     (5, "Recupero, oppure il primo modello", "Vicini e distanze, il torneo dei frutti"),
 ]
 
