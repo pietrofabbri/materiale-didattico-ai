@@ -2,7 +2,7 @@ from g import *
 
 def build():
     S, F = [], []
-    S.append(titolo_giornata(4, "Dai dati alle scoperte",
+    S.append(titolo_giornata(4, "Dai dati ai risultati",
         "Che cosa ci dicono i nostri dati, e come impara una macchina dagli esempi?",
         [("Ora 1 · In laboratorio", "L'analisi dei nostri dati"),
          ("Ora 2 · In laboratorio", "Macchine che imparano dagli esempi"),
@@ -14,7 +14,7 @@ def build():
          ("R2", "Due persone", "Media e variabilità delle due prove per due codici.", 1),
          ("R3", "Tabella pivot", "Media dei centri per mano, con il numero di persone.", 1),
          ("R4", "Previsione di r", "Segno previsto, poi valore calcolato.", 1),
-         ("R5", "La nostra scoperta", "Un numero · un grafico (descritto) · un limite.", 1),
+         ("R5", "Il nostro risultato", "Un numero · un grafico (descritto) · un limite.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((1, "L'analisi dei nostri dati", R))
     S.append(ora(1, "In laboratorio", "L'analisi dei nostri dati", "Il calcolatore al lavoro sulle nostre prove",
@@ -25,7 +25,7 @@ def build():
         "usare il <b>calcolatore</b> della giornata 2 su dati nuovi",
         "costruire una <b>tabella pivot</b> e un <b>grafico di dispersione</b>",
         "<b>prevedere</b> il segno di una correlazione prima di calcolarla",
-        "scrivere una scoperta con <b>un numero, un grafico e un limite</b>"]))
+        "scrivere un risultato con <b>un numero, un grafico e un limite</b>"]))
     S.append(sorteggio("Gruppi nuovi anche oggi: sono i gruppi di tutta la giornata, anche dell'installazione.", note="Inserire gli assenti e premere Sorteggia."))
     S.append(attivita("Prima stima, poi calcola",
         ["Senza guardare i dati: quanti secondi è durata, in media, la prima prova di equilibrio della classe?",
@@ -65,12 +65,12 @@ def build():
         testo=["Prima di calcolare: secondo voi r sarà positivo, negativo o vicino a 0? Scrivetelo in R4. Poi: <span class=\"mono\">=CORRELAZIONE(F2:F30;E2:E30)</span>"],
         timer=[(300, "R4")], rumore="discussione", fase="gruppo",
         note="19-24 min. Il valore dipende dai dati della classe: non c'è una risposta prestabilita. Anche una correlazione forte non dice che una cosa causa l'altra."))
-    S.append(spiega("Il formato di una scoperta", occhiello="Un numero, un grafico, un limite",
+    S.append(spiega("Il formato di un risultato", occhiello="Un numero, un grafico, un limite",
         esempio=["«Chi lancia con la destra fa in media 5,8 centri su 10, chi lancia con la sinistra 4,1 (tabella pivot).",
                  "Limite: chi lancia con la sinistra sono solo 4 persone, di una sola classe, in un solo giorno.»"],
         attenzione="I numeri dell'esempio sono inventati: usate i vostri.",
         note="24-25 min."))
-    S.append(attivita("Scrivete la vostra scoperta",
+    S.append(attivita("Scrivete il vostro risultato",
         ["Scegliete un risultato dei vostri dati",
          "Scrivete in R5: un numero, il grafico o la tabella da cui viene, un limite",
          "Salvate grafico e frase nella cartella della classe: andranno nel cruscotto dell'installazione"],
@@ -84,7 +84,7 @@ def build():
         ["30 e 50 (σ = 10 contro σ = 1)", "No: la correlazione non dice quale causa l'altra; può esserci una causa comune, come l'abitudine allo sport",
          "Dipende da pochissime persone: può cambiare molto per caso"],
         note="33-36 min."))
-    S.append(riga("una scoperta = un numero + un grafico + un limite",
+    S.append(riga("un risultato = un numero + un grafico + un limite",
         [("numero", "che cosa abbiamo misurato o calcolato"), ("grafico", "da dove viene il numero"), ("limite", "che cosa il numero non può dire")],
         note="36-40 min."))
 
@@ -119,7 +119,7 @@ def build():
                "Webcam › tenete premuto «Hold to Record»: almeno 20 esempi per classe, in posizioni diverse",
                "Train Model; poi provate nell'anteprima (Preview)"], ordinati=True,
         attenzione="Solo oggetti o disegni su carta: niente volti né corpi nell'inquadratura.",
-        note="6-8 min. Dimostrazione al proiettore. L'interfaccia è in inglese: i nomi dei pulsanti sono quelli scritti nella slide."))
+        note="6-8 min. Dimostrazione alla LIM. L'interfaccia è in inglese: i nomi dei pulsanti sono quelli scritti nella slide."))
     S.append(attivita("Addestrate il vostro modello",
         ["Scegliete 3 classi di oggetti o di disegni e scrivetele in R2",
          "Registrate almeno 20 esempi per classe",
@@ -141,7 +141,7 @@ def build():
         "gruppo", "R3 e R4", "6 minuti", [(360, "Test")],
         esempio="prova 1 · gomma · il modello dice gomma (giusta)",
         note="19-25 min."))
-    S.append(attivita("Batti la macchina",
+    S.append(attivita("Mettere in difficoltà il modello",
         ["Progettate l'esempio più ingannevole che vi viene in mente",
          "Scrivete in R5 perché dovrebbe ingannare il modello, <b>prima</b> di provarlo",
          "Provatelo: che cosa risponde, e con quale percentuale?"],
@@ -166,7 +166,7 @@ def build():
         note="33-36 min."))
     S.append(riga("accuratezza = risposte giuste ÷ risposte totali",
         [("risposte", "su esempi che il modello non ha mai visto"), ("addestramento", "gli esempi da cui il modello impara")],
-        dopo="Salvate il modello (Export Model › Upload): servirà alla stazione «Batti la macchina».",
+        dopo="Salvate il modello (Export Model › Upload): servirà alla stazione «Mettere in difficoltà il modello».",
         note="36-40 min. Salvare il modello migliore per l'installazione."))
 
     # ================================================================ ORA 3
@@ -192,8 +192,8 @@ def build():
         carte=[("1 Il pappagallo", "il visitatore scrive una frase; il pappagallo impara le sue parole", "#C8372D"),
                ("2 Vero o verosimile?", "il visitatore giudica frasi della classe; quante volte viene ingannato?", "#DB6A1C"),
                ("3 La moneta", "il visitatore lancia; la frequenza di tutti i lanci si avvicina a 0,5", "#3A8A3E"),
-               ("4 Batti la macchina", "il visitatore prova a ingannare il modello della classe", "#0E7C7B"),
-               ("5 Le nostre prove", "il cruscotto con le scoperte della classe, ciascuna con il suo limite", "#2C8BC9"),
+               ("4 Mettere in difficoltà il modello", "il visitatore prova a ingannare il modello della classe", "#0E7C7B"),
+               ("5 Le nostre prove", "il cruscotto con i risultati della classe, ciascuna con il suo limite", "#2C8BC9"),
                ("6 Accoglienza", "accoglie, spiega le regole sui dati, guida il giro, chiude con stima e verità", "#6B3FA0")],
         note="3-6 min. Il gruppo n segue la stazione n. Si presenta ad altre classi, alle famiglie o all'open day."))
     S.append(spiega("La scheda della stazione: un esempio", occhiello="Stazione 3, la moneta",
@@ -239,7 +239,7 @@ def build():
     S.append(spiega("Che cosa abbiamo costruito", occhiello="Quattro giornate",
         tabella=(["Giornata", "Pezzo per l'installazione"],
                  [["1 La lingua come dati", "il corpus della classe e il pappagallo"], ["2 Incertezza e misura", "i lanci, la moneta, il calcolatore"],
-                  ["3 Il corpo come fonte di dati", "le prove in aula, pulite e con l'errore misurato"], ["4 Dai dati alle scoperte", "le scoperte, il modello, le stazioni"]]),
+                  ["3 Il corpo come fonte di dati", "le prove in aula, pulite e con l'errore misurato"], ["4 Dai dati ai risultati", "i risultati, il modello, le stazioni"]]),
         dopo=["Prossimo passo: la presentazione di «Dentro la macchina»."],
         note="38-40 min. Raccogliere le schede delle stazioni e i biglietti."))
-    return "IA e dati 1P · Giornata 4 · Dai dati alle scoperte", S, F
+    return "IA e dati 1P · Giornata 4 · Dai dati ai risultati", S, F

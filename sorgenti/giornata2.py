@@ -6,7 +6,7 @@ def build():
         "Quanto possiamo essere sicuri di qualcosa che ricaviamo dai dati?",
         [("Ora 1 · In aula", "Probabile non vuol dire certo"),
          ("Ora 2 · In aula", "Tanti numeri, pochi numeri"),
-         ("Ora 3 · In laboratorio", "Il calcolatore statistico e il segreto della 1Z")],
+         ("Ora 3 · In laboratorio", "Il calcolatore statistico e i dati della 1Z")],
         note="Materiale: una moneta per coppia; una moneta normale e una con due teste in un sacchetto; 10 gettoni per gruppo (o fagioli); calcolatrici. Nei fogli dei lanci, metà con il biglietto «inventa» e metà «lancia». Pezzi per l'installazione: la tabella della moneta truccata, i lanci della classe, il calcolatore."))
 
     # ================================================================ ORA 1
@@ -64,7 +64,7 @@ def build():
         formula="frequenza = successi ÷ prove",
         attenzione="Con molte prove la frequenza si avvicina alla probabilità, ma la moneta non «recupera»: dopo 5 teste di fila la croce non diventa più probabile.",
         note="16-18 min. Raccogliere alla lavagna le teste di ogni coppia e calcolare la frequenza di classe."))
-    S.append(attivita("Il prof indovino",
+    S.append(attivita("Dati lanciati o inventati?",
         ["Il prof guarda i fogli e dice per ognuno: «lanciata» o «inventata»",
          "Poi, in R3: trovate la serie più lunga di risultati uguali di fila nella vostra sequenza",
          "Secondo voi, come ha fatto il prof?"],
@@ -114,11 +114,11 @@ def build():
         note="36-40 min."))
 
     # ================================================================ ORA 2
-    R = [("R1", "Il miliardario", "Media e mediana; quale descrive meglio la stanza.", 1),
+    R = [("R1", "Media e valore estremo", "Media e mediana; quale descrive meglio la stanza.", 1),
          ("R2", "La scommessa", "Quale insieme è più disperso: A, B o C?", 1),
          ("R3", "Deviazione standard", "I 5 passi per B oppure per C.", 1),
          ("R4", "z e min-max", "I due calcoli richiesti.", 1),
-         ("R5", "Indovina r", "Sei stime di r, una per grafico.", 1),
+         ("R5", "Stimare r", "Sei stime di r, una per grafico.", 1),
          ("R6", "Controllo", "Le tre risposte del controllo finale.", 1)]
     foglio_ora(R); F.append((2, "Tanti numeri, pochi numeri", R))
     S.append(ora(2, "In aula", "Tanti numeri, pochi numeri", "Media, mediana, dispersione, correlazione",
@@ -130,7 +130,7 @@ def build():
         "confrontare valori con il <b>punteggio z</b> e la <b>normalizzazione</b>",
         "stimare la <b>correlazione r</b> da un grafico",
         "spiegare che <b>correlazione non vuol dire causa</b>"]))
-    S.append(attivita("Il miliardario",
+    S.append(attivita("Media e valore estremo",
         ["Nove persone guadagnano 1.000 € al mese. Entra un miliardario: 1.000.000.000 €",
          "Calcolate la <b>media</b>: somma di tutti i valori diviso quanti sono",
          "Calcolate la <b>mediana</b>: mettete i valori in ordine e prendete quello in mezzo (con un numero pari di valori, la media dei due in mezzo)",
@@ -178,10 +178,10 @@ def build():
         carte=[("r vicino a 1", "quando una cresce, cresce anche l'altra", "#3A8A3E"), ("r vicino a −1", "quando una cresce, l'altra cala", "#C8372D"), ("r vicino a 0", "nessuna relazione a forma di retta", "#5B6475")],
         formula="−1 ≤ r ≤ 1",
         note="24-25 min. Disegnare a mano tre nuvole di punti."))
-    S.append(immagini("Indovina r: grafici 1, 2, 3", [("img/indovina_r_1.png", "Grafico 1", "1"), ("img/indovina_r_2.png", "Grafico 2", "2"), ("img/indovina_r_3.png", "Grafico 3", "3")],
+    S.append(immagini("Stimare r: grafici 1, 2, 3", [("img/indovina_r_1.png", "Grafico 1", "1"), ("img/indovina_r_2.png", "Grafico 2", "2"), ("img/indovina_r_3.png", "Grafico 3", "3")],
         occhiello="Scrivete in R5 una stima di r per ogni grafico", timer=[(120, "R5")], fase="gruppo", rumore="discussione",
         note="25-27 min. 40 secondi per grafico."))
-    S.append(immagini("Indovina r: grafici 4, 5, 6", [("img/indovina_r_4.png", "Grafico 4", "4"), ("img/indovina_r_5.png", "Grafico 5", "5"), ("img/indovina_r_6.png", "Grafico 6", "6")],
+    S.append(immagini("Stimare r: grafici 4, 5, 6", [("img/indovina_r_4.png", "Grafico 4", "4"), ("img/indovina_r_5.png", "Grafico 5", "5"), ("img/indovina_r_6.png", "Grafico 6", "6")],
         occhiello="Scrivete in R5 una stima di r per ogni grafico", timer=[(120, "R5")], fase="gruppo", rumore="discussione",
         note="27-29 min."))
     S.append(spiega("I valori veri", occhiello="Soluzione",
@@ -212,7 +212,7 @@ def build():
          ("R3", "Stima e verità", "Le due rette e una ragione per cui non coincidono.", 1),
          ("R4", "Controllo", "Le tre risposte del controllo finale.", 3)]
     foglio_ora(R); F.append((3, "Il calcolatore statistico", R))
-    S.append(ora(3, "In laboratorio", "Il calcolatore statistico", "E il segreto della classe 1Z",
+    S.append(ora(3, "In laboratorio", "Il calcolatore statistico", "E i dati della classe 1Z",
         "trasformare le formule in un foglio che calcola da solo.",
         note="Preparare: foglio condiviso «Lanci» (colonne n ed esito, 20 righe per coppia); modello «Calcolatore» per gruppo con i fogli Dati (colonna A ore di schermo, B ore di sonno della 1Z, righe 2-41) e Statistiche."))
     S.append(obiettivi([
@@ -263,7 +263,7 @@ def build():
         dopo=["Collaudo: il vostro calcolatore deve dare questi valori. Scriveteli in R2. Poi cambiate un numero nei Dati: i risultati cambiano da soli?"],
         timer=[(240, "R2")], rumore="discussione", fase="gruppo",
         note="22-26 min. Se un valore non torna: controllare l'intervallo (A2:A41) e l'ordine degli argomenti di PENDENZA."))
-    S.append(spiega("La classe 1Z non esiste", occhiello="Il segreto",
+    S.append(spiega("La classe 1Z non esiste", occhiello="Da dove vengono i dati",
         testo=["I dati della 1Z li ha inventati un programma. Ecco la riga che calcola il sonno:"],
         codice="sonno = round((9.6 - 0.45 * schermo + random.gauss(0, 0.45)) * 2) / 2",
         punti=["9,6 − 0,45 · schermo: la relazione vera", "random.gauss: un piccolo errore casuale diverso per ogni studente (il <b>rumore</b>)", "round(… · 2) / 2: arrotonda alla mezz'ora"],

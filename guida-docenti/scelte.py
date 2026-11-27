@@ -6,13 +6,13 @@ SCELTE["g1o1"] = [
  ("Le regole di conteggio si fissano prima di contare.", "Senza regole comuni ogni gruppo ottiene un numero diverso e il confronto diventa inutile. È la prima volta che la classe incontra un'idea che tornerà nella giornata 3: per confrontare misure serve un protocollo.", "regole"),
  ("Il paragrafo si conta a mano, con le tacche.", "Contare a mano 67 parole richiede cinque minuti e fa capire che cosa farà il computer nell'ora 3. Lo studente che ha contato a mano sa che cosa significa il numero che il computer gli darà.", "unplugged"),
  ("Radice e desinenza hanno un metodo in tre passi, con un esempio svolto.", "Molti studenti di prima non hanno un procedimento per scomporre una parola. Il metodo li rende autonomi; l'esempio svolto mostra i tre passi prima dell'esercizio.", "esempio"),
- ("Il gioco di Shannon si fa senza proiettare la frase.", "Se la frase fosse visibile, il gioco perderebbe senso. La difficoltà di prevedere le prime parole e la facilità delle ultime è l'esperienza che spiega il ruolo del contesto.", None),
+ ("Il gioco di Shannon si fa senza mostrare la frase sulla LIM.", "Se la frase fosse visibile, il gioco perderebbe senso. La difficoltà di prevedere le prime parole e la facilità delle ultime è l'esperienza che spiega il ruolo del contesto.", None),
  ("L'ora si chiude con tre domande individuali.", "Servono al docente per sapere se riprendere un concetto e agli studenti per fissarlo richiamandolo a memoria.", "recupero"),
 ]
 SCELTE["g1o2"] = [
  ("Si apre con cinque consigli scritti da un'intelligenza artificiale, senza dire subito quali sono falsi.", "Gli studenti giudicano i consigli prima di avere gli strumenti per farlo. Alla fine dell'ora rileggono il proprio giudizio alla luce di ciò che hanno imparato su fatti, falsi e fonti.", "prevedere"),
  ("Ogni gruppo scrive frasi su un genere assegnato, con regole precise.", "Le regole (4-8 parole, minuscolo, parole ripetute) non sono un vincolo formale: servono perché il modello dell'ora 3 possa funzionare. Gli studenti scrivono frasi che diventeranno dati, e lo sanno.", "costruire"),
- ("Ogni frase riceve un'etichetta: fatto, falso verosimile, opinione.", "Etichettare obbliga a ragionare su ogni frase. Inoltre prepara la scoperta dell'ora 3: il modello genera frasi senza usare le etichette.", None),
+ ("Ogni frase riceve un'etichetta: fatto, falso verosimile, opinione.", "Etichettare obbliga a ragionare su ogni frase. Inoltre prepara ciò che si osserva nell'ora 3: il modello genera frasi senza usare le etichette.", None),
  ("Si chiede la fonte di ogni fatto, e «internet» non vale.", "Indicare una fonte precisa costringe a chiedersi chi può confermare un'affermazione. È la competenza che gli studenti useranno davanti alle risposte di un chatbot.", None),
  ("Il gioco del verosimile chiede di ingannare i compagni.", "Per scrivere un falso credibile bisogna capire che cosa rende credibile una frase. Gli studenti scoprono da soli gli ingredienti (numeri, istituzioni, tono sicuro) prima che il docente li nomini.", "errori"),
 ]
@@ -29,10 +29,10 @@ SCELTE["g2o1"] = [
  ("Si fa notare che la probabilità non arriva mai a 1.", "È l'idea più importante dell'ora: molte conferme rendono un'ipotesi più credibile ma non certa. Collega la matematica al modo di ragionare delle scienze e al limite dei modelli.", None),
 ]
 SCELTE["g2o2"] = [
- ("Si apre con il miliardario.", "Un esempio estremo rende evidente in pochi secondi perché la media può ingannare. La mediana viene introdotta come risposta a un problema, non come nuova definizione.", "prevedere"),
+ ("Si apre con un esempio estremo: nove stipendi normali e un miliardario.", "Un esempio estremo rende evidente in pochi secondi perché la media può ingannare. La mediana viene introdotta come risposta a un problema, non come nuova definizione.", "prevedere"),
  ("La deviazione standard si calcola a mano su cinque numeri, in cinque passi.", "Cinque numeri bastano per eseguire tutti i passi senza perdersi nei conti. Dopo averla calcolata a mano, la funzione del foglio di calcolo non è più una scatola chiusa.", "unplugged"),
  ("Prima si scommette su quale insieme è più disperso, poi si calcola.", "La scommessa fa emergere l'intuizione (spesso sbagliata: si sceglie l'insieme con valori tutti diversi). Il calcolo la smentisce e rende interessante il risultato.", "prevedere"),
- ("Indovina r è un gioco a punti.", "Stimare r da un grafico richiede molti esempi. Il gioco permette di vederne sei in pochi minuti, con un riscontro immediato.", "recupero"),
+ ("La stima di r è un gioco a punti.", "Stimare r da un grafico richiede molti esempi. Il gioco permette di vederne sei in pochi minuti, con un riscontro immediato.", "recupero"),
 ]
 SCELTE["g2o3"] = [
  ("Il calcolatore si costruisce una volta e si riusa nella giornata 4.", "Gli studenti scoprono il valore di uno strumento generale: le stesse formule funzionano su dati diversi.", "costruire"),
@@ -56,7 +56,7 @@ SCELTE["g3o3"] = [
 ]
 SCELTE["g4o1"] = [
  ("Si stima prima di calcolare.", "La stima scritta prima del calcolo rende interessante il risultato e mostra che la media delle stime è spesso vicina al vero.", "prevedere"),
- ("Ogni scoperta deve avere un limite.", "Abitua a separare ciò che i dati mostrano da ciò che non possono mostrare. È la stessa prudenza richiesta davanti alle risposte di un modello.", None),
+ ("Ogni risultato deve avere un limite.", "Abitua a separare ciò che i dati mostrano da ciò che non possono mostrare. È la stessa prudenza richiesta davanti alle risposte di un modello.", None),
 ]
 SCELTE["g4o2"] = [
  ("I gruppi addestrano un modello vero con oggetti, mai con volti.", "Si vede un modello che impara dagli esempi senza esporre dati personali.", "dati"),

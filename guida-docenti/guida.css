@@ -96,3 +96,44 @@ dl.regole dt{font:700 16px var(--sans);margin-top:18px}dl.regole dd{margin:4px 0
 .indice-l a{display:block;padding:5px 0;text-decoration:none;color:var(--inchiostro);font-size:16px}
 .indice-l a.on{color:var(--petrolio);font-weight:700}.indice-l a.mia::before{content:"● ";color:var(--petrolio);font-size:11px}
 @media print{.barra,.giu,.lato,.profondita,.indice{display:none!important}.pag{display:block!important;page-break-after:always}}
+/* v3.1: barra di posizione, home gerarchica */
+.barra{display:block;padding:0}
+.riga1{display:flex;align-items:center;gap:14px;padding:8px 24px}
+.riga1 .marchio{flex:1}
+.inizio{font-weight:600;color:var(--inchiostro);text-decoration:none;border:1px solid var(--linea);border-radius:6px;padding:6px 14px}
+.posizione{display:flex;align-items:center;gap:16px;padding:8px 24px;background:#fff;border-top:1px solid var(--linea);min-height:42px}
+.briciole{flex:1;white-space:normal;line-height:1.5;color:var(--grigio)}
+.briciole b{color:var(--inchiostro)}.briciole .sep{font-style:normal;margin:0 8px;opacity:.5}
+.livelli{display:flex;gap:4px;flex:none}
+.lvp{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--grigio);padding:3px 8px 3px 3px;border-radius:20px;border:1px solid var(--linea);font-size:13px}
+.lvp span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--linea);color:var(--inchiostro);font-weight:700}
+.lvp em{font-style:normal;display:none}
+.lvp.on em{display:inline;color:var(--inchiostro);font-weight:600}
+.lvp.l1.on span,.lvp.l1.pass span{background:var(--l1);color:#fff}.lvp.l2.on span,.lvp.l2.pass span{background:var(--l2);color:#fff}
+.lvp.l3.on span,.lvp.l3.pass span{background:var(--l3);color:#fff}.lvp.l4.on span,.lvp.l4.pass span{background:var(--l4);color:#fff}
+.lvp.on{border-color:var(--inchiostro)}
+@media(max-width:760px){.posizione{flex-direction:column;align-items:flex-start;gap:6px}.lvp.on em{display:none}}
+.corpo{padding-top:34px}
+.capitolo .lv{margin-left:0}
+.h-vie{margin-top:30px}
+.vie{list-style:none;padding:0;display:grid;gap:12px}
+.vie li{margin:0}
+.via{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--inchiostro);font-family:var(--sans)}
+a.via:hover{border-color:var(--petrolio)}
+.via .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--petrolio);color:#fff;font:700 20px var(--serif)}
+.via .t{display:block;font-size:16px;color:var(--grigio);line-height:1.45}
+.via .t b{display:block;font-size:20px;color:var(--inchiostro);margin-bottom:2px}
+.via select{display:block;margin:10px 0 6px;font:15px var(--sans);padding:6px 8px}
+.via .mie ul{margin:6px 0;padding-left:18px}.via .mie a{font-weight:600}
+.via .tutte{display:inline-block;margin-top:4px;font-size:15px}
+.altro{font:16px var(--sans);margin-top:26px}
+.come{border-left:4px solid var(--linea);padding-left:16px;margin-top:26px;font-size:16px;color:var(--grigio)}
+.sommario{padding-left:22px}.sommario li{margin-bottom:12px;font-size:19px}
+.sommario li span{display:block;font:15px/1.45 var(--sans);color:var(--grigio)}
+.giorno h2{font-size:19px}
+.indice-l h4 a{display:inline;padding:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grigio)}
+.indice-l h4 a.on{color:var(--petrolio)}
+.indice-l h5{font-size:13px;color:var(--grigio);margin:10px 0 2px}
+.indice-l a.sub{padding-left:12px;font-size:15px}
+.giu .risali small{opacity:.7}
+.riga1 .marchio{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.riga1 .inizio,.riga1 .apri-indice{flex:none}

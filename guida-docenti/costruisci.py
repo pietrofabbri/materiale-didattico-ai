@@ -17,8 +17,8 @@ def img(nome, alt, cap=""):
 RUOLI = {"it": "Italiano", "ma": "Matematica", "ef": "Educazione fisica", "in": "Informatica"}
 P = {}      # id -> dict(titolo, capitolo, corpo, livello, su, giu, prec, succ, ruoli, scala)
 ORD = []
-def pag(pid, titolo, capitolo, corpo, livello=1, su=None, ruoli=("tutti",), scala=None):
-    P[pid] = dict(titolo=titolo, capitolo=capitolo, corpo=corpo, livello=livello, su=su, giu=None, prec=None, succ=None, ruoli=list(ruoli), scala=scala)
+def pag(pid, titolo, capitolo, corpo, livello=1, su=None, ruoli=("tutti",), scala=None, gruppo=None):
+    P[pid] = dict(titolo=titolo, capitolo=capitolo, corpo=corpo, livello=livello, su=su, giu=None, prec=None, succ=None, ruoli=list(ruoli), scala=scala, gruppo=gruppo)
     ORD.append(pid)
     if su: P[su]["giu"] = pid
 def catena(ids):
@@ -28,7 +28,11 @@ def catena(ids):
 def det(titolo, corpo):
     return f'<details class="nota"><summary>{titolo}</summary><div class="nota-c">{corpo}</div></details>'
 def link(pid, testo=None):
-    return f'<a href="#{pid}">{testo or P[pid]["titolo"]}</a>' if pid in P else (testo or pid)
+    return f'<a href="#{pid}">{testo or (P[pid]["titolo"] if pid in P else pid)}</a>'
+
+def princ_blocco(pid, qui):
+    pr = PRINCIPI[pid]
+    return f'<div class="princ"><h3>{pr["titolo"]}</h3><p>{pr["breve"]}</p><p>{pr["ricerca"][0]}</p>' + (f'<p class="rim">Qui: {qui}</p>' if qui else "") + f'<p class="rim"><a href="#pr-{pid}">Il principio per intero, con le fonti</a></p></div>'
 
 # ================================================================= HOME
 pag("home", "Guida per i docenti", "", "")  # corpo scritto alla fine, quando tutte le pagine esistono
@@ -77,7 +81,7 @@ pag("idea3", "Le scelte didattiche di fondo", C, f"""
 FILO = [("1", "La lingua come dati", "Come fa una macchina a scrivere?", "Un modello che genera frasi dalle 48 frasi della classe", "Il corpus e le probabilità tornano nelle giornate 2 e 4"),
  ("2", "Incertezza e misura", "Che cosa vuol dire «probabile»?", "Un calcolatore statistico sul foglio di calcolo", "Il calcolatore si usa nella giornata 4 sui dati veri"),
  ("3", "Il corpo come fonte di dati", "Da dove vengono i dati?", "Il dataset delle prove motorie, controllato", "Si analizza nella giornata 4"),
- ("4", "Dai dati alle scoperte", "Come impara una macchina dagli esempi?", "Un'analisi con i suoi limiti; un modello che riconosce oggetti; una presentazione", "Tutto confluisce nella verifica della giornata 5"),
+ ("4", "Dai dati ai risultati", "Come impara una macchina dagli esempi?", "Un'analisi con i suoi limiti; un modello che riconosce oggetti; una presentazione", "Tutto confluisce nella verifica della giornata 5"),
  ("5", "Verifica e primo modello", "Che cosa ho imparato? Come si valuta un modello?", "La verifica individuale; un classificatore a vicini", "")]
 righe = "".join(f'<tr><td class="n">{n}</td><td><b>{t}</b><br><i>{q}</i></td><td>{c}</td><td class="pic">{r}</td></tr>' for n, t, q, c, r in FILO)
 pag("filo", "Il filo delle giornate", C, f"""
@@ -119,6 +123,76 @@ pag("ora2", "Perché ogni ora è uguale", C, f"""
 <p>{link("pr-regole", "Principio: routine prevedibili")}.</p>
 """, 2, su="ora")
 
+ROS = [("Iniziare con un breve ripasso", "In apertura si riprende la domanda di controllo dell'ora precedente a cui meno di metà classe ha risposto bene. Ogni giornata riparte dal prodotto della giornata prima."),
+ ("Presentare il nuovo a piccoli passi, con pratica dopo ogni passo", "Attività da 4-8 minuti, ognuna con il suo riquadro del foglio. Mai più di un concetto nuovo per attività."),
+ ("Fare molte domande e controllare le risposte di tutti", "Numeri del registro estratti a sorte; risposte scritte nei riquadri."),
+ ("Mostrare modelli", "Un esempio svolto dopo ogni consegna, prima del timer."),
+ ("Guidare la pratica", "Lavoro di gruppo mentre il docente gira tra i banchi e commenta i riquadri."),
+ ("Controllare la comprensione", "Tre domande individuali a fine ora, con la regola: meno di metà risposte giuste, si riprende."),
+ ("Ottenere un alto tasso di successo", "Compiti calibrati perché la maggior parte dei gruppi riesca; soluzione mostrata nella stessa ora."),
+ ("Dare un sostegno per i compiti difficili", "Il foglio a riquadri; l'aiuto graduato al gruppo bloccato."),
+ ("Chiedere e seguire la pratica individuale", "Domande di controllo individuali; verifica individuale nella giornata 5."),
+ ("Ripassare a distanza di settimane", "La riga del formulario a fine ora; la verifica finale richiama tutte le giornate.")]
+tab_ros = "".join(f"<tr><td class='n'>{i}</td><td><b>{a}</b></td><td>{b}</td></tr>" for i, (a, b) in enumerate(ROS, 1))
+pag("ora3", "La sequenza dell'ora e la ricerca", C, f"""
+<p>Barak Rosenshine ha raccolto in dieci principi ciò che fanno i docenti i cui studenti imparano di più. Li ha ricavati da tre fonti: la ricerca sul funzionamento della memoria, l'osservazione in classe dei docenti più efficaci, gli studi sugli aiuti che servono a chi impara cose difficili. La tabella mostra dove ogni principio compare nell'ora del percorso.</p>
+<table class="tab"><thead><tr><th></th><th>Principio</th><th>Nel percorso</th></tr></thead><tbody>{tab_ros}</tbody></table>
+<h3>Perché questa sequenza funziona con una prima</h3>
+<p>Gli studenti di una prima hanno poche conoscenze di partenza sugli argomenti del percorso. In queste condizioni la memoria di lavoro si satura in fretta: un compito aperto, senza esempio e senza passi, produce confusione più che scoperta. La sequenza esempio, pratica guidata, pratica individuale, controllo è quella che la ricerca indica come più efficace per i principianti.</p>
+<p>Le attività più aperte (scrivere un risultato con il suo limite, mettere in difficoltà un modello, la presentazione finale) arrivano nella giornata 4, quando gli studenti hanno già gli strumenti per affrontarle.</p>
+<p class="piccolo">Fonte: Rosenshine B. (2012), Principles of Instruction: Research-Based Strategies That All Teachers Should Know, American Educator, 36(1). Disponibile anche in traduzione italiana.</p>
+""", 3, su="ora2")
+
+pag("condurre", "Condurre l'ora", C, """
+<p class="lede">Le slide dicono che cosa fare. Questa pagina dice come comportarsi mentre la classe lo fa.</p>
+<h3>1. Dare la consegna (meno di un minuto)</h3>
+<ol><li>Leggere ad alta voce la consegna della slide.</li>
+<li>Mostrare l'esempio svolto e indicare il passo in cui di solito si sbaglia.</li>
+<li>Estrarre un numero del registro e chiedere a quello studente di ripetere con parole sue che cosa si deve fare.</li>
+<li>Avviare il timer.</li></ol>
+<h3>2. Mentre i gruppi lavorano</h3>
+<ul><li>Girare tra i banchi, sempre nello stesso ordine, così nessun gruppo resta senza visita.</li>
+<li>Guardare il riquadro indicato dalla slide. Non chiedere «avete capito?» o «tutto bene?»: la risposta è quasi sempre sì.</li>
+<li>A ogni gruppo lasciare una sola indicazione precisa: che cosa è giusto, che cosa manca, quale passo fare.</li></ul>
+<h3>3. Se un gruppo è bloccato</h3>
+<p>Aiutare per gradi, fermandosi appena il gruppo riparte:</p>
+<ol><li>rileggere insieme la consegna;</li><li>indicare l'esempio sulla LIM;</li><li>chiedere «qual è il primo passo?»;</li><li>solo se serve, fare il primo passo e lasciare il resto al gruppo.</li></ol>
+<h3>4. Davanti a un errore</h3>
+<p>Chiedere «come ci siete arrivati?». Spesso l'errore viene da un'idea sbagliata diffusa: se lo stesso errore compare in due gruppi, lo si discute con la classe, senza dire di quale gruppo è.</p>
+<h3>5. Domande alla classe</h3>
+<p>Porre la domanda, aspettare almeno tre secondi, poi estrarre un numero del registro. Chi sbaglia va ringraziato: la sua risposta mostra che cosa va chiarito.</p>
+<h3>6. Quando il timer finisce</h3>
+<p>Se la maggior parte dei gruppi ha finito, si passa alla soluzione. Altrimenti si concede un minuto, una sola volta. Il margine di 5-10 minuti dell'ora serve proprio a questo.</p>
+<h3>7. Il controllo finale</h3>
+<p>Le tre domande si scrivono da soli, in silenzio. Poi il docente scorre i riquadri dei sei fogli: se meno di metà classe risponde bene a una domanda, lo annota sul foglio; l'argomento si riprende all'inizio dell'ora successiva.</p>
+<h3>Frasi utili</h3>
+<table class="tab"><thead><tr><th>Invece di</th><th>Dire</th></tr></thead><tbody>
+<tr><td>«Avete capito?»</td><td>«Mostratemi il riquadro R2.»</td></tr>
+<tr><td>«È sbagliato.»</td><td>«Che cosa avete fatto per primo?»</td></tr>
+<tr><td>«Chi lo sa?»</td><td>«Ci penso tre secondi… numero 14.»</td></tr>
+<tr><td>«Bravi!»</td><td>«Il conteggio è corretto; manca la frequenza relativa.»</td></tr>
+</tbody></table>
+""")
+pag("condurre2", "Perché si conduce così", C, """
+<p>Ogni comportamento della pagina precedente ha una ragione precisa.</p>
+<ol class="scelte">
+<li><p><b>Far ripetere la consegna a uno studente estratto.</b></p><p>La maggior parte delle domande durante un'attività riguarda che cosa fare, non il contenuto. Venti secondi di controllo all'inizio risparmiano minuti di spiegazioni ripetute gruppo per gruppo. L'estrazione a sorte fa sì che tutti ascoltino la consegna.</p><p class="rim">Principio: <a href="#pr-tutti">domande a tutti</a></p></li>
+<li><p><b>Guardare il riquadro invece di chiedere «avete capito?».</b></p><p>Gli studenti spesso non sanno di non aver capito, e chi lo sa raramente lo dice davanti ai compagni. Il riquadro mostra che cosa hanno fatto davvero.</p><p class="rim">Principio: <a href="#pr-formativa">verificare durante</a></p></li>
+<li><p><b>Una sola indicazione precisa per gruppo.</b></p><p>Un riscontro utile dice a che punto si è e qual è il passo successivo. Molte indicazioni insieme non vengono ricordate; un giudizio generico («bene», «no») non dice che cosa fare.</p><p class="rim">Principio: <a href="#pr-feedback">il riscontro sul lavoro</a></p></li>
+<li><p><b>Aiutare per gradi.</b></p><p>Dare subito la soluzione toglie al gruppo proprio il ragionamento che l'attività doveva far fare. Fermarsi al primo aiuto sufficiente lascia agli studenti il passo più grande possibile.</p><p class="rim">Principio: <a href="#pr-impalcatura">l'aiuto graduato</a></p></li>
+<li><p><b>Chiedere come si è arrivati all'errore.</b></p><p>Molti errori nascono da idee sbagliate stabili, non da distrazione. Se non vengono portate alla luce, sopravvivono alla correzione.</p><p class="rim">Principio: <a href="#pr-errori">gli errori di ragionamento</a></p></li>
+<li><p><b>Aspettare tre secondi e poi estrarre.</b></p><p>Con un secondo di attesa rispondono solo i più veloci. Con tre secondi e un'estrazione a sorte, tutti hanno tempo e motivo di pensare.</p><p class="rim">Principi: <a href="#pr-attesa">il tempo di attesa</a>; <a href="#pr-tutti">domande a tutti</a></p></li>
+<li><p><b>Controllo scritto e individuale, con una regola di decisione.</b></p><p>Il docente ottiene un'informazione su tutta la classe, non sui volontari, e sa già che cosa fare in base al risultato. Gli studenti, richiamando il concetto dalla memoria, lo fissano meglio.</p><p class="rim">Principi: <a href="#pr-formativa">verificare durante</a>; <a href="#pr-recupero">richiamare dalla memoria</a></p></li>
+</ol>
+""", 2, su="condurre")
+pag("condurre3", "Che cosa dice la ricerca sulla conduzione", C,
+ "<p>I principi su cui si regge la conduzione dell'ora, in sintesi. Ogni principio ha una pagina completa con le fonti.</p>"
+ + princ_blocco("attesa", "domande alla classe con almeno tre secondi di attesa.")
+ + princ_blocco("tutti", "consegna ripetuta da uno studente estratto; domande con numeri estratti; controllo scritto.")
+ + princ_blocco("feedback", "una sola indicazione precisa per gruppo, sul riquadro.")
+ + princ_blocco("impalcatura", "i quattro gradi di aiuto al gruppo bloccato.")
+ + princ_blocco("formativa", "i riquadri guardati durante il lavoro; la regola della metà classe."), 3, su="condurre2")
+
 pag("regole", "Le regole del percorso", C, f"""
 <dl class="regole">
 <dt>Niente nomi</dt><dd>Sui fogli e sullo schermo compaiono solo numeri del gruppo, numeri del registro (solo sul foglio, per il docente) e codici estratti a sorte. Non si raccolgono peso, altezza o informazioni sulla salute. Nei modelli non si usano volti né corpi. Nessun dato degli studenti viene caricato su servizi esterni.</dd>
@@ -128,7 +202,7 @@ pag("regole", "Le regole del percorso", C, f"""
 </dl>
 <p>{link("pr-dati", "Principio: dati personali, raccogliere il minimo")}.</p>
 """)
-catena(["idea", "filo", "materie", "ora", "regole"])
+catena(["idea", "filo", "materie", "ora", "condurre", "regole"])
 
 # ================================================================= LE SLIDE
 C = "Le slide"
@@ -138,7 +212,7 @@ pag("aprire", "Aprire le slide", C, f"""
 <li>Nel menu iniziale, fare clic su «Apri le slide» nella giornata da svolgere.</li>
 <li>Se il browser chiede di usare il microfono, rispondere «Consenti». Il microfono misura solo il volume; non registra nulla.</li></ol>
 {img("menu", "Il menu iniziale", "Il menu iniziale: per ogni giornata, le slide e i fogli dell'ora da stampare.")}
-<p><b>Che cosa serve:</b> un computer collegato al proiettore o alla lavagna interattiva, Chrome o Edge, il microfono del portatile. Non si installa nulla.</p>
+<p><b>Che cosa serve:</b> un computer collegato alla LIM, Chrome o Edge, il microfono del portatile. Non si installa nulla.</p>
 <p><b>Senza internet:</b> dallo stesso sito si scarica il file <code>index.html</code>, che si apre con un doppio clic. In questo caso alcuni browser non concedono il microfono: il barattolo resta spento, il resto funziona.</p>
 """)
 pag("schermo", "Che cosa si vede sullo schermo", C, f"""
@@ -149,7 +223,7 @@ TASTI = [("→ ←", "avanti e indietro; la freccia destra mostra prima le rispo
 pag("tasti", "I tasti", C, f"""
 <table class="tab">{"".join(f"<tr><td><kbd>{k}</kbd></td><td>{d}</td></tr>" for k, d in TASTI)}</table>
 <p>Se un tasto non funziona, fare clic una volta sulla slide e riprovare. Il telecomando per presentazioni funziona come le frecce.</p>
-<p>Le note (<kbd>N</kbd>) sono visibili anche alla classe se lo schermo è proiettato: conviene leggerle prima della lezione.</p>
+<p>Le note (<kbd>N</kbd>) sono visibili anche alla classe perché la LIM le mostra: conviene leggerle prima della lezione.</p>
 {img("risposta", "Risposta nascosta", "La risposta compare con la freccia destra.")}
 """)
 pag("barattolo", "Il barattolo del rumore", C, f"""
@@ -196,26 +270,25 @@ for k in ore_ids:
 <h3>Alla fine dell'ora lo studente sa</h3><ul>{sa}</ul>
 <h3>Se il tempo manca</h3><p>{ap['tempo'][0]}</p>
 <h3>Se il tempo avanza</h3><p>{ap['tempo'][1]}</p>"""
-    pag(k, titolo, C, l1, 1, ruoli=o["ruoli"], scala=k)
+    pag(k, titolo, C, l1, 1, ruoli=o["ruoli"], scala=k, gruppo=f"Giornata {o['giornata']}")
     l2 = "<p>Ogni attività dell'ora è il risultato di una scelta. Qui le scelte principali, con la loro ragione.</p><ol class='scelte'>" + "".join(
         f"<li><p><b>{s}</b></p><p>{w}</p>" + (f'<p class="rim">Principio: <a href="#pr-{pid}">{PRINCIPI[pid]["titolo"]}</a></p>' if pid else "") + "</li>" for s, w, pid in sc) + "</ol>"
-    pag(k + "-2", titolo, C, f'<p class="sopra">{testa}</p>' + l2, 2, su=k, ruoli=o["ruoli"], scala=k)
+    pag(k + "-2", titolo, C, f'<p class="sopra">{testa}</p>' + l2, 2, su=k, ruoli=o["ruoli"], scala=k, gruppo=f"Giornata {o['giornata']}")
     usati = []
     for _, _, pid in sc:
         if pid and pid not in usati: usati.append(pid)
     l3 = "<p>I principi didattici su cui si reggono le scelte di quest'ora. Per ciascuno: che cosa dice la ricerca e come compare qui. Ogni principio ha una pagina completa con le fonti.</p>"
     for pid in usati:
-        pr = PRINCIPI[pid]
-        qui = [s for s, _, p in sc if p == pid]
-        l3 += f'<div class="princ"><h3>{pr["titolo"]}</h3><p>{pr["breve"]}</p><p>{pr["ricerca"][0]}</p><p class="rim">In quest\'ora: {" ".join(x[0].lower()+x[1:] for x in qui)}</p><p class="rim"><a href="#pr-{pid}">Leggi il principio per intero, con le fonti</a></p></div>'
-    pag(k + "-3", titolo, C, f'<p class="sopra">{testa}</p>' + l3, 3, su=k + "-2", ruoli=o["ruoli"], scala=k)
+        qui = [x for x, _, p in sc if p == pid]
+        l3 += princ_blocco(pid, " ".join(x[0].lower() + x[1:] for x in qui))
+    pag(k + "-3", titolo, C, f'<p class="sopra">{testa}</p>' + l3, 3, su=k + "-2", ruoli=o["ruoli"], scala=k, gruppo=f"Giornata {o['giornata']}")
     conc = "".join(f"<p>{c}</p>" for c in ap["concetto"])
     dom = "".join(f'<p class="q">{q}</p><p class="ans">{a}</p>' for q, a in ap["domande"])
     crit = "".join(f"<li>{c}</li>" for c in ap["criteri"])
     l4 = f"""<h3>Il concetto</h3>{conc}
 <h3>Domande che gli studenti fanno</h3>{dom}
 <h3>Criteri di riuscita</h3><p>Che cosa osservare nei riquadri del foglio per dire che l'obiettivo è raggiunto.</p><ul>{crit}</ul>"""
-    pag(k + "-4", titolo, C, f'<p class="sopra">{testa}</p>' + l4, 4, su=k + "-3", ruoli=o["ruoli"], scala=k)
+    pag(k + "-4", titolo, C, f'<p class="sopra">{testa}</p>' + l4, 4, su=k + "-3", ruoli=o["ruoli"], scala=k, gruppo=f"Giornata {o['giornata']}")
 for lv in ("", "-2", "-3", "-4"):
     catena([k + lv for k in ore_ids])
 
@@ -237,11 +310,10 @@ for k, v in PRINCIPI.items():
 <h3>Dove compare nel percorso</h3><ul>{"".join(f"<li>{x}</li>" for x in v['percorso'])}</ul>
 <h3>Limiti e attenzioni</h3><ul>{"".join(f"<li>{x}</li>" for x in v['limiti'])}</ul>
 <h3>Fonti</h3><ul class="fonti">{"".join(f"<li>{x}</li>" for x in v['fonti'])}</ul>"""
-    pag("pr-" + k, v["titolo"], C, corpo, 2, su="principi")
+    pag("pr-" + k, v["titolo"], C, corpo)
     pr_ids.append("pr-" + k)
 catena(pr_ids)
 for pid in pr_ids: pass
-P["principi"]["giu"] = pr_ids[0]
 
 # ================================================================= STRUMENTI
 C = "Strumenti"
@@ -254,37 +326,52 @@ pag("prep", "Preparazione", C, f'<div class="preps">{prep}</div><p class="piccol
 pag("glossario", "Glossario", C, '<input class="cerca" placeholder="Cerca un termine" aria-label="Cerca">' + '<dl class="glossario">' + "".join(f'<div class="voce"><dt>{t}</dt><dd>{d}</dd></div>' for t, d in GLOSSARIO) + "</dl>")
 catena(["prep", "glossario"])
 
-# ================================================================= HOME (scritta per ultima)
-def gruppo_ore(g):
-    return "".join(f'<li data-ruoli="{" ".join(ORE[k]["ruoli"])}"><a href="#{k}">{P[k]["titolo"].split(" · ", 1)[1]}</a></li>' for k in ore_ids if ORE[k]["giornata"] == g)
-ore_home = "".join(f'<div class="g"><p class="gt">Giornata {g}</p><ul>{gruppo_ore(g)}</ul></div>' for g in range(1, 6))
+# ================================================================= PAGINE DI SEZIONE E HOME (scritte per ultime)
+def voce(pid, testo=""):
+    return f'<li><a href="#{pid}">{P[pid]["titolo"]}</a>' + (f'<span>{testo}</span>' if testo else "") + "</li>"
+def sezione(pid, titolo, intro, voci):
+    pag(pid, titolo, titolo, f'<p class="lede">{intro}</p><ol class="sommario">' + "".join(voce(*v) for v in voci) + "</ol>")
+    ORD.remove(pid); ORD.insert(1, pid)
+sezione("sez-percorso", "Il percorso", "Che cosa impara la classe, in quale ordine e perché. Si legge una volta, prima di cominciare: circa dieci minuti.",
+ [("idea", "Il problema da cui parte tutto."), ("filo", "Che cosa produce ogni giornata e dove viene ripreso."), ("materie", "Che cosa porta ogni materia."),
+  ("ora", "Come è fatta ogni ora, minuto per minuto."), ("condurre", "Come comportarsi mentre la classe lavora."), ("regole", "Privacy, niente classifiche, niente chatbot.")])
+sezione("sez-slide", "Le slide", "Come si usano in aula. Si legge prima della propria prima ora.",
+ [("aprire", "Da quale indirizzo, con quale browser."), ("schermo", "Che cosa indica ogni parte dello schermo."), ("tasti", "I tasti da conoscere."),
+  ("barattolo", "Lo strumento che segnala il rumore dell'aula."), ("altri", "Timer, sorteggio dei gruppi, stampa dei fogli.")])
+sezione("sez-strumenti", "Preparazione e glossario", "Gli strumenti di supporto.", [("prep", "Che cosa preparare, materia per materia."), ("glossario", "I termini informatici spiegati in modo semplice.")])
+for k in ("sez-percorso", "sez-slide", "sez-strumenti"): P[k]["capitolo"] = ""
+def gruppo_ore(g, con_obiettivo=False):
+    return "".join(f'<li data-ruoli="{" ".join(ORE[k]["ruoli"])}"><a href="#{k}">{P[k]["titolo"].split(" · ", 1)[1]}</a>' + (f'<span>{ORE[k]["obiettivo"]}</span>' if con_obiettivo else "") + "</li>" for k in ore_ids if ORE[k]["giornata"] == g)
+NOMI_G = {1: "La lingua come dati", 2: "Incertezza e misura", 3: "Il corpo come fonte di dati", 4: "Dai dati ai risultati", 5: "Verifica e primo modello"}
+pag("ore", "Le ore", "", "<p class='lede'>Ogni ora ha una pagina con la scaletta e tre livelli di approfondimento.</p>" + "".join(
+    f'<div class="giorno"><h2>Giornata {g} · {NOMI_G[g]}</h2><ol class="sommario">{gruppo_ore(g, True)}</ol></div>' for g in range(1, 6)))
+ORD.remove("ore"); ORD.insert(1, "ore")
 P["home"]["corpo"] = f"""
-<p class="lede">Questa guida serve a condurre le ore del percorso «Intelligenza artificiale e dati» nella classe 1P.</p>
-<p>Ogni pagina ha un <b>testo di base</b>, sufficiente per condurre l'ora. Chi vuole capire di più trova in fondo alla pagina il pulsante <b>Scendi</b>, che porta a un livello più profondo: perché l'attività è fatta così, che cosa dice la ricerca, il concetto spiegato a fondo. Si può scendere fino al quarto livello e risalire in qualsiasi momento.</p>
-<div class="materia"><label for="materia">La mia materia</label>
-<select id="materia"><option value="tutti">Tutte</option><option value="it">Italiano</option><option value="ma">Matematica</option><option value="ef">Educazione fisica</option><option value="in">Informatica</option></select>
-<span class="piccolo">Le ore della propria materia vengono evidenziate.</span></div>
-<div class="mappa">
-<div><h3>Il percorso</h3><ul><li>{link("idea")}</li><li>{link("filo")}</li><li>{link("materie")}</li><li>{link("ora")}</li><li>{link("regole")}</li></ul></div>
-<div><h3>Le slide</h3><ul><li>{link("aprire")}</li><li>{link("schermo")}</li><li>{link("tasti")}</li><li>{link("barattolo")}</li><li>{link("altri")}</li></ul></div>
-<div><h3>Valutazione</h3><ul><li>{link("val1")}</li><li>{link("val2")}</li><li>{link("val3")}</li></ul></div>
-<div><h3>Approfondire e preparare</h3><ul><li>{link("principi")}</li><li>{link("prep")}</li><li>{link("glossario")}</li></ul></div>
-</div>
-<h2 class="h-ore">Le ore</h2><div class="ore-home">{ore_home}</div>
+<p class="lede">Questa guida accompagna chi conduce le ore del percorso «Intelligenza artificiale e dati» nella classe 1P.</p>
+<h2 class="h-vie">Da dove cominciare</h2>
+<ol class="vie">
+<li><a class="via" href="#sez-percorso"><span class="n">1</span><span class="t"><b>Capire il percorso</b>Che cosa impara la classe e perché. Dieci minuti, una volta sola.</span></a></li>
+<li class="via via-ore"><span class="n">2</span><span class="t"><b>Preparare le proprie ore</b>Scegliere la propria materia: compaiono le ore da preparare.
+<select id="materia" aria-label="La mia materia"><option value="tutti">Tutte le materie</option><option value="it">Italiano</option><option value="ma">Matematica</option><option value="ef">Educazione fisica</option><option value="in">Informatica</option></select>
+<span class="mie"></span><a class="tutte" href="#ore">Tutte le ore, giornata per giornata</a></span></li>
+<li><a class="via" href="#sez-slide"><span class="n">3</span><span class="t"><b>Usare le slide in aula</b>Tasti, timer, barattolo del rumore. Prima della propria prima ora.</span></a></li>
+</ol>
+<p class="altro"><b>Quando serve:</b> <a href="#val1">Valutazione</a> · <a href="#principi">Principi didattici</a> · <a href="#sez-strumenti">Preparazione e glossario</a></p>
+<div class="come"><p><b>Come si legge.</b> Ogni pagina ha un testo di base, sufficiente per lavorare. In fondo alla pagina, <b>Scendi</b> porta a un livello più profondo (fino al quarto): perché l'attività è fatta così, che cosa dice la ricerca, il concetto a fondo. La barra in alto mostra sempre dove ci si trova; <b>Inizio</b> riporta qui.</p></div>
 """
-
 # ================================================================= USCITA
-dati = {pid: {k: P[pid][k] for k in ("titolo", "capitolo", "livello", "su", "giu", "prec", "succ", "ruoli", "scala")} for pid in P}
+CAPS = {"Il percorso": "sez-percorso", "Le slide": "sez-slide", "Le ore": "ore", "Valutazione": "val1", "Principi didattici": "principi", "Strumenti": "sez-strumenti"}
+dati = {pid: {k: P[pid][k] for k in ("titolo", "capitolo", "livello", "su", "giu", "prec", "succ", "ruoli", "scala", "gruppo")} for pid in P}
 sezioni = "".join(f'<section class="pag" id="p-{pid}" data-id="{pid}">{P[pid]["corpo"]}</section>' for pid in ORD)
 CSS = open(os.path.join(QUI, "guida.css")).read()
-JS = open(os.path.join(QUI, "guida.js")).read().replace("__DATI__", json.dumps(dati, ensure_ascii=False)).replace("__LIV__", json.dumps(LIV, ensure_ascii=False))
+JS = open(os.path.join(QUI, "guida.js")).read().replace("__DATI__", json.dumps(dati, ensure_ascii=False)).replace("__LIV__", json.dumps(LIV, ensure_ascii=False)).replace("__CAPS__", json.dumps(CAPS, ensure_ascii=False)).replace("__ORE__", json.dumps({k: ORE[k]["ruoli"] for k in ore_ids}))
 out = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>IA e dati · 1P · Guida per i docenti</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
-<header class="barra"><a href="#home" class="marchio">Guida per i docenti</a><nav class="briciole"></nav><button class="apri-indice">Indice</button></header>
-<div class="corpo"><aside class="profondita"></aside><main>
+<header class="barra"><div class="riga1"><a href="#home" class="marchio">Guida per i docenti · IA e dati 1P</a><a href="#home" class="inizio">Inizio</a><button class="apri-indice">Indice</button></div><div class="posizione"><nav class="briciole" aria-label="Dove sei"></nav><div class="livelli"></div></div></header>
+<div class="corpo"><main>
 <p class="capitolo"></p><h1 class="titolo"></h1>
 <div class="pagine">{sezioni}</div>
 <nav class="giu"></nav>

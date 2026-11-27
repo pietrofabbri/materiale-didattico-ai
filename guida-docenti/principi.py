@@ -46,9 +46,9 @@ PRINCIPI["errori"] = dict(
  titolo="Le idee sbagliate più frequenti",
  breve="Alcuni errori non nascono da distrazione ma da intuizioni sbagliate molto diffuse. Vanno fatti emergere e discussi apertamente.",
  ricerca=["Sulla probabilità sono documentati errori sistematici anche negli adulti. Il più noto è la <i>fallacia del giocatore</i>: dopo una serie di teste si pensa che croce sia più probabile. Tversky e Kahneman hanno descritto questi errori come effetti di scorciatoie mentali.",
-  "Un altro errore frequente è credere che una sequenza «disordinata» sia più casuale di una con lunghe serie uguali. Chi inventa sequenze casuali alterna troppo, ed è per questo che il gioco del docente indovino funziona.",
+  "Un altro errore frequente è credere che una sequenza «disordinata» sia più casuale di una con lunghe serie uguali. Chi inventa sequenze casuali alterna troppo, ed è per questo che il docente riesce a riconoscere i fogli inventati.",
   "Sui dati, l'errore più comune è confondere correlazione e causa."],
- percorso=["Giornata 2, ora 1: il docente indovino fa emergere l'idea sbagliata di casualità; la domanda «dopo cinque teste è più probabile croce?» affronta la fallacia del giocatore.", "Giornata 2, ora 2: gelati e annegamenti per correlazione e causa.", "Giornata 1: «il chatbot cita una fonte, quindi è affidabile»."],
+ percorso=["Giornata 2, ora 1: l'attività dei dati inventati fa emergere l'idea sbagliata di casualità; la domanda «dopo cinque teste è più probabile croce?» affronta la fallacia del giocatore.", "Giornata 2, ora 2: gelati e annegamenti per correlazione e causa.", "Giornata 1: «il chatbot cita una fonte, quindi è affidabile»."],
  limiti=["Correggere un'idea sbagliata a voce raramente basta. Funziona meglio quando lo studente vede un risultato che contraddice la propria idea (vedi «Prevedere prima di verificare»)."],
  fonti=["Tversky A., Kahneman D. (1974), Judgment under uncertainty: heuristics and biases, Science."])
 
@@ -105,3 +105,42 @@ PRINCIPI["dati"] = dict(
  percorso=["Codici estratti a sorte al posto dei nomi; nessun elenco codice-nome.", "Nessun dato su peso, altezza o salute.", "Nessun volto nei modelli di riconoscimento.", "Sullo schermo solo dati aggregati; nessuna classifica."],
  limiti=["I numeri del registro scritti sul foglio dell'ora servono solo al docente di informatica per attribuire il punteggio del prodotto; non compaiono mai sullo schermo."],
  fonti=["Regolamento (UE) 2016/679, articolo 5."])
+
+PRINCIPI["attesa"] = dict(
+ titolo="Il tempo di attesa dopo una domanda",
+ breve="Dopo una domanda alla classe conviene aspettare almeno tre secondi prima di dare la parola o la risposta.",
+ ricerca=["Mary Budd Rowe registrò centinaia di lezioni di scienze. In media i docenti aspettavano circa un secondo tra la domanda e l'intervento successivo: se nessuno rispondeva subito, riformulavano, davano un indizio o rispondevano da soli.",
+  "Nelle classi in cui i docenti impararono ad aspettare tre secondi o più, le risposte diventarono più lunghe, risposero più studenti, diminuirono i «non lo so» e aumentarono le risposte motivate.",
+  "Un secondo basta solo per ricordare. Per ragionare serve più tempo; chi non ha questo tempo smette di provare e lascia rispondere i più veloci."],
+ percorso=["Le domande alla classe si pongono, si aspetta, poi si chiama un numero di registro estratto a sorte.", "Le tre domande di controllo si scrivono da soli, quindi ognuno ha il proprio tempo."],
+ limiti=["Il silenzio dopo una domanda può sembrare tempo perso: va annunciato («vi do qualche secondo per pensare»).", "Per domande di puro richiamo (una definizione) l'attesa lunga non serve."],
+ fonti=["Rowe M. B. (1974), Wait-time and rewards as instructional variables, Journal of Research in Science Teaching, 11(2).", "Rowe M. B. (1986), Wait time: slowing down may be a way of speeding up!, Journal of Teacher Education, 37(1)."])
+
+PRINCIPI["tutti"] = dict(
+ titolo="Domande a tutti, non solo a chi alza la mano",
+ breve="Se rispondono solo i volontari, il docente sa che cosa hanno capito i volontari, non la classe.",
+ ricerca=["Quando si chiede «chi lo sa?», alzano la mano quasi sempre gli stessi studenti, di solito quelli che hanno già capito. Gli altri imparano che possono non pensare alla domanda.",
+  "Dylan Wiliam propone di non usare le mani alzate per le domande di verifica: si sceglie lo studente a caso, oppure si chiede a tutti una risposta scritta. Così ogni studente ha un motivo per pensare e il docente riceve un'informazione rappresentativa.",
+  "Tra i principi di Rosenshine c'è lo stesso punto: fare molte domande e controllare le risposte di tutti gli studenti."],
+ percorso=["Il sorteggio dei gruppi e le domande alla classe usano i numeri del registro estratti a sorte.", "Le domande di controllo di fine ora sono individuali e scritte: il docente vede le risposte di tutti, non solo di chi parla."],
+ limiti=["Chiamare a caso funziona se l'errore non viene punito: chi sbaglia va ringraziato, perché la sua risposta è utile alla classe.", "Uno studente in difficoltà può dire «passo», a patto che poi ripeta la risposta di un compagno."],
+ fonti=["Wiliam D. (2011), Embedded Formative Assessment, Solution Tree.", "Rosenshine B. (2012), Principles of Instruction, American Educator."])
+
+PRINCIPI["feedback"] = dict(
+ titolo="Il riscontro sul lavoro, non sulla persona",
+ breve="Un riscontro aiuta se dice allo studente dove deve arrivare, a che punto è e quale passo fare adesso.",
+ ricerca=["Kluger e DeNisi hanno analizzato più di seicento confronti sperimentali: in media il riscontro migliora i risultati, ma in circa un caso su tre li peggiora. Peggiora soprattutto quando sposta l'attenzione dal compito alla persona, come le lodi generiche o i giudizi sul carattere.",
+  "Hattie e Timperley riassumono un riscontro utile in tre domande: dove sto andando? A che punto sono? Qual è il passo successivo? Il riscontro più efficace riguarda il compito e il procedimento («la frequenza relativa va divisa per il totale delle parole, non per le parole diverse»), non la persona («sei bravo»)."],
+ percorso=["Girando tra i gruppi, il docente commenta i riquadri del foglio: che cosa è corretto, che cosa manca, quale passo fare.", "Le soluzioni sulle slide (tasto freccia) permettono a ogni gruppo di confrontare subito il proprio lavoro.", "La griglia di valutazione dei fogli guarda il lavoro (completezza, correttezza, regole), non chi l'ha fatto."],
+ limiti=["Un riscontro che arriva troppo tardi (giorni dopo) serve poco: per questo le soluzioni sono nella stessa ora.", "Dare subito la soluzione a un gruppo bloccato toglie il ragionamento: meglio indicare il primo passo."],
+ fonti=["Kluger A. N., DeNisi A. (1996), The effects of feedback interventions on performance, Psychological Bulletin, 119(2).", "Hattie J., Timperley H. (2007), The power of feedback, Review of Educational Research, 77(1)."])
+
+PRINCIPI["impalcatura"] = dict(
+ titolo="L'aiuto graduato",
+ breve="Si aiuta lo studente quanto basta per fare il passo che da solo non farebbe, e poi si toglie l'aiuto.",
+ ricerca=["Vygotskij chiamava «zona di sviluppo prossimale» la distanza tra ciò che uno studente sa fare da solo e ciò che sa fare con l'aiuto di qualcuno più esperto. L'insegnamento è utile soprattutto in questa zona.",
+  "Wood, Bruner e Ross osservarono come un adulto aiutava bambini a costruire una piramide di blocchi. Chiamarono «scaffolding» (impalcatura) il suo modo di aiutare: semplificare il compito, indicare ciò che conta, tenere la direzione, mostrare come si fa, e intervenire sempre meno man mano che il bambino riusciva da solo.",
+  "Il punto decisivo è togliere l'aiuto. Un aiuto che resta sempre uguale crea dipendenza."],
+ percorso=["Il foglio dell'ora divide il compito in riquadri piccoli e ordinati.", "Gli esempi svolti si accorciano nel corso dell'ora.", "Con un gruppo bloccato il docente procede per gradi: rilegge la consegna; indica l'esempio; chiede il primo passo; solo alla fine mostra il primo passo."],
+ limiti=["Se l'aiuto è troppo, lo studente esegue senza capire. Se è troppo poco, rinuncia. Si regola guardando il riquadro del foglio, non chiedendo «avete capito?»."],
+ fonti=["Wood D., Bruner J. S., Ross G. (1976), The role of tutoring in problem solving, Journal of Child Psychology and Psychiatry, 17(2).", "Vygotskij L. S. (1934), Pensiero e linguaggio (trad. it. Laterza)."])

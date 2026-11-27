@@ -124,14 +124,14 @@ def build():
          "Alla fine: dove era più facile indovinare?"],
         "gruppo", "R4", "5 minuti", [(300, "Shannon")],
         esempio="«Oggi piove, prendo l'…» → ombrello",
-        note="24-29 min. Frase da leggere senza proiettarla: «ogni mattina prendo l'autobus per andare a scuola e arrivo sempre in ritardo». Dopo «per andare a» quasi tutti scrivono «scuola». Claude Shannon fece questo esperimento nel 1951."))
+        note="24-29 min. Frase da leggere senza mostrarla sulla LIM: «ogni mattina prendo l'autobus per andare a scuola e arrivo sempre in ritardo». Dopo «per andare a» quasi tutti scrivono «scuola». Claude Shannon fece questo esperimento nel 1951."))
     S.append(slide("Più parole hai davanti, più è facile",
         P("Le parole che vengono prima si chiamano <b>contesto</b>. Ma il contesto può non bastare:"),
         Tasselli(["La", "pesca", "è", "buona"], {"pesca": "ambra"}),
         P("In R5: i due significati e la parola che crea il doppio senso. 1 minuto.", "piccolo"),
         Risposta(["Il frutto è buono da mangiare, oppure: la pesca con la canna è andata bene.",
                   "Una parola con due significati crea <b>ambiguità</b>. Altro esempio: «Mi piace il riso»."]),
-        occhiello="Che cosa abbiamo scoperto", rumore="discussione", fase="gruppo", timer=[(60, "R5")],
+        occhiello="Che cosa abbiamo osservato", rumore="discussione", fase="gruppo", timer=[(60, "R5")],
         note="29-31 min. Una macchina che guarda poche parole alla volta può scegliere il significato sbagliato."))
     S.append(slide("Il pappagallo stocastico",
         P("Un chatbot sceglie la parola successiva guardando quanto spesso, nei testi letti, segue le parole di prima."),
@@ -293,7 +293,7 @@ def build():
         Lista(["una riga per ogni frase", "le colonne separate dallo stesso simbolo (qui il punto e virgola)", "la prima riga: i nomi delle colonne"]),
         Ricorda("CSV vuol dire «valori separati da virgola»: un file di solo testo che qualsiasi programma sa leggere."),
         occhiello="File › Scarica › Valori separati da virgola", imp="c",
-        note="11-13 min. Dimostrazione al proiettore. Salvare corpus_1p.csv nella cartella della classe (pezzo per l'installazione): 49 righe, i nomi delle colonne più 48 frasi."))
+        note="11-13 min. Dimostrazione alla LIM. Salvare corpus_1p.csv nella cartella della classe (pezzo per l'installazione): 49 righe, i nomi delle colonne più 48 frasi."))
     S.append(slide("Dalle frasi alle coppie",
         Catena(["il", "cane", "corre", "veloce"]),
         P("Coppie: (il, cane) · (cane, corre) · (corre, veloce)"),

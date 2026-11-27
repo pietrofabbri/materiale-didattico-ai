@@ -13,7 +13,7 @@ Il file contiene tutto: le slide delle cinque giornate, gli stili, i font, le im
 | 1 · La lingua come dati | Italiano: parole e frequenze, radice e desinenza, fatto e opinione | Un modello che genera frasi dalle frasi della classe |
 | 2 · Incertezza e misura | Matematica: probabilità, media, deviazione standard, correlazione | Un calcolatore statistico sul foglio di calcolo |
 | 3 · Il corpo come fonte di dati | Educazione fisica in aula: misure, errori di misura, raccolta anonima | Dai fogli di carta a dati puliti |
-| 4 · Dai dati alle scoperte | Laboratorio: analisi dei dati, Teachable Machine | Preparazione di «Dentro la macchina», l'installazione della classe |
+| 4 · Dai dati ai risultati | Laboratorio: analisi dei dati, Teachable Machine | Preparazione di «Dentro la macchina», l'installazione della classe |
 | 5 · Recupero o primo modello | Laboratorio, condotta dal docente di informatica | Classificatore a k vicini |
 
 Ogni ora dura 40 minuti: avvio, attività, tre domande di controllo, consegna del foglio dell'ora. I gruppi cambiano a ogni giornata; il prodotto finale è della classe intera.

@@ -36,7 +36,7 @@ ORE["g1o1"] = dict(
             ("Attenzione", "Errore tipico: parlav- / -amo invece di parl- / -avamo. La slide sugli irregolari è facoltativa."))),
         (24, 29, "Il gioco di Shannon", "R4", A("Il punto",
             ("Consegna", "Il docente legge una parola alla volta; i gruppi scrivono prima la parola che si aspettano."),
-            ("Frase", "«ogni mattina prendo l'autobus per andare a scuola e arrivo sempre in ritardo» (non proiettarla)."),
+            ("Frase", "«ogni mattina prendo l'autobus per andare a scuola e arrivo sempre in ritardo» (non mostrarla sulla LIM)."),
             ("Da dire", "Più <b>contesto</b> c'è, più è facile prevedere. Claude Shannon fece questo esperimento nel 1951."))),
         (29, 33, "Ambiguità e pappagallo stocastico", "R5", A("Il punto",
             ("Consegna", "I due significati di «La pesca è buona»."),
@@ -106,7 +106,7 @@ ORE["g1o3"] = dict(
 
 ORE["g2o1"] = dict(
     giornata=2, ora=1, luogo="In aula", ruoli=["ma"],
-    titolo="Probabile non significa certo",
+    titolo="Probabile non vuol dire certo",
     obiettivo="Esprimere l'incertezza con un numero e aggiornarlo dopo ogni osservazione.",
     sa=["collocare un evento tra 0 e 1", "calcolare probabilità classica ed evento contrario",
         "confrontare frequenza e probabilità", "usare l'albero per aggiornare"],
@@ -120,7 +120,7 @@ ORE["g2o1"] = dict(
         (11, 18, "Testa o croce", "R2", A("Il punto",
             ("Consegna", "Ogni coppia scrive 20 risultati: un biglietto segreto dice se lanciare o inventare."),
             ("Da dire", "Sommando la classe la frequenza si avvicina a 0,5: legge dei grandi numeri. La moneta non ha memoria."))),
-        (18, 21, "Il docente indovino", "R3", A("Il punto",
+        (18, 21, "Dati lanciati o inventati?", "R3", A("Il punto",
             ("Il trucco", "Chi inventa alterna troppo. In 20 lanci veri una serie di almeno 4 uguali c'è circa 77 volte su 100."),)),
         (21, 31, "La moneta del docente e l'albero", "R4 R5", A("Il punto",
             ("Situazione", "Nel sacchetto una moneta normale e una con due teste; se ne lancia una senza guardarla."),
@@ -138,7 +138,7 @@ ORE["g2o2"] = dict(
     sa=["media e mediana", "leggere Σ", "deviazione standard in 5 passi", "punteggio z e min-max",
         "stimare la correlazione", "distinguere correlazione e causa"],
     att=[
-        (3, 8, "Il miliardario e Σ", "R1", A("Il punto",
+        (3, 8, "Media, valore estremo e Σ", "R1", A("Il punto",
             ("Consegna", "Nove persone a 1.000 €, entra un miliardario: media e mediana?"),
             ("Soluzione", "Media 100.000.900 €, mediana 1.000 €: con un valore estremo la mediana è più fedele."))),
         (8, 21, "Deviazione standard", "R2 R3", A("Il punto",
@@ -149,7 +149,7 @@ ORE["g2o2"] = dict(
         (21, 24, "z e min-max", "R4", A("Il punto",
             ("Formule", "z = (x − media) ÷ σ · min-max = (x − min) ÷ (max − min)"),
             ("Soluzione", "Per A: z di 10 ≈ 0,71; min-max di 6 = 0,25."))),
-        (24, 30, "Indovina r", "R5", A("Il punto",
+        (24, 30, "Stimare r", "R5", A("Il punto",
             ("Da dire", "r vicino a 1: crescono insieme; a −1: una cresce, l'altra cala; a 0: nessuna retta."),
             ("Soluzione", "0,93 · −0,84 · −0,09 · −0,17 · 0,48 · −0,10."))),
         (30, 33, "Correlazione non è causa", "—", A("Il punto",
@@ -219,7 +219,7 @@ ORE["g3o2"] = dict(
 
 ORE["g3o3"] = dict(
     giornata=3, ora=3, luogo="In laboratorio", ruoli=["in"],
-    titolo="Dal foglio di carta al dataset",
+    titolo="Dal foglio di carta all'archivio",
     obiettivo="Trasferire le misure in un archivio controllato, pulito e documentato.",
     sa=["usare la convalida", "trovare errori con le formule", "usare E e O", "documentare le correzioni"],
     att=[
@@ -237,13 +237,13 @@ ORE["g3o3"] = dict(
 ORE["g4o1"] = dict(
     giornata=4, ora=1, luogo="In laboratorio", ruoli=["in"],
     titolo="L'analisi dei nostri dati",
-    obiettivo="Analizzare i dati della classe e formulare una scoperta con il suo limite.",
-    sa=["confrontare stima e valore calcolato", "usare la tabella pivot", "leggere un grafico di dispersione", "scrivere una scoperta"],
+    obiettivo="Analizzare i dati della classe e ricavare un risultato e indicarne il limite.",
+    sa=["confrontare stima e valore calcolato", "usare la tabella pivot", "leggere un grafico di dispersione", "scrivere un risultato con il suo limite"],
     att=[
         (3, 10, "Prima stima, poi calcola", "R1", A("Il punto", ("Da dire", "La media delle stime spesso si avvicina al valore vero."),)),
         (10, 28, "Il calcolatore sui nostri dati", "R2 R3 R4", A("Il punto",
             ("Passi", "Valori con z oltre 3; pivot per mano usata; grafico equilibrio-lanci, prevedendo prima il segno di r."),)),
-        (28, 40, "La scoperta", "R5 R6", A("Il punto", ("Consegna", "Un numero, un grafico, un limite (gruppi piccoli, una sola prova)."),)),
+        (28, 40, "Un risultato e il suo limite", "R5 R6", A("Il punto", ("Consegna", "Un numero, un grafico, un limite (gruppi piccoli, una sola prova)."),)),
     ])
 
 ORE["g4o2"] = dict(
@@ -256,7 +256,7 @@ ORE["g4o2"] = dict(
         (8, 22, "Addestramento", "R2", A("Il punto",
             ("Teachable Machine", "Tre classi di oggetti o disegni, almeno 20 esempi ciascuna. Mai volti o corpi."),)),
         (22, 30, "Il test", "R3 R4", A("Il punto", ("Consegna", "10 prove nuove, risposta giusta scritta prima; accuratezza = corrette ÷ totali."),)),
-        (30, 40, "Batti la macchina", "R5 R6", A("Il punto",
+        (30, 40, "Mettere in difficoltà il modello", "R5 R6", A("Il punto",
             ("Consegna", "Un esempio che inganna il modello, spiegato prima (sfondo, luce, oggetto nuovo)."),
             ("Sintesi", "Bersaglio = rinforzo · Teachable Machine = supervisionato · frutti da raggruppare = non supervisionato."))),
     ])
@@ -287,7 +287,7 @@ ORE["g5"] = dict(
         (0, 40, "Ora 2 · Distanze e vicini, oppure recupero", "—", A("Che cosa fare",
             ("Primo modello", "Distanza tra frutti; i tre vicini del frutto W; senza normalizzare sembra un limone, normalizzando un mandarino."),
             ("Recupero", "Si riprendono le attività segnate come non svolte o non riuscite nei controlli di fine ora."))),
-        (0, 40, "Ora 3 · Il torneo, oppure recupero", "—", A("Che cosa fare",
+        (0, 40, "Ora 3 · Il confronto tra classificatori, oppure recupero", "—", A("Che cosa fare",
             ("Primo modello", "Scelta motivata di k e delle caratteristiche; modello applicato ai 7 frutti segreti senza modificarlo. S7 resta sbagliato perché manca il colore."),)),
     ])
 

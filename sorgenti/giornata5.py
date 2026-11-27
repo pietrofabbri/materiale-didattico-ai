@@ -6,7 +6,7 @@ def build():
         "Che cosa resta da sistemare? Se niente: costruiamo un classificatore che funziona davvero.",
         [("Ora 1 · In laboratorio", "Distanze e vicini: che frutto è W?"),
          ("Ora 2 · In laboratorio", "Progettare il modello e scommettere"),
-         ("Ora 3 · In laboratorio", "Il torneo dei classificatori")],
+         ("Ora 3 · In laboratorio", "Il confronto tra classificatori")],
         note="Giornata condotta dal docente di informatica. Il percorso si è già concluso in 4 giornate. Se qualcosa è rimasto indietro, questa giornata serve a recuperarlo con i file delle giornate precedenti (slide successiva). Se la classe è in pari, si fa il primo modello. Dati: dati/frutti.csv (24 frutti) e dati/frutti_segreti.csv (7 frutti)."))
     S.append(spiega("Prima di cominciare: c'è qualcosa da recuperare?", occhiello="Per il docente",
         punti=["Corpus o pappagallo incompleti → giornata-1.html, ora 3",
@@ -144,8 +144,8 @@ def build():
          ("R2", "Accuratezza", "Verdetti giusti ÷ 7, confrontata con la scommessa.", 1),
          ("R3", "Il frutto impossibile", "Perché S7 è difficile per tutti? Che cosa servirebbe?", 2),
          ("R4", "Controllo", "Le tre risposte del controllo finale.", 1)]
-    foglio_ora(R); F.append((3, "Il torneo dei classificatori", R))
-    S.append(ora(3, "In laboratorio", "Il torneo dei classificatori", "Sette frutti che il modello non ha mai visto",
+    foglio_ora(R); F.append((3, "Il confronto tra classificatori", R))
+    S.append(ora(3, "In laboratorio", "Il confronto tra classificatori", "Sette frutti che il modello non ha mai visto",
         "mettere alla prova il modello su frutti mai visti."))
     S.append(obiettivi([
         "applicare il proprio modello a dati nuovi <b>senza cambiarlo</b>",

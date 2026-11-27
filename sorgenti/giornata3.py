@@ -203,7 +203,7 @@ def build():
         testo=["La formula vale 1 se le due caselle sono diverse. Si sommano gli 1 e si divide per il numero di caselle confrontate."],
         esempio="2 caselle diverse su 58 (29 persone × 2 prove) → 2 ÷ 58 ≈ 3,4%",
         dopo=["Scrivete in R3 la percentuale della classe."],
-        note="26-29 min. Lavoro al proiettore. È una stima della qualità dei nostri dati: un numero da mettere nel cruscotto dell'installazione."))
+        note="26-29 min. Lavoro alla LIM. È una stima della qualità dei nostri dati: un numero da mettere nel cruscotto dell'installazione."))
     S.append(spiega("Il file finale", occhiello="Esportazione",
         punti=["File › Scarica › CSV", "Nome: <b>prove_1p.csv</b>", "Apritelo con un editor di testo: 30 righe, i nomi delle colonne e 29 persone"],
         note="29-33 min."))

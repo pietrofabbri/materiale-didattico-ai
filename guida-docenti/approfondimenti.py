@@ -28,7 +28,7 @@ APP["g1o3"] = dict(
  domande=[("«Perché genera sempre la stessa frase?»", "Perché la regola greedy è deterministica: sceglie sempre il massimo. Con il dado la scelta diventa casuale e le frasi cambiano."),
   ("«Con più frasi diventerebbe più intelligente?»", "Più fluente, non più veritiero: continuerebbe a contare le parole senza conoscere la verità di ciò che scrive.")],
  criteri=["File corpus_1p.csv con 49 righe", "Coppie: n parole → n − 1 coppie, nessuna coppia tra due frasi", "Le probabilità che seguono una stessa parola sommano a 1", "Ogni passo della generazione sceglie il massimo della tabella", "R4: la spiegazione cita le frequenze, non la verità"],
- tempo=("Ogni gruppo calcola le probabilità solo per due parole a scelta; la generazione si fa insieme al proiettore.", "Generazione con il dado: con due parole a 0,5, da 1 a 3 la prima e da 4 a 6 la seconda."))
+ tempo=("Ogni gruppo calcola le probabilità solo per due parole a scelta; la generazione si fa insieme alla LIM.", "Generazione con il dado: con due parole a 0,5, da 1 a 3 la prima e da 4 a 6 la seconda."))
 
 APP["g2o1"] = dict(
  perche="Dà un significato preciso alla parola «probabile» usata nella giornata 1, e introduce l'aggiornamento di una convinzione alla luce di un'osservazione: un meccanismo presente in molti sistemi che imparano.",
@@ -38,7 +38,7 @@ APP["g2o1"] = dict(
  domande=[("«Dopo cinque teste di fila, è più probabile croce?»", "No. È l'errore del giocatore: i lanci sono indipendenti e la moneta non ha memoria."),
   ("«Con cento teste, è certo che la moneta è truccata?»", "Quasi certo, mai certo: la probabilità si avvicina a 1 senza raggiungerlo.")],
  criteri=["R1: almeno 5 eventi su 6 nell'ordine corretto", "R2: riconosce che con più prove la frequenza si avvicina a 0,5", "R3: conosce il criterio della serie più lunga", "R5: 2/3, 4/5, 8/9", "R6: spiega perché una croce porta a 0 e perché senza croci non si arriva mai a 1"],
- tempo=("Omettere il docente indovino (R3) e ridurre a tre i lanci della moneta del docente.", "Calcolare insieme la probabilità dopo cinque teste (32/33) e discutere quante teste servirebbero per superare il 99%."))
+ tempo=("Omettere l'attività dei dati inventati (R3) e ridurre a tre i lanci della moneta del docente.", "Calcolare insieme la probabilità dopo cinque teste (32/33) e discutere quante teste servirebbero per superare il 99%."))
 
 APP["g2o2"] = dict(
  perche="I modelli lavorano con riassunti numerici dei dati. Media, dispersione e correlazione sono gli strumenti con cui, nella giornata 4, la classe analizzerà le proprie misure.",
@@ -89,16 +89,16 @@ APP["g3o3"] = dict(
   "Il doppio inserimento degli stessi fogli permette di stimare l'errore di trascrizione, di solito qualche punto percentuale."],
  domande=[("«Perché non correggere a occhio i valori strani?»", "Perché una correzione non documentata è una modifica invisibile ai dati, e nessuno potrà più verificarla.")],
  criteri=["Il rifiuto del valore 600 letto e spiegato", "Quattro controlli funzionanti", "Ogni modifica registrata con il motivo", "Percentuale di errori di trascrizione calcolata correttamente", "R4: O(x < 0; x > 60)"],
- tempo=("Il confronto tra i due inserimenti lo esegue il docente al proiettore.", "Gli studenti scrivono da soli la regola di convalida per la colonna dei lanci."))
+ tempo=("Il confronto tra i due inserimenti lo esegue il docente alla LIM.", "Gli studenti scrivono da soli la regola di convalida per la colonna dei lanci."))
 
 APP["g4o1"] = dict(
  perche="Riporta tutti gli strumenti delle giornate precedenti sui dati veri della classe e insegna a formulare una conclusione insieme al suo limite.",
  concetto=["La media delle stime individuali è spesso vicina al valore vero, più della maggior parte delle stime singole: il fenomeno è detto saggezza della folla.",
   "Una tabella pivot raggruppa e riassume; il numero di persone in ogni gruppo va sempre riportato, perché un gruppo piccolo produce medie instabili.",
   "Scrivere la previsione sul segno di r prima di calcolarlo evita di adattare a posteriori la spiegazione al risultato."],
- domande=[("«Chi usa la mano sinistra lancia meglio?»", "I dati della classe possono suggerirlo, ma con gruppi così piccoli non lo dimostrano: è il limite da scrivere accanto alla scoperta.")],
- criteri=["R1: confronto tra stima, valore calcolato e media delle stime", "R3: pivot con media e conteggio", "R4: previsione scritta prima del calcolo", "R5: scoperta con un numero, un grafico e un limite pertinente"],
- tempo=("Il grafico di dispersione si costruisce insieme al proiettore.", "Ogni gruppo cerca una seconda scoperta e la presenta in trenta secondi."))
+ domande=[("«Chi usa la mano sinistra lancia meglio?»", "I dati della classe possono suggerirlo, ma con gruppi così piccoli non lo dimostrano: è il limite da scrivere accanto al risultato.")],
+ criteri=["R1: confronto tra stima, valore calcolato e media delle stime", "R3: pivot con media e conteggio", "R4: previsione scritta prima del calcolo", "R5: risultato con un numero, un grafico e un limite pertinente"],
+ tempo=("Il grafico di dispersione si costruisce insieme alla LIM.", "Ogni gruppo cerca un secondo risultato e la presenta in trenta secondi."))
 
 APP["g4o2"] = dict(
  perche="È il primo contatto diretto con un modello che impara dagli esempi, e mostra che le sue prestazioni dipendono interamente dagli esempi ricevuti.",
@@ -118,7 +118,7 @@ APP["g4o3"] = dict(
 APP["g5"] = dict(
  perche="La giornata si apre con la verifica individuale, su cui si basa il voto finale. Nel resto del tempo si recupera ciò che è rimasto indietro, oppure si costruisce un classificatore completo.",
  concetto=["Il metodo dei k vicini classifica un elemento guardando i k elementi noti più simili. «Simile» significa vicino secondo una distanza, che dipende dalle unità di misura: senza normalizzazione il peso in grammi domina la larghezza in centimetri.",
-  "Il torneo sui frutti segreti, eseguito senza modificare il modello, è la stessa procedura con cui si valutano i modelli reali. L'errore sul frutto S7 mostra che nessun modello può usare un'informazione che non ha ricevuto: il colore."],
+  "Il confronto sui frutti mai visti, eseguito senza modificare il modello, è la stessa procedura con cui si valutano i modelli reali. L'errore sul frutto S7 mostra che nessun modello può usare un'informazione che non ha ricevuto: il colore."],
  domande=[("«Quale k è il migliore?»", "Dipende dai dati: k troppo piccolo segue il rumore, k troppo grande cancella le differenze. Per questo si sceglie motivando e si verifica su dati nuovi.")],
  criteri=["Distanza calcolata correttamente", "Spiegazione del cambio di verdetto che cita le unità di misura", "Tre scelte di progetto motivate e una previsione scritta", "Accuratezza corretta; errore di S7 spiegato con il dato mancante"],
- tempo=("La verifica non si riduce. Se la classe è indietro, le ore 2 e 3 servono al recupero.", "Aggiungere il colore come caratteristica e ripetere il torneo."))
+ tempo=("La verifica non si riduce. Se la classe è indietro, le ore 2 e 3 servono al recupero.", "Aggiungere il colore come caratteristica e ripetere il confronto."))
