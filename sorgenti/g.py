@@ -216,6 +216,6 @@ def pagina_foglio(g, h, titolo_ora, riquadri):
         f'<div class="r" style="grid-column:span {span}"><div class="c">{cod} · {T(tit)}</div><div class="i">{T(istr)}</div></div>'
         for cod, tit, istr, span in riquadri)
     return (f'<div class="pag"><div class="testa"><h1>Giornata {g} · Ora {h} · {T(titolo_ora)}</h1>'
-            f'<div class="g">Gruppo n. ______ &nbsp;&nbsp; Data ____________ &nbsp;&nbsp; (niente nomi)</div></div>'
+            f'<div class="g">Gruppo n. ____ &nbsp; Data __________ &nbsp; Presenti (numeri del registro): ______________________ &nbsp; (niente nomi)</div></div>'
             f'<div class="griglia">{celle}</div>'
             f'<div class="nota">Percorso «IA e dati» · 1P · Si scrive solo nei riquadri indicati dalle slide. Il foglio si consegna a fine ora.</div></div>')

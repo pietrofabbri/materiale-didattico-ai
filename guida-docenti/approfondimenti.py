@@ -2,8 +2,8 @@
 APP = {}
 
 APP["g1o1"] = dict(
- perche="È l'ora che costruisce il modello mentale su cui si regge l'intero percorso: per una macchina un testo è una distribuzione di frequenze. Senza questa idea il «pappagallo» costruito in laboratorio resterebbe un trucco incomprensibile.",
- concetto=["Un modello linguistico stima la probabilità della parola successiva date le parole precedenti, a partire dalle frequenze osservate in una grande raccolta di testi. Il gioco di Shannon rende tangibile un fatto noto dalla teoria dell'informazione: la lingua è ridondante, e il contesto restringe drasticamente le continuazioni possibili.",
+ perche="In quest'ora gli studenti scoprono che, per una macchina, un testo è un elenco di parole con le loro frequenze. Tutte le ore successive partono da questa idea.",
+ concetto=["Un modello linguistico stima la probabilità della parola successiva date le parole precedenti, a partire dalle frequenze osservate in una grande raccolta di testi. Il gioco di Shannon mostra che, conoscendo le parole precedenti, le parole possibili dopo sono poche: per questo la previsione diventa più facile man mano che la frase procede.",
   "I sistemi attuali usano contesti di migliaia di parole e reti neurali al posto dei semplici conteggi, ma il compito con cui vengono addestrati è lo stesso: prevedere il pezzo di testo successivo. Non contiene alcuna verifica della verità di ciò che si scrive.",
   "Radice e desinenza preparano il concetto di <i>token</i>: i modelli spezzano le parole in frammenti frequenti (ad esempio «mangi» + «avano»), e questo consente loro di trattare forme mai incontrate."],
  domande=[("«Quindi ChatGPT copia dai testi che ha letto?»", "No. Ricombina: sceglie una parola alla volta in base alle probabilità apprese, e può produrre frasi mai scritte da nessuno, comprese frasi false."),
@@ -12,7 +12,7 @@ APP["g1o1"] = dict(
  tempo=("Saltare la slide facoltativa sui verbi irregolari; far contare solo i primi due periodi del paragrafo.", "Catena dei pappagalli umani: ogni studente aggiunge una parola guardando soltanto l'ultima scritta dal compagno. Il testo che ne esce mostra il limite di un contesto di una sola parola."))
 
 APP["g1o2"] = dict(
- perche="Introduce la distinzione che il modello della terza ora non è in grado di fare: vero, falso, opinione. Le frasi scritte dai gruppi diventano dati con un'etichetta, primo contatto con l'idea di dataset annotato.",
+ perche="Gli studenti imparano a distinguere vero, falso e opinione: è proprio la distinzione che il modello costruito nell'ora 3 non sa fare. Le frasi che scrivono diventano i dati di quel modello.",
  concetto=["L'etichetta che i gruppi attribuiscono a ogni frase è un'informazione che il modello a coppie non utilizza: per questo, in laboratorio, genererà frasi che mescolano fatti e falsi.",
   "I sistemi reali condividono questo limite di fondo: la plausibilità linguistica non garantisce la verità. Le cosiddette allucinazioni nascono qui. Gli elementi che rendono credibile un falso (un'istituzione citata, un numero preciso, un tono sicuro) sono proprio ciò che un modello linguistico riproduce con maggiore facilità."],
  domande=[("«Se il chatbot cita una fonte, allora è affidabile?»", "Non necessariamente: può citare fonti inesistenti o attribuire a una fonte ciò che non dice. La fonte va aperta e letta."),
@@ -21,7 +21,7 @@ APP["g1o2"] = dict(
  tempo=("Gioco del verosimile con tre soli gruppi; le cinque domande sulle fonti lette dal docente senza discussione.", "Ogni gruppo trasforma uno dei propri fatti veri in un falso verosimile aggiungendo un solo ingrediente, e la classe individua quale."))
 
 APP["g1o3"] = dict(
- perche="Gli studenti costruiscono con le proprie mani un modello di linguaggio funzionante. Scoprono che, in questo caso, «addestrare» significa contare.",
+ perche="Gli studenti costruiscono un piccolo modello che genera frasi. Scoprono che, in questo caso, «addestrare» un modello significa contare.",
  concetto=["Il modello costruito è un modello a bigrammi, cioè una catena di Markov del primo ordine: la parola successiva dipende solo da quella precedente. La stima P(b | a) = c(a, b) ÷ c(a) è la stima di massima verosimiglianza.",
   "La regola greedy produce sempre la stessa frase. Scegliendo invece a caso secondo le probabilità (l'estensione con il dado) si ottengono frasi diverse a ogni esecuzione: è il comportamento regolato, nei chatbot, dal parametro detto <i>temperatura</i>.",
   "Con 48 frasi molte coppie compaiono una sola volta: è il problema della scarsità dei dati, che i modelli reali affrontano con quantità enormi di testo."],
@@ -61,7 +61,7 @@ APP["g2o3"] = dict(
  tempo=("Distribuire il calcolatore con metà delle formule già scritte.", "Raddoppiare i dati della 1Z con la stessa formula nascosta e osservare la stima avvicinarsi al valore vero."))
 
 APP["g3o1"] = dict(
- perche="I dati non sono «dati»: qualcuno li misura. L'ora rende visibile l'errore contenuto in ogni numero e la responsabilità di chi raccoglie dati sulle persone.",
+ perche="Ogni dato è il risultato di una misura fatta da qualcuno, e ogni misura contiene un errore. In quest'ora gli studenti lo vedono con i propri numeri e imparano a proteggere i dati delle persone.",
  concetto=["L'errore casuale si riduce ripetendo e facendo la media; l'errore sistematico no, perché sposta tutte le misure nello stesso verso, e si corregge solo cambiando la procedura. Un modello addestrato su dati affetti da errore sistematico lo eredita.",
   "Il protocollo garantisce la riproducibilità: misure confrontabili solo se raccolte nello stesso modo.",
   "Il codice estratto a sorte è una pseudonimizzazione: i dati restano riconducibili alla persona solo per chi conosce la corrispondenza. Per questo l'elenco codice-nome non si scrive da nessuna parte.",
@@ -116,9 +116,9 @@ APP["g4o3"] = dict(
  tempo=("Presentazioni di tre gruppi soltanto.", "La classe vota la domanda più difficile ricevuta e la discute insieme."))
 
 APP["g5"] = dict(
- perche="Chiude il percorso costruendo un classificatore completo, dalle distanze alla valutazione finale su dati mai visti.",
+ perche="La giornata si apre con la verifica individuale, su cui si basa il voto finale. Nel resto del tempo si recupera ciò che è rimasto indietro, oppure si costruisce un classificatore completo.",
  concetto=["Il metodo dei k vicini classifica un elemento guardando i k elementi noti più simili. «Simile» significa vicino secondo una distanza, che dipende dalle unità di misura: senza normalizzazione il peso in grammi domina la larghezza in centimetri.",
   "Il torneo sui frutti segreti, eseguito senza modificare il modello, è la stessa procedura con cui si valutano i modelli reali. L'errore sul frutto S7 mostra che nessun modello può usare un'informazione che non ha ricevuto: il colore."],
  domande=[("«Quale k è il migliore?»", "Dipende dai dati: k troppo piccolo segue il rumore, k troppo grande cancella le differenze. Per questo si sceglie motivando e si verifica su dati nuovi.")],
  criteri=["Distanza calcolata correttamente", "Spiegazione del cambio di verdetto che cita le unità di misura", "Tre scelte di progetto motivate e una previsione scritta", "Accuratezza corretta; errore di S7 spiegato con il dato mancante"],
- tempo=("Si svolge solo se la classe è in pari; altrimenti la giornata serve al recupero.", "Aggiungere il colore come caratteristica e ripetere il torneo."))
+ tempo=("La verifica non si riduce. Se la classe è indietro, le ore 2 e 3 servono al recupero.", "Aggiungere il colore come caratteristica e ripetere il torneo."))

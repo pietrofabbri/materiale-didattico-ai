@@ -276,15 +276,19 @@ ORE["g4o3"] = dict(
 
 ORE["g5"] = dict(
     giornata=5, ora=0, luogo="In laboratorio", ruoli=["in"],
-    titolo="Recupero, oppure il primo modello",
-    obiettivo="Se la classe è in pari: un classificatore a vicini sul foglio di calcolo.",
-    sa=["calcolare una distanza", "trovare i vicini", "normalizzare", "valutare su dati mai visti"],
+    titolo="Verifica, poi recupero o primo modello",
+    obiettivo="Nella prima ora la verifica individuale; nel resto della giornata il recupero, oppure il classificatore a vicini se la classe è in pari.",
+    sa=["rispondere da solo su tutte le giornate", "calcolare una distanza e trovare i vicini", "normalizzare", "valutare su dati mai visti"],
     att=[
-        (0, 40, "Ora 1 · Distanze e vicini", "—", A("Il punto",
-            ("Esito", "Senza normalizzare il frutto W sembra un limone; normalizzando, un mandarino."),)),
-        (0, 40, "Ora 2 · Progettare il modello", "—", A("Il punto", ("Consegna", "Scegliere k, normalizzazione e caratteristiche, motivando; prevedere l'accuratezza."),)),
-        (0, 40, "Ora 3 · Il torneo", "—", A("Il punto",
-            ("Consegna", "Il modello sui 7 frutti segreti, senza modificarlo. S7 resta sbagliato: manca il colore."),)),
+        (0, 40, "Ora 1 · Verifica individuale", "—", A("Che cosa fare",
+            ("Durata", "Circa 35 minuti, da soli, senza appunti; carta e calcolatrice."),
+            ("Contenuto", "Una parte per ogni giornata: vedi la sezione Valutazione."),
+            ("Chi corregge", "Il docente di informatica."))),
+        (0, 40, "Ora 2 · Distanze e vicini, oppure recupero", "—", A("Che cosa fare",
+            ("Primo modello", "Distanza tra frutti; i tre vicini del frutto W; senza normalizzare sembra un limone, normalizzando un mandarino."),
+            ("Recupero", "Si riprendono le attività segnate come non svolte o non riuscite nei controlli di fine ora."))),
+        (0, 40, "Ora 3 · Il torneo, oppure recupero", "—", A("Che cosa fare",
+            ("Primo modello", "Scelta motivata di k e delle caratteristiche; modello applicato ai 7 frutti segreti senza modificarlo. S7 resta sbagliato perché manca il colore."),)),
     ])
 
 GLOSSARIO = [
