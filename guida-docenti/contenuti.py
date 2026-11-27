@@ -1,0 +1,327 @@
+# Contenuti della guida interattiva per i docenti (IA e dati, 1P).
+# Ogni schermata: poco testo visibile, approfondimenti che si aprono al clic.
+# ruoli: it = italiano, ma = matematica, ef = educazione fisica, in = informatica, tutti
+
+def A(titolo, *righe):
+    """Attività: titolo, poi righe (etichetta, testo)."""
+    return {"t": titolo, "r": list(righe)}
+
+ORE = {}
+
+ORE["g1o1"] = dict(
+    giornata=1, ora=1, luogo="In aula", ruoli=["it"],
+    titolo="Le parole come dati",
+    obiettivo="Comprendere perché una macchina riesce a prevedere la parola successiva.",
+    sa=["contare occorrenze e forme", "calcolare una frequenza relativa", "dividere radice e desinenza",
+        "prevedere la parola successiva", "spiegare il «pappagallo stocastico»"],
+    att=[
+        (0, 3, "Apertura e gruppi", "—", A("Che cosa fare",
+            ("Slide", "Titolo, obiettivi, sorteggio dei gruppi con i numeri del registro degli assenti."),)),
+        (3, 7, "Quante parole ci sono?", "—", A("Il punto",
+            ("Consegna", "Quante parole ci sono in «il gatto e il cane»? Ognuno scrive un numero."),
+            ("Da dire", "Sono giusti 5 e 4: le <b>occorrenze</b> contano tutte le parole, le <b>forme</b> solo quelle diverse."),
+            ("Regole", "Maiuscole e punteggiatura non contano; gatto e gatti sono due forme; «l'» è una parola."))),
+        (7, 12, "Contate il paragrafo", "R1", A("Il punto",
+            ("Consegna", "Ogni parola nuova in R1, una tacca a ogni ripetizione."),
+            ("Da dire", "Un computer fa esattamente questo, su milioni di testi."),
+            ("Attenzione", "Errore tipico: «Il» e «il» contati due volte. Soluzione: 67 occorrenze, 50 forme (scarto ammesso: 3)."))),
+        (12, 16, "Frequenza relativa", "R2", A("Il punto",
+            ("Consegna", "Per le 5 parole più frequenti: occorrenze ÷ totale."),
+            ("Da dire", "0,09 significa 9 parole su 100. In cima ci sono parole piccole (il, di), poi quelle dell'argomento (treno)."),
+            ("Soluzione", "il 6 (≈ 0,09) · treno 4 (≈ 0,06) · di, studenti, la 3 (≈ 0,04)."))),
+        (16, 24, "Radice e desinenza", "R3", A("Il punto",
+            ("Metodo", "1 trova l'infinito · 2 togli -are/-ere/-ire: è la radice · 3 il resto è la desinenza: chi, quanti, quando?"),
+            ("Consegna", "Dividere: parlavamo, leggete, finiranno, cantai, prendono, apriamo, ragazze, verdi, libro."),
+            ("Da dire", "Nei verbi irregolari (vado) la regola non basta: anche le macchine spezzano le parole in pezzi frequenti, i token."),
+            ("Attenzione", "Errore tipico: parlav- / -amo invece di parl- / -avamo. La slide sugli irregolari è facoltativa."))),
+        (24, 29, "Il gioco di Shannon", "R4", A("Il punto",
+            ("Consegna", "Il docente legge una parola alla volta; i gruppi scrivono prima la parola che si aspettano."),
+            ("Frase", "«ogni mattina prendo l'autobus per andare a scuola e arrivo sempre in ritardo» (non proiettarla)."),
+            ("Da dire", "Più <b>contesto</b> c'è, più è facile prevedere. Claude Shannon fece questo esperimento nel 1951."))),
+        (29, 33, "Ambiguità e pappagallo stocastico", "R5", A("Il punto",
+            ("Consegna", "I due significati di «La pesca è buona»."),
+            ("Da dire", "Un chatbot sceglie la parola che di solito segue le precedenti: è un <b>pappagallo stocastico</b> (stocastico = che dipende dalle probabilità). Non controlla se è vero."))),
+        (33, 40, "Controllo e chiusura", "R6", A("Il punto",
+            ("Domande", "Dividere «prendevate» · due significati di «Ho visto il riccio» · su che cosa si basa il pappagallo."),
+            ("Se va male", "Se meno di metà classe risponde bene, si riprende all'inizio dell'ora 2."))),
+    ])
+
+ORE["g1o2"] = dict(
+    giornata=1, ora=2, luogo="In aula", ruoli=["it"],
+    titolo="Vero, verosimile, opinione",
+    obiettivo="Ogni gruppo scrive 8 frasi controllate: saranno i dati del modello in laboratorio.",
+    sa=["riconoscere il genere dai marcatori", "distinguere fatto, opinione, falso verosimile",
+        "scrivere frasi con regole date", "indicare una fonte", "dire che cosa rende credibile un falso"],
+    att=[
+        (0, 3, "Apertura", "—", A("Che cosa fare", ("Slide", "Titolo e obiettivi. Stessi gruppi dell'ora 1."),)),
+        (3, 6, "Vero o inventato?", "R1", A("Il punto",
+            ("Consegna", "Cinque consigli per studiare scritti da un'IA: quali sono veri?"),
+            ("Da dire", "Niente per ora: la soluzione arriva alla fine dell'ora."))),
+        (6, 10, "Genere e marcatori", "R2", A("Il punto",
+            ("Consegna", "Per sei frasi: il genere e tre parole che lo fanno riconoscere."),
+            ("Soluzione", "1 meteo · 2 calcio · 3 cucina · 4 fiaba · 5 scuola · 6 informatica."))),
+        (10, 14, "Tre tipi di frase; le regole", "—", A("Il punto",
+            ("Fatto vero", "Si può verificare, e la verifica dice vero: il Po sfocia nell'Adriatico."),
+            ("Opinione", "Un giudizio, né vero né falso: il Po è il fiume più bello."),
+            ("Falso verosimile", "Sembra vero ma la verifica dice falso: il Po nasce in Svizzera."),
+            ("Regole", "4-8 parole, minuscolo, senza punteggiatura, almeno 3 parole ripetute. Generi: 1 meteo, 2 calcio, 3 cucina, 4 fiabe, 5 scuola, 6 informatica."))),
+        (14, 27, "Le 8 frasi", "R3", A("Il punto",
+            ("Consegna", "3 fatti veri con fonte, 3 falsi verosimili, 2 opinioni; poi 3 minuti di revisione."),
+            ("Da controllare", "Opinioni scritte come fatti; fatti non verificabili; fonti generiche («internet» e «un chatbot» non valgono)."))),
+        (27, 31, "Il gioco del verosimile", "R4", A("Il punto",
+            ("Consegna", "Un gruppo legge una frase vera e una falsa; gli altri indovinano la falsa."),
+            ("Da dire", "Che cosa rende credibile un falso: un nome importante, un numero preciso, una data o un luogo, un tono sicuro."))),
+        (31, 33, "Le fonti", "—", A("Il punto",
+            ("Da dire", "Cinque domande: chi, come lo sa, perché, quando, chi altro conferma. Fonte <b>primaria</b> (l'INGV) e <b>secondaria</b> (il giornale). Un chatbot non è una fonte."),)),
+        (33, 40, "Controllo e chiusura", "R5", A("Il punto",
+            ("Soluzione consigli", "Veri 4 e 5; falsi 1 e 2 (miti); inventato 3 (lo studio non esiste)."),
+            ("Chiusura", "I fogli con le 8 frasi si consegnano: servono subito in laboratorio."))),
+    ])
+
+ORE["g1o3"] = dict(
+    giornata=1, ora=3, luogo="In laboratorio", ruoli=["in"],
+    titolo="Dalle frasi al pappagallo",
+    obiettivo="Costruire un modello che genera frasi a partire dalle 48 frasi della classe.",
+    sa=["salvare dati in CSV", "scomporre una frase in coppie", "contare con una formula",
+        "calcolare P(b | a)", "generare con la regola greedy"],
+    att=[
+        (3, 6, "Regole oppure esempi", "—", A("Il punto",
+            ("Da dire", "Programmazione classica: una persona scrive le regole. Apprendimento automatico: il computer le ricava dagli esempi."),)),
+        (6, 13, "Il foglio condiviso e il CSV", "—", A("Il punto",
+            ("Consegna", "Ogni gruppo scrive le sue 8 frasi solo nelle sue righe di «Corpus 1P»."),
+            ("Dimostrazione", "File › Scarica › CSV: corpus_1p.csv, 49 righe."))),
+        (13, 20, "Le coppie", "R1", A("Il punto",
+            ("Esempio", "«il cane corre veloce» → (il, cane) (cane, corre) (corre, veloce). Mai una coppia tra due frasi."),
+            ("Controllo", "Coppie = somma di (parole − 1); circa 35 per gruppo."))),
+        (20, 25, "Conti e probabilità", "R2", A("Il punto",
+            ("Formule", "C2 =CONTA.PIÙ.SE(A:A;A2;B:B;B2) · D2 =CONTA.SE(A:A;A2) · E2 =C2/D2"),
+            ("Controllo", "Le probabilità dopo una stessa parola sommano a 1."))),
+        (25, 30, "La regola greedy", "R3", A("Il punto",
+            ("Regola", "Si sceglie sempre la parola più probabile; a pari merito, l'ordine alfabetico; massimo 8 parole."),)),
+        (30, 33, "Che cosa sa il pappagallo", "—", A("Il punto",
+            ("Da dire", "Ha contato fatti, falsi e opinioni allo stesso modo: conosce le frequenze, non la verità."),)),
+        (33, 40, "Controllo e chiusura", "R4", A("Il punto",
+            ("Domande", "P(cane | il) con c(il) = 10 e c(il, cane) = 4 → 0,4 · che cosa fa la regola greedy · perché non sa se è vero."),)),
+    ])
+
+ORE["g2o1"] = dict(
+    giornata=2, ora=1, luogo="In aula", ruoli=["ma"],
+    titolo="Probabile non significa certo",
+    obiettivo="Esprimere l'incertezza con un numero e aggiornarlo dopo ogni osservazione.",
+    sa=["collocare un evento tra 0 e 1", "calcolare probabilità classica ed evento contrario",
+        "confrontare frequenza e probabilità", "usare l'albero per aggiornare"],
+    att=[
+        (0, 3, "Apertura e gruppi", "—", A("Che cosa fare", ("Slide", "Titolo, obiettivi, sorteggio dei gruppi."),)),
+        (3, 9, "La scala da 0 a 1", "R1", A("Il punto",
+            ("Consegna", "Ordinare sei eventi: dado fa 7, 7 × 8 = 56, testa, dado fa 6, sorge il sole, Superenalotto."),
+            ("Da dire", "Certo (si dimostra) e quasi certo (si basa sull'esperienza) non sono la stessa cosa."))),
+        (9, 11, "Due regole", "—", A("Il punto",
+            ("Regole", "P(non E) = 1 − P(E) · P(E) = favorevoli ÷ possibili, se i casi sono equiprobabili."),)),
+        (11, 18, "Testa o croce", "R2", A("Il punto",
+            ("Consegna", "Ogni coppia scrive 20 risultati: un biglietto segreto dice se lanciare o inventare."),
+            ("Da dire", "Sommando la classe la frequenza si avvicina a 0,5: legge dei grandi numeri. La moneta non ha memoria."))),
+        (18, 21, "Il docente indovino", "R3", A("Il punto",
+            ("Il trucco", "Chi inventa alterna troppo. In 20 lanci veri una serie di almeno 4 uguali c'è circa 77 volte su 100."),)),
+        (21, 31, "La moneta del docente e l'albero", "R4 R5", A("Il punto",
+            ("Situazione", "Nel sacchetto una moneta normale e una con due teste; se ne lancia una senza guardarla."),
+            ("Consegna", "I gruppi spostano 10 gettoni tra «normale» e «truccata» dopo ogni lancio."),
+            ("Albero", "Dopo una testa: (1/2) ÷ (3/4) = 2/3. Poi 4/5, 8/9, 16/17: mai 1. Una croce porta a 0."))),
+        (31, 40, "Collegamento e controllo", "R6", A("Il punto",
+            ("Da dire", "Il pappagallo della giornata 1 sceglie il probabile e parla sempre con tono sicuro."),
+            ("Domande", "Evento contrario, frequenza, albero."))),
+    ])
+
+ORE["g2o2"] = dict(
+    giornata=2, ora=2, luogo="In aula", ruoli=["ma"],
+    titolo="Tanti numeri, pochi numeri",
+    obiettivo="Descrivere un insieme di dati con pochi indici e leggere il legame tra due grandezze.",
+    sa=["media e mediana", "leggere Σ", "deviazione standard in 5 passi", "punteggio z e min-max",
+        "stimare la correlazione", "distinguere correlazione e causa"],
+    att=[
+        (3, 8, "Il miliardario e Σ", "R1", A("Il punto",
+            ("Consegna", "Nove persone a 1.000 €, entra un miliardario: media e mediana?"),
+            ("Soluzione", "Media 100.000.900 €, mediana 1.000 €: con un valore estremo la mediana è più fedele."))),
+        (8, 21, "Deviazione standard", "R2 R3", A("Il punto",
+            ("Insiemi", "A = {4, 6, 8, 10, 12} · B = {7, 8, 8, 8, 9} · C = {2, 8, 8, 8, 14}, tutti con media 8."),
+            ("5 passi", "media · scarti · quadrati · media dei quadrati · radice. A ≈ 2,83."),
+            ("Soluzione", "B ≈ 0,63 · C ≈ 3,79: il più disperso è C."),
+            ("Attenzione", "Dividere per 4 invece che per 5; dimenticare la radice."))),
+        (21, 24, "z e min-max", "R4", A("Il punto",
+            ("Formule", "z = (x − media) ÷ σ · min-max = (x − min) ÷ (max − min)"),
+            ("Soluzione", "Per A: z di 10 ≈ 0,71; min-max di 6 = 0,25."))),
+        (24, 30, "Indovina r", "R5", A("Il punto",
+            ("Da dire", "r vicino a 1: crescono insieme; a −1: una cresce, l'altra cala; a 0: nessuna retta."),
+            ("Soluzione", "0,93 · −0,84 · −0,09 · −0,17 · 0,48 · −0,10."))),
+        (30, 33, "Correlazione non è causa", "—", A("Il punto",
+            ("Esempio", "Gelati e annegamenti crescono insieme: la causa comune è il caldo."),
+            ("Retta", "y = a + b · x; y = 10 − 0,5 · x con x = 4 dà 8."))),
+        (33, 40, "Controllo e chiusura", "R6", A("Il punto", ("Domande", "Mediana, deviazione standard, una correlazione da spiegare senza causa."),)),
+    ])
+
+ORE["g2o3"] = dict(
+    giornata=2, ora=3, luogo="In laboratorio", ruoli=["in"],
+    titolo="Il calcolatore statistico",
+    obiettivo="Trasformare le formule in un foglio riutilizzabile e collaudarlo.",
+    sa=["frequenza cumulata con riferimenti assoluti", "grafico a linee", "formule statistiche", "collaudo"],
+    att=[
+        (3, 13, "I lanci nel foglio", "R1", A("Il punto",
+            ("Formula", "Teste cumulate =SOMMA($B$2:B2), trascinata; frequenza = teste ÷ n."),
+            ("Grafico", "Oscilla, poi si stabilizza vicino a 0,5."))),
+        (13, 30, "Il calcolatore", "R2", A("Il punto",
+            ("Formule", "Media, mediana, min, max, DEV.ST.POP, z, min-max, CORRELAZIONE, PENDENZA, INTERCETTA."),
+            ("Collaudo 1Z", "4,10 · 1,497 · −0,84 · −0,51 · 9,92."))),
+        (30, 40, "Stima e verità; controllo", "R3 R4", A("Il punto",
+            ("Da dire", "La retta trovata non coincide con la formula nascosta della 1Z: rumore e pochi dati. Una stima non è la verità."),)),
+    ])
+
+ORE["g3o1"] = dict(
+    giornata=3, ora=1, luogo="In aula", ruoli=["ef"],
+    titolo="Misurare bene, imparare per tentativi",
+    obiettivo="Capire che ogni misura ha un errore, scrivere un protocollo, imparare provando.",
+    sa=["calcolare uno scarto", "distinguere errore casuale e sistematico", "scrivere un protocollo",
+        "usare un codice anonimo", "descrivere agente, azione, ricompensa"],
+    att=[
+        (0, 5, "Apertura e le due prove", "—", A("Il punto",
+            ("Equilibrio", "Su un piede, mani sui fianchi, occhi aperti; secondi, massimo 60; due prove."),
+            ("Lanci", "10 palline di carta nel cestino da 2 metri; centri da 0 a 10."))),
+        (5, 9, "Tre cronometri", "R1", A("Il punto",
+            ("Consegna", "Tre compagni cronometrano lo stesso equilibrio senza guardarsi; si calcola lo scarto."),
+            ("Esempio", "23,4 · 24,1 · 23,8 s: scarto 0,7."))),
+        (9, 11, "Due tipi di errore", "R2", A("Il punto",
+            ("Casuale", "Varia in su e in giù: si ripete e si fa la media."),
+            ("Sistematico", "Sempre nello stesso verso (linea a 1,80 m): si cambia il modo di misurare."))),
+        (11, 15, "Il protocollo", "R3", A("Il punto",
+            ("Consegna", "Quattro righe: che cosa, come, unità, quante prove. Gruppi 1-3 i lanci, 4-6 l'equilibrio."),
+            ("Verifica", "Un altro gruppo potrebbe eseguirlo senza domande?"))),
+        (15, 17, "Privacy: i codici", "—", A("Il punto",
+            ("Procedura", "Ognuno estrae un codice e lo usa al posto del nome. Nessuna classifica."),)),
+        (17, 33, "Il bersaglio nascosto", "R4", A("Il punto",
+            ("Allestimento", "A terra col nastro: cerchio piccolo 3 punti, grande 1 punto, fuori 0."),
+            ("Consegna", "Strategia «se… allora…»; un compagno bendato fa 6 lanci e sente solo il punteggio."),
+            ("Da dire", "Agente, azione, ricompensa, strategia: così si addestrano robot e programmi di gioco."))),
+        (33, 40, "Controllo e postazioni", "R5", A("Il punto", ("Chiusura", "Tre domande; si allestiscono le sei postazioni dell'ora 2."),)),
+    ])
+
+ORE["g3o2"] = dict(
+    giornata=3, ora=2, luogo="In aula", ruoli=["ef"],
+    titolo="La raccolta dei dati",
+    obiettivo="Tutti eseguono le due prove secondo il protocollo; i dati sono completi.",
+    sa=["eseguire una prova con protocollo", "registrare una misura", "lasciare vuoto ciò che manca", "verificare la completezza"],
+    att=[
+        (3, 7, "Il foglio dati e i turni", "—", A("Il punto",
+            ("Regole", "Una riga per codice; numeri senza unità; casella vuota se la prova manca (0 è un valore vero); note per i casi strani."),
+            ("Turni", "Nel gruppo si ruota: uno esegue, uno misura, uno scrive."))),
+        (7, 19, "Primo turno", "R1 R2", A("Il punto", ("Organizzazione", "Gruppi 1-3 all'equilibrio, 4-6 ai lanci."),)),
+        (20, 32, "Secondo turno", "R1 R2", A("Il punto", ("Organizzazione", "I gruppi si scambiano. Il docente controlla che si segua il protocollo."),)),
+        (32, 40, "Completezza e chiusura", "—", A("Il punto",
+            ("Controllo", "Ogni codice ha tutte le misure? Nessun nome sul foglio? Le mancanze si recuperano subito."),)),
+    ])
+
+ORE["g3o3"] = dict(
+    giornata=3, ora=3, luogo="In laboratorio", ruoli=["in"],
+    titolo="Dal foglio di carta al dataset",
+    obiettivo="Trasferire le misure in un archivio controllato, pulito e documentato.",
+    sa=["usare la convalida", "trovare errori con le formule", "usare E e O", "documentare le correzioni"],
+    att=[
+        (3, 13, "Convalida e inserimento", "R1", A("Il punto",
+            ("Da mostrare", "Il foglio «Prove 1P» rifiuta 600 secondi: la convalida accetta equilibrio 0-60, lanci 0-10."),)),
+        (13, 25, "Errori nascosti", "R2", A("Il punto",
+            ("Formule", "CONTA.VUOTE, CONTA.SE, O, VAL.NUMERO in colonne a destra."),
+            ("E e O", "Valido se E(x ≥ 0; x ≤ 60); non valido se O(x < 0; x > 60)."))),
+        (25, 33, "Decisioni e registro", "R3", A("Il punto",
+            ("Regola", "Correggere se il foglio di carta è chiaro, svuotare se incerto, tenere se è reale. Ogni modifica va nel registro."),
+            ("Trascrizione", "Due inserimenti dello stesso foglio: percentuale di celle diverse."))),
+        (33, 40, "Controllo e salvataggio", "R4", A("Il punto", ("File", "prove_1p.csv nella cartella della classe."),)),
+    ])
+
+ORE["g4o1"] = dict(
+    giornata=4, ora=1, luogo="In laboratorio", ruoli=["in"],
+    titolo="L'analisi dei nostri dati",
+    obiettivo="Analizzare i dati della classe e formulare una scoperta con il suo limite.",
+    sa=["confrontare stima e valore calcolato", "usare la tabella pivot", "leggere un grafico di dispersione", "scrivere una scoperta"],
+    att=[
+        (3, 10, "Prima stima, poi calcola", "R1", A("Il punto", ("Da dire", "La media delle stime spesso si avvicina al valore vero."),)),
+        (10, 28, "Il calcolatore sui nostri dati", "R2 R3 R4", A("Il punto",
+            ("Passi", "Valori con z oltre 3; pivot per mano usata; grafico equilibrio-lanci, prevedendo prima il segno di r."),)),
+        (28, 40, "La scoperta", "R5 R6", A("Il punto", ("Consegna", "Un numero, un grafico, un limite (gruppi piccoli, una sola prova)."),)),
+    ])
+
+ORE["g4o2"] = dict(
+    giornata=4, ora=2, luogo="In laboratorio", ruoli=["in"],
+    titolo="Macchine che imparano dagli esempi",
+    obiettivo="Addestrare e valutare un modello che impara dagli esempi.",
+    sa=["distinguere esempio ed etichetta", "addestrare un modello", "calcolare l'accuratezza", "progettare un esempio ingannevole"],
+    att=[
+        (3, 8, "Esempi ed etichette", "R1", A("Il punto", ("Da dire", "Si addestra su alcuni esempi, si prova su altri mai visti."),)),
+        (8, 22, "Addestramento", "R2", A("Il punto",
+            ("Teachable Machine", "Tre classi di oggetti o disegni, almeno 20 esempi ciascuna. Mai volti o corpi."),)),
+        (22, 30, "Il test", "R3 R4", A("Il punto", ("Consegna", "10 prove nuove, risposta giusta scritta prima; accuratezza = corrette ÷ totali."),)),
+        (30, 40, "Batti la macchina", "R5 R6", A("Il punto",
+            ("Consegna", "Un esempio che inganna il modello, spiegato prima (sfondo, luce, oggetto nuovo)."),
+            ("Sintesi", "Bersaglio = rinforzo · Teachable Machine = supervisionato · frutti da raggruppare = non supervisionato."))),
+    ])
+
+ORE["g4o3"] = dict(
+    giornata=4, ora=3, luogo="In laboratorio", ruoli=["in"],
+    titolo="La presentazione finale",
+    obiettivo="Preparare e provare una breve presentazione del lavoro svolto.",
+    sa=["scegliere materiali e dati aggregati", "presentare in un minuto", "distinguere stima e verità"],
+    att=[
+        (3, 18, "Preparazione", "scheda", A("Il punto",
+            ("Consegna", "Ogni gruppo sceglie un'esperienza del percorso: che cosa si mostra, che cosa si spiega, un numero, un limite, una domanda."),)),
+        (18, 28, "Prova incrociata", "scheda", A("Il punto", ("Consegna", "Ogni gruppo ascolta un altro gruppo e scrive un'osservazione motivata."),)),
+        (28, 40, "Un minuto a gruppo; biglietto finale", "—", A("Il punto",
+            ("Biglietto", "Ciascuno scrive con un esempio la differenza tra stima e verità."),)),
+    ])
+
+ORE["g5"] = dict(
+    giornata=5, ora=0, luogo="In laboratorio", ruoli=["in"],
+    titolo="Recupero, oppure il primo modello",
+    obiettivo="Se la classe è in pari: un classificatore a vicini sul foglio di calcolo.",
+    sa=["calcolare una distanza", "trovare i vicini", "normalizzare", "valutare su dati mai visti"],
+    att=[
+        (0, 40, "Ora 1 · Distanze e vicini", "—", A("Il punto",
+            ("Esito", "Senza normalizzare il frutto W sembra un limone; normalizzando, un mandarino."),)),
+        (0, 40, "Ora 2 · Progettare il modello", "—", A("Il punto", ("Consegna", "Scegliere k, normalizzazione e caratteristiche, motivando; prevedere l'accuratezza."),)),
+        (0, 40, "Ora 3 · Il torneo", "—", A("Il punto",
+            ("Consegna", "Il modello sui 7 frutti segreti, senza modificarlo. S7 resta sbagliato: manca il colore."),)),
+    ])
+
+GLOSSARIO = [
+ ("Accuratezza", "La percentuale di risposte giuste di un modello: corrette diviso totali."),
+ ("Addestramento", "La fase in cui un modello impara guardando molti esempi."),
+ ("Algoritmo", "Una sequenza di istruzioni precise, da eseguire in ordine. Una ricetta è un algoritmo."),
+ ("Apprendimento automatico", "Il computer ricava da solo una regola guardando molti esempi."),
+ ("Apprendimento per rinforzo", "Il computer impara per tentativi: prova, riceve un punteggio, corregge."),
+ ("Apprendimento supervisionato", "Il computer riceve esempi con la risposta giusta e impara a rispondere su esempi nuovi."),
+ ("Apprendimento non supervisionato", "Il computer raggruppa da solo esempi senza risposta."),
+ ("Browser", "Il programma che apre le pagine web: Chrome, Edge."),
+ ("Cella", "Un riquadro del foglio di calcolo, ad esempio B2."),
+ ("Chatbot", "Un programma con cui si dialoga scrivendo; sceglie le parole più probabili."),
+ ("Classificatore", "Un modello che assegna ogni elemento a una categoria."),
+ ("Codice anonimo", "Una sigla usata al posto del nome."),
+ ("Contesto", "Le parole che vengono prima di quella da indovinare."),
+ ("Convalida dei dati", "Un controllo che rifiuta i valori non ammessi."),
+ ("Corpus", "Una raccolta di testi usata come dati."),
+ ("CSV", "Un file di solo testo che contiene una tabella, con i valori separati da un simbolo."),
+ ("Dataset", "Una raccolta ordinata di dati, di solito una tabella."),
+ ("Etichetta", "La risposta giusta associata a un esempio."),
+ ("Foglio di calcolo", "Un programma a righe e colonne per dati e formule: Google Fogli, Excel."),
+ ("Formula", "Un'istruzione in una cella che inizia con = e calcola un risultato."),
+ ("Funzione", "Una formula già pronta con un nome: SOMMA, CONTA.SE."),
+ ("Intelligenza artificiale", "Programmi che svolgono compiti che sembrano richiedere intelligenza, partendo dai dati."),
+ ("Modello", "Un programma che ha imparato dagli esempi a fare previsioni."),
+ ("Normalizzazione", "Rendere confrontabili valori con unità diverse."),
+ ("Pappagallo stocastico", "Un chatbot che ripete combinazioni di parole probabili, senza sapere se sono vere."),
+ ("Probabilità condizionata", "P(b | a): la probabilità di b sapendo che è avvenuto a."),
+ ("Pulizia dei dati", "Cercare e correggere gli errori in un dataset."),
+ ("Regola greedy", "Scegliere sempre l'opzione migliore in quel momento. Greedy = ingordo."),
+ ("Riferimento assoluto", "Un indirizzo con $ (come $B$2) che non cambia trascinando la formula."),
+ ("Tabella pivot", "Uno strumento che riassume una tabella raggruppando i dati."),
+ ("Teachable Machine", "Un sito di Google per addestrare un modello con la webcam, senza codice."),
+ ("Test set", "Esempi mai mostrati al modello, usati per verificarlo."),
+ ("Token", "Un pezzo di testo che un programma tratta come unità."),
+ ("Training set", "Gli esempi usati per addestrare il modello."),
+ ("Valore anomalo", "Un valore molto diverso dagli altri: errore o caso raro."),
+ ("Valore mancante", "Un dato che non c'è: si lascia vuoto, perché 0 è un valore vero."),
+]
